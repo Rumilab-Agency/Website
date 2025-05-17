@@ -6,7 +6,7 @@ import {
   NavbarContainer,
   Logo,
   CTAButton,
-  ShootingStarButton,
+  // ShootingStarButton,
   LogoImage,
 } from './Navbar.styles';
 // Define props type
@@ -14,7 +14,7 @@ interface NavbarProps {
     onMenuClick: () => void;
   }
 
-  const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => (
+  const Navbar: React.FC<NavbarProps> = ({  }) => (
     <NavbarContainer>
       <Logo>
         <LogoImage src={logoImg} alt="RomiLab Logo" />

@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import { breakpoints, SubTitle, Title, Content, Container, ContentWrapper, SectionTitle } from '../../layouts/AppLayout.style';
+import styled, {  } from 'styled-components';
+import { breakpoints, Title, Container, ContentWrapper } from '../../layouts/AppLayout.style';
 
 export const StrengthContainer = styled(Container)`
   background-color: black;

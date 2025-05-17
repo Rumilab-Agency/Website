@@ -1,4 +1,3 @@
-import React from 'react';
 import { StrengthContainer, StrengthContentWrapper, StrengthTitle, CardGrid, GlowingCard, CardTitle, CardContent } from './Strength.style';
 
 

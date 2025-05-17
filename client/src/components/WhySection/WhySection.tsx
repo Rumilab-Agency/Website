@@ -1,7 +1,6 @@
-import React from 'react';
-import { WhyUsContainer, WhyUsContentWrapper, WhyUsSubHeadline, WhyUsContent, WhyUsHeadline, WhyUsTitle, WhyUsBg } from './WhySection.style';
+import { WhyUsContainer, WhyUsContentWrapper, WhyUsSubHeadline, WhyUsContent, WhyUsHeadline, WhyUsTitle } from './WhySection.style';
 
-import whyUsBg from '../../assets/images/bg-why.png';
+// import whyUsBg from '../../assets/images/bg-why.png';
 
 
 const WhyUs = () => (

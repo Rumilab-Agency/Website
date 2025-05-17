@@ -1,4 +1,3 @@
-import React from 'react';
 import AppLayout from '../layouts/AppLayout';
 
 import Hero from '../components/Hero/Hero';

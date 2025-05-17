@@ -1,4 +1,3 @@
-import React from 'react';
 import { HeroContainer, Headline, HeadlineWrapper, Subheadline, SunriseImage } from './Hero.style';
 import sunriseGlow from '../../assets/images/sunrise.png';
 
