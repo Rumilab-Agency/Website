@@ -55,7 +55,6 @@ export const CardGrid = styled(ContentWrapper)`
 `;
 
 export const GlowingCard = styled.div`
-  background: #0d0d0d;
   padding: 48px 32px;
   border-radius: 50px;
   aspect-ratio: 1 / 1; /* 1:1 square */

@@ -21,12 +21,15 @@ export const HeadlineWrapper = styled.div`
   justify-content: center; 
   flex-direction: column;
   height: 250px; 
+  min-height:80vh;
   background-color:#010101;
 
 
   @media (min-width: ${breakpoints.md}) {
     height: 400px;
+    min-height:60vh;
   }
+
 
   @media (min-width: ${breakpoints.xl}) {
     height: 31.25vw;
