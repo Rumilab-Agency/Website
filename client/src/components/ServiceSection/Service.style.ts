@@ -1,11 +1,17 @@
 
 import styled, {  } from 'styled-components';
-import { breakpoints, Title, Container, ContentWrapper } from '../../layouts/AppLayout.style';
+import { breakpoints, Title, Container } from '../../layouts/AppLayout.style';
 
 
 
 export const ServiceContainer = styled(Container)`
   background-color: black;
+
+
+    @media (min-width: ${breakpoints.md}) {
+
+  }
+
 
 `;
 

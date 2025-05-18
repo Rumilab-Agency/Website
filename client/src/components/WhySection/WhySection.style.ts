@@ -2,9 +2,6 @@ import styled, {  } from 'styled-components';
 import { breakpoints, SubTitle, Title, Content, Container,ContentWrapper, SectionTitle } from '../../layouts/AppLayout.style';
 
 
-import whyUsBg from '../../assets/images/bg-why.png';
-
-
 
 export const WhyUsContainer = styled(Container)`
   background-color: black;
