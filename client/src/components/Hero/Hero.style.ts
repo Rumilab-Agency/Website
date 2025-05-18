@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { breakpoints, Title, SubTitle } from '../../layouts/AppLayout.style';
 
-import { fadeIn } from '../../styles/animations'; // adjust the path as needed
+import { fadeIn, sunriseGlow } from '../../styles/animations'; // adjust the path as needed
 
 
 
@@ -69,7 +69,7 @@ export const SunriseImage = styled.img`
   margin-top: -64px; /* Optional: overlap slightly with Hero */
   z-index: -1;
   opacity: 0;
-  animation: ${fadeIn} 3s ease-in-out forwards;
+  animation: ${sunriseGlow} 2.5s ease-in-out forwards;
 
 @media (min-width: ${breakpoints.xl}) {
     margin-top: -5vw;

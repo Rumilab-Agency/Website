@@ -51,11 +51,11 @@ export const LogoImage = styled.img`
 
 
     @media (min-width: ${breakpoints.lg}) {
-        height: 30px;
+        height: 24px;
     }
 
       @media (min-width: ${breakpoints.xl}) {
-        height: 2.344vw;
+        height: 1.875vw;
         margin-right: 0.625vw;
     }
 `;

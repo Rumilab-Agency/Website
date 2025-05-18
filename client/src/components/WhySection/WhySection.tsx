@@ -9,13 +9,13 @@ const WhyUs = () => (
             Why Us
         </WhyUsTitle>
         <WhyUsContentWrapper>
-            <WhyUsSubHeadline>
+            <WhyUsSubHeadline data-aos="fade-right">
                 Why Choose Rumilab?
             </WhyUsSubHeadline>
-            <WhyUsHeadline>
+            <WhyUsHeadline data-aos="fade-right">
                 The right partner for <br/> your digital growth
             </WhyUsHeadline>
-            <WhyUsContent>
+            <WhyUsContent data-aos="fade-right">
             We're a small, passionate team — a professional web developer and an experienced designer — who work closely with you to bring your business online with purpose. Our mission is to create websites that not only look great but help you grow. No fluff, no confusing jargon — just reliable, custom-built sites designed to make your brand stand out.            </WhyUsContent>
             <WhyUsBg src={whyUsBg} alt="Why Us Background" />
         </WhyUsContentWrapper>

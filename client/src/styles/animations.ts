@@ -21,4 +21,18 @@ export const slideUp = keyframes`
   }
 `;
 
+export const sunriseGlow = keyframes`
+  0% {
+    filter: brightness(0.4) saturate(0.8);
+    opacity: 0;
+  }
+  50% {
+    filter: brightness(1) saturate(1.4);
+    opacity: 0.8;
+  }
+  100% {
+    filter: brightness(1.6) saturate(1);
+    opacity: 1;
+  }
+`;
 // Add more animations as needed
