@@ -13,6 +13,8 @@ export const sunrise = keyframes`
 
 
 export const HeroContainer = styled.div`
+  background-color: #010101;
+
 `;
 
 export const HeadlineWrapper = styled.div`
@@ -64,7 +66,6 @@ export const SunriseImage = styled.img`
   width: 100%;
   height: auto;
   display: block;
-  background-color: #010101;
   margin-top: -64px; /* Optional: overlap slightly with Hero */
   z-index: -1;
   opacity: 0;

@@ -2,6 +2,7 @@ import styled, {  } from 'styled-components';
 import { breakpoints, SubTitle, Title, Content, Container,ContentWrapper, SectionTitle } from '../../layouts/AppLayout.style';
 
 
+import whyUsBg from '../../assets/images/bg-why.png';
 
 
 
@@ -13,7 +14,6 @@ export const WhyUsContainer = styled(Container)`
 
 export const WhyUsTitle = styled(Title)`
   color:white;
-  background-color: black;
 
 `;
 
@@ -78,6 +78,8 @@ export const WhyUsContent = styled(Content)`
 
   color: white;
   width: 100%;
+  position: relative;
+  z-index: 2;
 
 
   @media (min-width: ${breakpoints.md}) {
@@ -93,16 +95,42 @@ export const WhyUsContent = styled(Content)`
 
 
 export const WhyUsBg = styled.img`
-  width: 55%;
-  right:0;
-  top:0;
+
+
+  width: 285px;
+  right: 0;
+  bottom: 20%;
+
+
   height: auto;
   position:absolute;
-  background-color: #010101;
   margin-top: -64px; /* Optional: overlap slightly with Hero */
   z-index: 1;
 
+
+  @media (min-width: ${breakpoints.sm}) {
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+      width: 385px;
+      right: 0;
+      bottom: 20%;
+
+  }
+
+  @media (min-width: ${breakpoints.lg}) {
+      width: 735px;
+      bottom: 0;
+  }
+
+  @media (min-width: ${breakpoints.xl}) {
+      width: 57.422vw;
+
+  }
+
 `;
+
+
 
 
 

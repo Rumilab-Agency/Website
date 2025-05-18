@@ -141,18 +141,19 @@ export const ContentWrapper = styled.div`
   margin: 20px auto;
 
   @media (min-width: ${breakpoints.md}) {
-
-  }
-
-  @media (min-width: ${breakpoints.lg}) {
       margin-top: 40px;
       margin-bottom: 40px;
   }
 
+  @media (min-width: ${breakpoints.lg}) {
+      margin-top: 80px;
+      margin-bottom: 80px;
+  }
+
 
   @media (min-width: ${breakpoints.xl}) {
-    margin-top: 3.125vw;
-    margin-bottom: 3.125vw;
+    margin-top: 6.25vw;
+    margin-bottom: 6.25vw;
   }
 `;
 
