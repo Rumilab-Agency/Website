@@ -77,11 +77,11 @@ export const WhyUsHeadline = styled(SectionTitle)`
 export const WhyUsContent = styled(Content)`
 
   color: white;
-  width: 80%;
+  width: 100%;
 
 
   @media (min-width: ${breakpoints.md}) {
-    width: 60%;
+      width: 75%;
   }
 
   @media (min-width: ${breakpoints.lg}) {

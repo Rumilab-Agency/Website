@@ -22,6 +22,8 @@ export const HeadlineWrapper = styled.div`
   flex-direction: column;
   height: 250px; 
   min-height:80vh;
+  width: 90%;
+  margin:0 auto;
   background-color:#010101;
 
 

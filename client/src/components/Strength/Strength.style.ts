@@ -31,7 +31,6 @@ export const StrengthContentWrapper = styled.div`
 export const CardGrid = styled(ContentWrapper)`
   display: grid;
   gap: 32px;
-  margin: 20px auto;
   grid-template-columns: 1fr;
 
 
@@ -50,7 +49,6 @@ export const CardGrid = styled(ContentWrapper)`
 
   @media (min-width: ${breakpoints.xl}) {
         gap: 4.375vw;
-        margin: 1.563vw auto;
   }
 `;
 

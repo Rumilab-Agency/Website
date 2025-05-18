@@ -6,10 +6,11 @@ const Hero = () => (
   <HeroContainer>
     <HeadlineWrapper>
         <Headline>
-        Crafting Digital Identities<br />Through Custom Design.
+        Beautiful, Custom Websites <br /> for Small Businesses.
+        {/* Crafting Digital IdentitiesThrough Custom Design. */}
         </Headline>
         <Subheadline>
-        Tailored design, fast delivery, and SEO-ready from day one.
+        Built for your brand, delivered quickly, and ready to rank.
         </Subheadline>
     </HeadlineWrapper>
     {/* <SunWrapper>

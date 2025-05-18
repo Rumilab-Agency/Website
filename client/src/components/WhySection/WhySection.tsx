@@ -16,8 +16,7 @@ const WhyUs = () => (
                 The right partner for <br/> your digital growth
             </WhyUsHeadline>
             <WhyUsContent>
-             We are a dedicated team comprising a professional web developer and an experienced web designer, committed to delivering bespoke digital solutions tailored to your brand. By combining technical expertise with creative design, we craft responsive, user-centric websites that effectively communicate your identity and support your business objectives.
-            </WhyUsContent>
+            We're a small, passionate team — a professional web developer and an experienced designer — who work closely with you to bring your business online with purpose. Our mission is to create websites that not only look great but help you grow. No fluff, no confusing jargon — just reliable, custom-built sites designed to make your brand stand out.            </WhyUsContent>
         </WhyUsContentWrapper>
   </WhyUsContainer>
 );

@@ -71,7 +71,7 @@ export const breakpoints = {
 
 
 export const SubTitle = styled.p`
-  font-size: 12px;
+  font-size: 16px;
 
   @media (min-width: ${breakpoints.md}) {
     font-size: 18px;
@@ -91,6 +91,11 @@ export const SubTitle = styled.p`
 export const Container = styled.div`
 
   padding: 32px 0;
+  min-height:80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   @media (min-width: ${breakpoints.md}) {
     padding: 40px 0;
@@ -154,10 +159,9 @@ export const ContentWrapper = styled.div`
 
 
 export const Content = styled.p`
-  font-size: 10px;
+  font-size: 14px;
 
   @media (min-width: ${breakpoints.md}) {
-    font-size: 12px;
   }
 
   @media (min-width: ${breakpoints.lg}) {
