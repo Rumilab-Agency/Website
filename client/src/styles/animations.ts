@@ -35,4 +35,5 @@ export const sunriseGlow = keyframes`
     opacity: 1;
   }
 `;
+
 // Add more animations as needed

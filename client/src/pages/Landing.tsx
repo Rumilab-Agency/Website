@@ -4,6 +4,8 @@ import Hero from '../components/Hero/Hero';
 import WhySection from '../components/WhySection/WhySection';
 import Strength from '../components/Strength/Strength';
 import Service from '../components/ServiceSection/Service';
+import CTA from '../components/CTA/CTA';
+
 
 
 
@@ -15,6 +17,7 @@ const Landing = () => {
         <WhySection/>
         <Strength/>
         <Service/>
+        <CTA/>
       </AppLayout>
     );
   };

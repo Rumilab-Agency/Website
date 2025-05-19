@@ -174,3 +174,73 @@ export const Content = styled.p`
     font-size: 1.25vw;
   }
 `;
+
+export const CTAButton = styled.button`
+  background: transparent;
+  border: 2px solid #a0a0ff;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration:none;
+  transition: background 0.2s, color 0.2s;
+  &:hover {
+    background: #a0a0ff;
+    color: #111;
+  }
+
+    @media (min-width: ${breakpoints.md}) {
+      padding: 8px 24px;
+      font-size: 16px;
+    }
+  
+    @media (min-width: ${breakpoints.xl}) {
+          padding: 8px 1.875vw;
+          font-size: 1.25vw;
+          border-radius: 1.875vw;
+          border: 0.156vw solid #a0a0ff;
+
+    }
+`;
+
+export const CTAButtonLarge = styled.button`
+  background: transparent;
+  border: 2px solid #a0a0ff;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration:none;
+  transition: background 0.2s, color 0.2s;
+  &:hover {
+    background: #a0a0ff;
+    color: #111;
+  }
+
+    @media (min-width: ${breakpoints.md}) {
+      font-size: 24px;
+    }
+
+
+  
+    @media (min-width: ${breakpoints.xl}) {
+          padding: 0.938vw 2.5vw;
+          font-size: 1.875vw;
+          border-radius: 3.125vw;
+          border: 0.156vw solid #a0a0ff;
+
+    }
+`;
+
+
+
+
+export const GradientText = styled.span`
+  background: linear-gradient(90deg, #a084ff 0%, #f780ff 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+`;

@@ -11,11 +11,9 @@ export const WhyUsContainer = styled(Container)`
 
 export const WhyUsTitle = styled(Title)`
   color:white;
-
 `;
 
 export const WhyUsContentWrapper = styled(ContentWrapper)`
-
   width: 80%;
 
   @media (min-width: ${breakpoints.md}) {
@@ -35,11 +33,6 @@ export const WhyUsContentWrapper = styled(ContentWrapper)`
 `;
 
 export const WhyUsSubHeadline = styled(SubTitle)`
-
-    background: linear-gradient(90deg, #a084ff 0%, #f780ff 50%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     color: transparent;
     font-weight:500;
 `;
@@ -97,8 +90,7 @@ export const WhyUsBg = styled.img`
   width: 285px;
   right: 0;
   bottom: 20%;
-
-
+  opacity:0.5;
   height: auto;
   position:absolute;
   margin-top: -64px; /* Optional: overlap slightly with Hero */

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { breakpoints } from '../../layouts/AppLayout.style';
+import { breakpoints, CTAButton } from '../../layouts/AppLayout.style';
 
 
 
@@ -60,36 +60,6 @@ export const LogoImage = styled.img`
     }
 `;
 
-export const CTAButton = styled.button`
-  background: transparent;
-  border: 2px solid #a0a0ff;
-  color: #fff;
-  padding: 8px 20px;
-  border-radius: 24px;
-  font-size: 14px;
-  margin-right: 0px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  &:hover {
-    background: #a0a0ff;
-    color: #111;
-  }
-
-    @media (min-width: ${breakpoints.md}) {
-      margin-right: 0px;
-      padding: 8px 24px;
-      font-size: 16px;
-    }
-  
-    @media (min-width: ${breakpoints.xl}) {
-          padding: 8px 1.875vw;
-          font-size: 1.25vw;
-          border-radius: 1.875vw;
-          border: 0.156vw solid #a0a0ff;
-
-    }
-`;
-
 export const ShootingStarButton = styled.button`
   background: linear-gradient(90deg, #a0a0ff 60%, #fff 100%);
   border: none;
@@ -113,3 +83,8 @@ export const ShootingStarButton = styled.button`
     pointer-events: none;
   }
 `; 
+
+
+export const NavbarCTAButton = styled(CTAButton)`
+
+`;

@@ -1,6 +1,7 @@
 import styled, {  } from 'styled-components';
 import { breakpoints, Title, Container, ContentWrapper } from '../../layouts/AppLayout.style';
 
+
 export const StrengthContainer = styled(Container)`
   background-color: black;
 
@@ -66,6 +67,7 @@ export const GlowingCard = styled.div`
   flex-direction: column;
   justify-content: center; /* Vertical center */
   align-items: center;     /* Horizontal center */
+
 
 
   &::before {

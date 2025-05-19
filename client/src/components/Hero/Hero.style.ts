@@ -40,15 +40,16 @@ export const HeadlineWrapper = styled.div`
   }
 `;
 
+
 export const Headline = styled(Title)`
-  background: linear-gradient(90deg, #a084ff 0%, #f780ff 100%);
+  background: linear-gradient(180deg, #a084ff, #f780ff, #ffd1e3);
+  background-size: 100% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   color: transparent;
   font-weight:700;
-  opacity: 0;
-  animation: ${fadeIn} 1s ease-in-out forwards;
+  animation:
+    ${fadeIn} 2s ease-in-out forwards;
 
 `;
 
@@ -57,7 +58,7 @@ export const Subheadline = styled(SubTitle)`
   text-align: center;
   margin: 0 0 48px 0;
  opacity: 0;
-  animation: ${fadeIn} 2s ease-in-out forwards;
+  animation: ${fadeIn} 2.5s ease-in-out forwards;
 `;
 
 
@@ -69,7 +70,7 @@ export const SunriseImage = styled.img`
   margin-top: -64px; /* Optional: overlap slightly with Hero */
   z-index: -1;
   opacity: 0;
-  animation: ${sunriseGlow} 2.5s ease-in-out forwards;
+  animation: ${sunriseGlow} 3s ease-in-out forwards;
 
 @media (min-width: ${breakpoints.xl}) {
     margin-top: -5vw;

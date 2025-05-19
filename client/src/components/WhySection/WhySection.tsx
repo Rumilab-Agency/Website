@@ -1,6 +1,7 @@
 import { WhyUsContainer, WhyUsContentWrapper, WhyUsSubHeadline, WhyUsContent, WhyUsHeadline, WhyUsTitle,WhyUsBg } from './WhySection.style';
 
 import whyUsBg from '../../assets/images/bg-why.png';
+import { GradientText } from '../../layouts/AppLayout.style';
 
 
 const WhyUs = () => (
@@ -10,7 +11,7 @@ const WhyUs = () => (
         </WhyUsTitle>
         <WhyUsContentWrapper>
             <WhyUsSubHeadline data-aos="fade-right">
-                Why Choose Rumilab?
+                <GradientText>Why Choose Rumilab?</GradientText>
             </WhyUsSubHeadline>
             <WhyUsHeadline data-aos="fade-right">
                 The right partner for <br/> your digital growth
