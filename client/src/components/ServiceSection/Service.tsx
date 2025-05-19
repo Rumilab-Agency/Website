@@ -4,30 +4,36 @@ import { ServiceContainer, ServiceTitle, ServiceContentWrapper,
 
 import serviceBg from '../../assets/images/bg-service.png';
 
+import designIcon from '../../assets/images/service-icon/design.png';
+import businessIcon from '../../assets/images/service-icon/business.png';
+import responsiveIcon from '../../assets/images/service-icon/responsive.png';
+import seoIcon from '../../assets/images/service-icon/seo.png';
+import supportIcon from '../../assets/images/service-icon/support.png';
+
 
 const services = [
     {
-      icon: "../../src/assets/images/service-icon/design.png",
+      icon: designIcon,
       title: 'Custom Website Design',
       description: 'Unique, brand-driven designs tailored to your business goals — no templates, just thoughtful creativity.',
     },
     {
-      icon: "../../src/assets/images/service-icon/business.png",
+      icon: businessIcon,
       title: 'Frontend Development',
       description: 'Clean, responsive interfaces built with React, Next.js, and modern web tech.',
     },
     {
-      icon: "../../src/assets/images/service-icon/responsive.png",
+      icon: responsiveIcon,
       title: 'UI/UX Design',
       description: 'Human-centered designs with smooth flow and aesthetic visuals.',
     },
     {
-      icon: "../../src/assets/images/service-icon/seo.png",
+      icon: seoIcon,
       title: 'Mobile Optimization',
       description: 'Fast, mobile-first websites optimized for all devices.',
     },
     {
-      icon: "../../src/assets/images/service-icon/support.png",
+      icon: supportIcon,
       title: 'Hosting & Maintenance',
       description: 'Reliable cloud hosting and post-launch support to keep you running smoothly.',
     },
