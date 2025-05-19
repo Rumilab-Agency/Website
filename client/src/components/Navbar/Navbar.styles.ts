@@ -12,7 +12,7 @@ export const shoot = keyframes`
 
 export const NavbarContainer = styled.div`
   width: 100%;
-  background: #111;
+  background: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
