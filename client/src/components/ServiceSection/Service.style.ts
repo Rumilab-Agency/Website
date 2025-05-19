@@ -51,9 +51,16 @@ export const ServiceCard = styled.article`
 export const IconContainer = styled.div`
   border: 2px solid #c056f7;
   border-radius: 16px;
-  padding: 1rem;
+  padding: 24px;;
   display: inline-block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
+
+  @media (min-width: ${breakpoints.xl}) {
+    border: 0.156vw solid #c056f7;
+    border-radius: 1.25vw;
+    padding: 1.875vw;;
+    margin-bottom: 1.563vw;
+  }
 `;
 
 export const CardTitle = styled.h1`

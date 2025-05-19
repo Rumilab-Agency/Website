@@ -14,7 +14,7 @@ export const StrengthTitle = styled(Title)`
 
 
 export const StrengthContentWrapper = styled.div`
-    width:60%;
+    width:65%;
     max-width: 300px;
     margin:0 auto;
 
@@ -54,7 +54,7 @@ export const CardGrid = styled(ContentWrapper)`
 `;
 
 export const GlowingCard = styled.div`
-  padding: 48px 32px;
+  padding: 48px 30px;
   border-radius: 50px;
   aspect-ratio: 1 / 1; /* 1:1 square */
   position: relative;
@@ -128,12 +128,8 @@ export const CardTitle = styled.h2`
 
 export const CardContent = styled.p`
     font-weight:500;
-    font-size: 10px;
-
-
-  @media (min-width: ${breakpoints.sm}) {
     font-size: 12px;
-  }
+
 
   @media (min-width: ${breakpoints.lg}) {
     font-size: 14px;
