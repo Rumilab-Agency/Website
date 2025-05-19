@@ -31,9 +31,11 @@ export const CTASubTitle = styled(SubTitle)`
 
 export const CTAContentWrapper = styled(ContentWrapper)`
     width:300px;
-    margin-top:80px;
     display:flex;
     flex-direction:column;
+    margin-top:100px;
+    margin-bottom:100px;
+
 
 
     @media (min-width: ${breakpoints.md}) {
@@ -46,6 +48,8 @@ export const CTAContentWrapper = styled(ContentWrapper)`
 
     @media (min-width: ${breakpoints.xl}) {
         width: 60.938vw;
+        margin-top:7.813vw;
+        margin-bottom:7.813vw;
     }
 
 `;
