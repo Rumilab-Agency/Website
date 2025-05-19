@@ -14,7 +14,7 @@ const WhyUs = () => (
                 <GradientText>Why Choose Rumilab?</GradientText>
             </WhyUsSubHeadline>
             <WhyUsHeadline data-aos="fade-right">
-                The right partner for <br/> your digital growth
+            Your digital success starts <br/> with the right partner
             </WhyUsHeadline>
             <WhyUsContent data-aos="fade-right">
             We're a small, passionate team — a professional web developer and an experienced designer — who work closely with you to bring your business online with purpose. Our mission is to create websites that not only look great but help you grow. No fluff, no confusing jargon — just reliable, custom-built sites designed to make your brand stand out.            </WhyUsContent>

@@ -19,23 +19,26 @@ const services = [
     },
     {
       icon: businessIcon,
-      title: 'Frontend Development',
-      description: 'Clean, responsive interfaces built with React, Next.js, and modern web tech.',
+      title: 'Cost-Effective Pricing',
+      description: 'Choose one-time or subscription plans for clean, high-impact websites tailored to your budget.',
     },
     {
       icon: responsiveIcon,
-      title: 'UI/UX Design',
-      description: 'Human-centered designs with smooth flow and aesthetic visuals.',
-    },
-    {
-      icon: seoIcon,
       title: 'Mobile Optimization',
       description: 'Fast, mobile-first websites optimized for all devices.',
     },
+
+    {
+        icon: seoIcon,
+        title: 'SEO Optimization',
+        description: 'Foundational SEO setup to improve visibility and help your site rank on search engines.',
+    },
+
+
     {
       icon: supportIcon,
       title: 'Hosting & Maintenance',
-      description: 'Reliable cloud hosting and post-launch support to keep you running smoothly.',
+      description: 'Keep your website secure, updated, and running smoothly after launch.',
     },
   ];
 

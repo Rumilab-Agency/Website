@@ -76,12 +76,24 @@ export const CardTitle = styled.h1`
 export const CardDescription = styled.p`
   font-size: 16px;
   color: #ccc;
+
+@media (min-width: ${breakpoints.xl}) {
+    font-size: 1.25vw;
+
+  }
 `;
 
 export const IconImage = styled.img`
   width: 48px;
   height: 48px;
   object-fit: contain;
+
+  @media (min-width: ${breakpoints.xl}) {
+    width: 3.75vw;
+    height: 3.75vw;
+
+
+  }
 `;
 
 
