@@ -23,7 +23,7 @@ const Strength = () => (
                   href="https://wa.me/6598323646"
                   target="_blank"
                   rel="noopener noreferrer"
-        >Get in touch</CTAButton1>
+        >Chat With Us</CTAButton1>
     </CTAContentWrapper>
     <CTABg src={ctaBg} alt="CTA Background" />
 

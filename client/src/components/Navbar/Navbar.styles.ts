@@ -17,15 +17,31 @@ export const NavbarContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  &.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
 
   @media (min-width: ${breakpoints.md}) {
-      padding: 16px 80px;
+    padding: 16px 80px;
   }
 
   @media (min-width: ${breakpoints.xl}) {
     padding: 1.25vw 6.25vw;
   }
 `;
+
 
 export const Logo = styled.div`
   font-size: 16px;

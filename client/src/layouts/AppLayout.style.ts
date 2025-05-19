@@ -11,6 +11,26 @@ export const breakpoints = {
   };
 
 
+export const MainContent = styled.div`
+
+  padding-top:71px; 
+  background:black;
+
+
+  @media (min-width: ${breakpoints.md}) {
+      padding-top:74px; 
+  }
+
+  @media (min-width: ${breakpoints.lg}) {
+      padding-top:73px; 
+  }
+
+    @media (min-width: ${breakpoints.xl}) {
+      padding-top:5.703vw; 
+  }
+`;
+
+
 
   export const Title = styled.h1`
     font-size: 28px;

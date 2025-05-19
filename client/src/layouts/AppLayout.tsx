@@ -2,6 +2,10 @@ import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Navbar/Footer';
 
+import {
+    MainContent
+  } from './AppLayout.style';
+
 type Props = {
   children: React.ReactNode;
 };
@@ -15,7 +19,7 @@ const AppLayout = ({ children }: Props) => {
   return (
     <div> {/* Leave space for fixed Navbar */}
       <Navbar onMenuClick={handleMenuClick} />
-      <main>{children}</main>
+      <MainContent>{children}</MainContent>
       <Footer/>
     </div>
   );
