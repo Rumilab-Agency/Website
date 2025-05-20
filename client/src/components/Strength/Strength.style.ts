@@ -128,13 +128,9 @@ export const CardTitle = styled.h2`
 
 export const CardContent = styled.p`
     font-weight:500;
-    font-size: 12px;
-
-
-  @media (min-width: ${breakpoints.lg}) {
     font-size: 14px;
+    color: #ccc;
 
-  }
 
 
   @media (min-width: ${breakpoints.xl}) {

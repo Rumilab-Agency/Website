@@ -64,7 +64,7 @@ export const IconContainer = styled.div`
 `;
 
 export const CardTitle = styled.h1`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 12px;
   color:white;
@@ -81,7 +81,7 @@ export const CardTitle = styled.h1`
 `;
 
 export const CardDescription = styled.p`
-  font-size: 16px;
+  font-size: 14px;
   color: #ccc;
 
 @media (min-width: ${breakpoints.xl}) {

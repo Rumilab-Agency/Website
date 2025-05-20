@@ -25,7 +25,7 @@ const services = [
     {
       icon: responsiveIcon,
       title: 'Mobile Optimization',
-      description: 'Fast, mobile-first websites optimized for all devices.',
+      description: 'Fast, mobile-first websites optimized for all devices to ensure seamless user experiences on the go.',
     },
 
     {
