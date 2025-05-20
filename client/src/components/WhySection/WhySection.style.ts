@@ -90,11 +90,12 @@ export const WhyUsBg = styled.img`
   width: 285px;
   right: 0;
   bottom: 20%;
-  opacity:0.5;
+  opacity:0.9;
   height: auto;
   position:absolute;
   margin-top: -64px; /* Optional: overlap slightly with Hero */
   z-index: 1;
+  pointer-event:none;
 
 
   @media (min-width: ${breakpoints.sm}) {

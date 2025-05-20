@@ -16,9 +16,14 @@ export const FooterWrapper = styled.section`
   gap: 24px;
   width:90%;
   margin: 28px auto;
-  
+  justify-content: space-between;
+
+
+    & > :first-child {
+    flex: 1 0 100%;
+  }
+
       @media (min-width: ${breakpoints.sm}) {
-        justify-content: space-evenly;
 
       }
   
@@ -33,8 +38,7 @@ export const FooterWrapper = styled.section`
       }
 `
 
-export const FooterColumn = styled.div`
-`;
+export const FooterColumn = styled.div``;
 
 export const FooterHeading = styled.h4`
   font-size: 12px;
@@ -102,11 +106,11 @@ export const FooterBottom = styled.div`
 `;
 
 export const LogoImage = styled.img`
-  height: 20px;
+  height: 26px;
   width: auto;
 
       @media (min-width: ${breakpoints.xl}) {
-        height: 1.563vw;
+        height: 2.031vw;
 
     }
 `;

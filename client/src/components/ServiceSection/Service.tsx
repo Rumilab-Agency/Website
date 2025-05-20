@@ -42,7 +42,7 @@ const services = [
     },
   ];
 
-const Strength = () => (
+const Service = () => (
     <ServiceContainer>
           <ServiceTitle>
               Services
@@ -59,11 +59,11 @@ const Strength = () => (
           </ServiceCard>
         ))}
 
-        <ServiceBg data-aos="fade-in" data-aos-anchor-placement="center-bottom" src={serviceBg} alt="Service Background" />
+        <ServiceBg src={serviceBg} alt="Service Background" />
     
 
           </ServiceContentWrapper>
     </ServiceContainer>
   );
   
-  export default Strength; 
+  export default Service; 

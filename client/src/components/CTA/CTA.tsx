@@ -19,7 +19,7 @@ const Strength = () => (
     <CTATitle>Ready to get your <br/> <GradientText data-aos="fade-in" data-aos-duration="2000">business online?</GradientText></CTATitle>
     <CTASubTitle>Let’s build a website that reflects your identity <br/>and connects with your audience.</CTASubTitle>
     <CTAContentWrapper>
-        <CTASlogan1>Not sure where to begin?</CTASlogan1>
+        <CTASlogan1 data-aos="fade-right">Not sure where to begin?</CTASlogan1>
         <CTASlogan2 data-aos="fade-left"><GradientText>We're here to help.</GradientText></CTASlogan2>
         <CTAButton1
                   as="a"

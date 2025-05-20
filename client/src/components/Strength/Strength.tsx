@@ -2,6 +2,21 @@ import { StrengthContainer, StrengthContentWrapper, StrengthTitle, CardGrid, Glo
 
 
 
+const strengths = [
+    {
+      title: 'Brand-Driven Design',
+      description: 'Every website we create is carefully crafted to reflect your unique brand identity and voice.',
+    },
+    {
+      title: 'Responsive Across Devices',
+      description: 'Your site will look and perform beautifully on desktops, tablets, and smartphones—because first impressions matter everywhere.',
+    },
+    {
+      title: '1-on-1 Collaboration',
+      description: 'You work directly with our developer and designer—no middlemen, just clear communication and personalized service.',
+    },
+  ];
+
 const Strength = () => (
   <StrengthContainer>
         <StrengthTitle>
@@ -9,18 +24,12 @@ const Strength = () => (
         </StrengthTitle>
         <StrengthContentWrapper>
         <CardGrid>
-            <GlowingCard data-aos="fade-right">
-            <CardTitle>Brand-Driven Design</CardTitle>
-            <CardContent>Every website we create is carefully crafted to reflect your unique brand identity and voice.</CardContent>
+        {strengths.map((strength, idx) => (
+            <GlowingCard key={idx} data-aos="fade-up" data-aos-delay={idx * 100}>
+                <CardTitle>{strength.title}</CardTitle>
+                <CardContent>{strength.description}</CardContent>
             </GlowingCard>
-            <GlowingCard data-aos="fade-up">
-            <CardTitle>Responsive Across <br /> All Devices</CardTitle>
-            <CardContent>Your site will look and perform beautifully on desktops, tablets, and smartphones—because first impressions matter everywhere.</CardContent>
-            </GlowingCard>
-            <GlowingCard data-aos="fade-left">
-            <CardTitle>1-on-1 Collaboration</CardTitle>
-            <CardContent>You work directly with our developer and designer—no middlemen, just clear communication and personalized service.</CardContent>
-            </GlowingCard>
+        ))}
         </CardGrid>
         </StrengthContentWrapper>
   </StrengthContainer>

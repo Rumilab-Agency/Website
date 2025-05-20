@@ -56,6 +56,7 @@ export const MainContent = styled.div`
     @media (min-width: ${breakpoints.xl}) {
       font-size: 5.625vw;
       padding: 2.5vw 0;
+      letter-spacing: -0.156vw;
 
     }
 

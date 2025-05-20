@@ -17,8 +17,14 @@ import {
 const Footer: React.FC = () => (
   <FooterContainer>
     <FooterWrapper>
-        
+
     <FooterColumn>
+    <LogoImage src={logoImg} alt="RumiLab Logo" />
+
+    </FooterColumn>
+
+    <FooterColumn>
+
     <FooterHeading>Connect</FooterHeading>
 
     <FooterItem>
@@ -58,10 +64,11 @@ const Footer: React.FC = () => (
     </FooterItem>
     </FooterColumn>
 
+    <FooterColumn></FooterColumn>
+
     </FooterWrapper>
 
     <FooterBottom>
-      <LogoImage src={logoImg} alt="RumiLab Logo" />
     </FooterBottom>
 
   </FooterContainer>

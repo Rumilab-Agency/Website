@@ -41,15 +41,18 @@ export const CTAContentWrapper = styled(ContentWrapper)`
 
     @media (min-width: ${breakpoints.md}) {
         width:580px;
+            margin-top:125px;
       }
 
     @media (min-width: ${breakpoints.lg}) {
         width:780px;
+        margin-top:150px;
+
     }
 
     @media (min-width: ${breakpoints.xl}) {
         width: 60.938vw;
-        margin-top:7.813vw;
+        margin-top:11.719vw;
         margin-bottom:7.813vw;
     }
 
@@ -83,14 +86,14 @@ export const CTASlogan2 = styled(Title)`
 export const CTAButton1 = styled(CTAButtonLarge)`
   text-align:center;
   width:70%;
-  margin:30px auto;
+  margin:40px auto;
 
     @media (min-width: ${breakpoints.md}) {
              width:50%;
     }
 
     @media (min-width: ${breakpoints.xl}) {
-        margin:2.344vw auto;
+        margin:3.125vw auto;
     }
 
 `;
