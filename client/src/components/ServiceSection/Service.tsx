@@ -14,38 +14,36 @@ import supportIcon from '../../assets/images/service-icon/support.png';
 const services = [
     {
       icon: designIcon,
-      title: 'Custom Website Design',
+      title: 'Custom Design',
       description: 'Unique, brand-driven designs tailored to your business goals — no templates, just thoughtful creativity.',
     },
     {
-      icon: businessIcon,
-      title: 'Cost-Effective Pricing',
-      description: 'Choose one-time or subscription plans for clean, high-impact websites tailored to your budget.',
-    },
-    {
       icon: responsiveIcon,
-      title: 'Mobile Optimization',
-      description: 'Fast, mobile-first websites optimized for all devices to ensure seamless user experiences on the go.',
+      title: 'Mobile-first',
+      description: 'Over 60% of web traffic comes from mobile — we build mobile-first to keep your business front and center.',
     },
-
     {
         icon: seoIcon,
-        title: 'SEO Optimization',
+        title: 'SEO-Ready',
         description: 'Foundational SEO setup to improve visibility and help your site rank on search engines.',
     },
 
-
     {
       icon: supportIcon,
-      title: 'Hosting & Maintenance',
-      description: 'Keep your website secure, updated, and running smoothly after launch.',
+      title: 'Optimized Page Speed',
+      description: 'Load your site in under 1 second and score 90+ on PageSpeed for top-tier performance.',
+    },
+    {
+        icon: businessIcon,
+        title: 'Landing & Business Sites',
+        description: 'Engaging pages and websites thoughtfully designed to attract visitors and help grow your business online.',
     },
   ];
 
 const Service = () => (
     <ServiceContainer>
           <ServiceTitle>
-              Services
+            What We Offer
           </ServiceTitle>
           <ServiceContentWrapper>
 

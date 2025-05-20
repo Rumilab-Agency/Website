@@ -15,6 +15,11 @@ export const WhyUsTitle = styled(Title)`
 
 export const WhyUsContentWrapper = styled(ContentWrapper)`
   width: 80%;
+    
+  > * {
+    position: relative;
+    z-index: 3;
+  }
 
   @media (min-width: ${breakpoints.md}) {
       width: 75%;
@@ -70,6 +75,7 @@ export const WhyUsContent = styled(Content)`
   width: 100%;
   position: relative;
   z-index: 2;
+
 
 
   @media (min-width: ${breakpoints.md}) {

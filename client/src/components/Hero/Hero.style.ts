@@ -49,16 +49,33 @@ export const Headline = styled(Title)`
   color: transparent;
   font-weight:700;
   animation:
-    ${fadeIn} 2s ease-in-out forwards;
-
+    ${fadeIn} 2.5s ease-in-out forwards;
 `;
+
+export const SubHeadlinePrice = styled(SubTitle)`
+  color: #ccc;
+  text-align: center;
+  margin: 0 0 48px 0;
+ opacity: 0;
+  animation: ${fadeIn} 2.5s ease-in-out forwards;
+`;
+
+export const PriceHighlight = styled.strong`
+  background: linear-gradient(90deg, #a084ff, #f780ff, #ffd1e3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+`;
+
+
 
 export const Subheadline = styled(SubTitle)`
   color: #ccc;
   text-align: center;
   margin: 0 0 48px 0;
  opacity: 0;
-  animation: ${fadeIn} 2.5s ease-in-out forwards;
+  animation: ${fadeIn} 3s ease-in-out forwards;
+  font-weight:500;
 `;
 
 
@@ -70,7 +87,7 @@ export const SunriseImage = styled.img`
   margin-top: -64px; /* Optional: overlap slightly with Hero */
   z-index: -1;
   opacity: 0;
-  animation: ${sunriseGlow} 3s ease-in-out forwards;
+  animation: ${sunriseGlow} 2.5s ease-in-out forwards;
 
 @media (min-width: ${breakpoints.xl}) {
     margin-top: -5vw;

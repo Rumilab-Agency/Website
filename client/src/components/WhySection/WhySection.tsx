@@ -7,17 +7,22 @@ import { GradientText } from '../../layouts/AppLayout.style';
 const WhyUs = () => (
   <WhyUsContainer>
         <WhyUsTitle>
-            Why Us
+            What We Do
         </WhyUsTitle>
         <WhyUsContentWrapper>
             <WhyUsSubHeadline data-aos="fade-right">
-                <GradientText>Why Choose Rumilab?</GradientText>
+                <GradientText>What We Do at RumiLab</GradientText>
             </WhyUsSubHeadline>
             <WhyUsHeadline data-aos="fade-right">
-            Your digital success starts <br/> with the right partner
+            Custom Websites, Built <br/> for Small Business Growth
             </WhyUsHeadline>
             <WhyUsContent data-aos="fade-right">
-            We're a small, passionate team — a professional web developer and an experienced designer — who work closely with you to bring your business online with purpose. Our mission is to create websites that not only look great but help you grow. No fluff, no confusing jargon — just reliable, custom-built sites designed to make your brand stand out.            </WhyUsContent>
+            At RumiLab, we build custom websites from scratch — no templates, no generic solutions. Every project is coded by hand and designed in-house to reflect your brand’s unique personality and purpose.
+
+We work closely with small business owners to create websites that not only look great but also help draw attention from potential customers. With thoughtful design and solid development, we help you build a stronger online presence.
+
+Our goal is to be a long-term partner in your digital journey — growing with you as your business evolves.
+             </WhyUsContent>
             <WhyUsBg src={whyUsBg} alt="Why Us Background" />
         </WhyUsContentWrapper>
 

@@ -17,7 +17,9 @@ import backgroundStars from '../../assets/images/bg-stars.png';
 const Strength = () => (
   <CTAContainer>
     <CTATitle>Ready to get your <br/> <GradientText data-aos="fade-in" data-aos-duration="2000">business online?</GradientText></CTATitle>
-    <CTASubTitle>Let’s build a website that reflects your identity <br/>and connects with your audience.</CTASubTitle>
+    <CTASubTitle>
+    Let’s create a website that showcases  <br/> your business and brings your brand to life.
+    </CTASubTitle>
     <CTAContentWrapper>
         <CTASlogan1 data-aos="fade-right">Not sure where to begin?</CTASlogan1>
         <CTASlogan2 data-aos="fade-left"><GradientText>We're here to help.</GradientText></CTASlogan2>

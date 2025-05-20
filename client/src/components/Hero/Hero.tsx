@@ -1,4 +1,4 @@
-import { HeroContainer, Headline, HeadlineWrapper, Subheadline, SunriseImage } from './Hero.style';
+import { HeroContainer, Headline, HeadlineWrapper, Subheadline, SunriseImage, SubHeadlinePrice, PriceHighlight } from './Hero.style';
 import sunriseGlow from '../../assets/images/sunrise.png';
 
 
@@ -10,14 +10,14 @@ const Hero = () => (
         {/* Crafting Digital IdentitiesThrough Custom Design. */}
         </Headline>
         <Subheadline>
-        Built for your brand, delivered quickly, and ready to rank.
+        Starting at just <PriceHighlight>$49/mo</PriceHighlight> — complete with design, hosting, and support.
         </Subheadline>
     </HeadlineWrapper>
     {/* <SunWrapper>
       <SunriseGlow />
       <SunCurve />
     </SunWrapper> */}
-    <SunriseImage src={sunriseGlow} alt="Sunrise Glow" />
+    <SunriseImage data-aos="fade-up" src={sunriseGlow} alt="Sunrise Glow" />
   </HeroContainer>
 );
 

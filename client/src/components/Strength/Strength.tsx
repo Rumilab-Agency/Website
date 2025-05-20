@@ -8,8 +8,8 @@ const strengths = [
       description: 'Every website we create is carefully crafted to reflect your unique brand identity and voice.',
     },
     {
-      title: 'Responsive Across Devices',
-      description: 'Your site will look and perform beautifully on desktops, tablets, and smartphones—because first impressions matter everywhere.',
+      title: 'Flexible Pricing Options',
+      description: 'Affordable, transparent pricing with options to pay once or monthly—because great websites shouldn’t come with financial stress.',
     },
     {
       title: '1-on-1 Collaboration',
@@ -20,7 +20,7 @@ const strengths = [
 const Strength = () => (
   <StrengthContainer>
         <StrengthTitle>
-            Core Strengths
+            Built Around You
         </StrengthTitle>
         <StrengthContentWrapper>
         <CardGrid>
