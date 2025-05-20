@@ -1,4 +1,4 @@
-import { HeroContainer, Headline, HeadlineWrapper, Subheadline, SunriseImage, SubHeadlinePrice, PriceHighlight } from './Hero.style';
+import { HeroContainer, Headline, HeadlineWrapper, Subheadline, SunriseImage, PriceHighlight } from './Hero.style';
 import sunriseGlow from '../../assets/images/sunrise.png';
 
 
