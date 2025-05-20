@@ -1,13 +1,16 @@
 
 
 import { CTAContainer, CTATitle, CTASubTitle, CTAContentWrapper, 
-    CTASlogan1, CTASlogan2, CTAButton1, SunriseImageFlip, CTABg} from './CTA.style';
+    CTASlogan1, CTASlogan2, CTAButton1, SunriseImageFlip, CTABg, CTABgStars} from './CTA.style';
 
 import { GradientText } from '../../layouts/AppLayout.style';
 
 import sunriseGlowFlip from '../../assets/images/sunrise-flip.png';
 
 import ctaBg from '../../assets/images/bg-cta.png';
+
+import backgroundStars from '../../assets/images/bg-stars.png';
+
 
 
 
@@ -26,6 +29,7 @@ const Strength = () => (
         >Chat With Us</CTAButton1>
     </CTAContentWrapper>
     <CTABg src={ctaBg} alt="CTA Background" />
+    <CTABgStars src={backgroundStars} alt="CTA Background Stars" />
 
     <SunriseImageFlip src={sunriseGlowFlip} alt="Sunrise Glow" />
   </CTAContainer>

@@ -8,9 +8,10 @@ export const CTAContainer = styled(Container)`
   background-color: black;
   padding: 0px 12px;
     position:relative;
+
     > * {
     position: relative;
-    z-index: 1;
+    z-index: 3;
   }
 `;
 
@@ -82,12 +83,15 @@ export const CTASlogan2 = styled(Title)`
 export const CTAButton1 = styled(CTAButtonLarge)`
   text-align:center;
   width:70%;
-  margin:0 auto;
+  margin:30px auto;
 
     @media (min-width: ${breakpoints.md}) {
              width:50%;
+    }
 
-      }
+    @media (min-width: ${breakpoints.xl}) {
+        margin:2.344vw auto;
+    }
 
 `;
 
@@ -98,7 +102,7 @@ export const CTABg = styled.img`
   opacity:0.7;
   height: auto;
   position:absolute;
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
 
 
@@ -121,11 +125,28 @@ export const CTABg = styled.img`
 
 `;
 
+export const CTABgStars = styled.img`
+    width: 100%;
+    bottom: 0;
+  opacity:0.8;
+  height: auto;
+  position:absolute;
+  z-index: 1;
+  pointer-events: none;
+
+
+  @media (min-width: ${breakpoints.sm}) {
+  }
+
+`;
+
 export const SunriseImageFlip = styled.img`
   width: 100%;
   height: auto;
   display: block;
   animation: ${sunriseGlow} 3s ease-in-out forwards;
+    z-index: 0;
+
 
 @media (min-width: ${breakpoints.xl}) {
   }

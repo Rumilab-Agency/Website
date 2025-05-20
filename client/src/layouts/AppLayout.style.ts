@@ -11,6 +11,7 @@ export const breakpoints = {
   };
 
 
+
 export const MainContent = styled.div`
 
   padding-top:71px; 

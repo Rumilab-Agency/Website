@@ -34,7 +34,7 @@ const Footer: React.FC = () => (
         <FooterIcon>
         <FaInstagram />
         </FooterIcon>
-        <a href="https://www.instagram.com/rumilab_ai/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/rumilab_solutions/" target="_blank" rel="noopener noreferrer">
         Instagram
         </a>
     </FooterItem>
