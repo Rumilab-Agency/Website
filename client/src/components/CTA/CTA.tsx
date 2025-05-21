@@ -14,7 +14,7 @@ import backgroundStars from '../../assets/images/bg-stars.png';
 
 
 
-const Strength = () => (
+const CTA = () => (
   <CTAContainer>
     <CTATitle>Ready to get your <br/> <GradientText data-aos="fade-in" data-aos-duration="2000">business online?</GradientText></CTATitle>
     <CTASubTitle>
@@ -37,4 +37,4 @@ const Strength = () => (
   </CTAContainer>
 );
 
-export default Strength; 
+export default CTA; 
