@@ -94,7 +94,7 @@ const Pricing = () => {
 
                 <PackageListItem><FaAnglesUp />5 Edit Per Month</PackageListItem>
                 <PackageListItem><FaAnglesUp />{billingCycle === 'monthly'
-                    ? '+15/mo for each new page'
+                    ? '+$15/mo for each new page'
                     : '+$180 for each new page'}
                 </PackageListItem>
                 <PackageListItem><FaAnglesUp />CMS Section Included</PackageListItem>
