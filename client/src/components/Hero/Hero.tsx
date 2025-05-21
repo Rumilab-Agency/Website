@@ -17,7 +17,7 @@ const Hero = () => (
       <SunriseGlow />
       <SunCurve />
     </SunWrapper> */}
-    <SunriseImage data-aos="fade-up" src={sunriseGlow} alt="Sunrise Glow" />
+    <SunriseImage src={sunriseGlow} alt="Sunrise Glow" />
   </HeroContainer>
 );
 
