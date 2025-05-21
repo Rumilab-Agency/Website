@@ -11,7 +11,7 @@ export const shoot = keyframes`
 `;
 
 export const NavbarContainer = styled.nav`
-  width: 100%;
+  width: 100vw;
   background: black;
   display: flex;
   align-items: center;

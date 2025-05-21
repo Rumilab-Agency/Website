@@ -1,7 +1,5 @@
 import styled, { } from 'styled-components';
 
-
-
 // src/styles/theme.ts
 export const breakpoints = {
     sm: '480px',   // small devices (phones)
