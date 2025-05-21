@@ -16,7 +16,7 @@ const Pricing = () => {
     // Pricing values based on billingCycle
     const prices = {
       monthly: { essentials: '$48', growth: '$128' },
-      oneTime: { essentials: '$648', growth: '$1688', hosting: '+$15/mo hosting' },
+      oneTime: { essentials: '$648', growth: '$1728', hosting: '+$15/mo hosting' },
     };
   
     // Example: different features for monthly vs one-time if needed
@@ -55,17 +55,23 @@ const Pricing = () => {
                 <PackageListItem><IoCheckmarkSharp />
                 {billingCycle === 'monthly'
                     ? 'Unlimited Hosting'
-                    : '$15/mo for Hosting'}
+                    : 'Free 1 Year Hosting'}
                 </PackageListItem>
                 <PackageListItem><IoCheckmarkSharp />1 Fully Responsive page</PackageListItem>
                 <PackageListItem><IoCheckmarkSharp />1 Edit Per Month</PackageListItem>
                 <PackageListItem><IoCheckmarkSharp />{billingCycle === 'monthly'
                     ? '+$25/mo for each new page'
-                    : '+$300 for each new page'}</PackageListItem>
+                    : '+$300 for each new page'}
+                    </PackageListItem>
+
+                <PackageListItem><IoCheckmarkSharp />{billingCycle === 'monthly'
+                    ? '+$10/mo for Dynamic Blog/News Section'
+                    : '+$120 for Dynamic Blog/News Section'}
+                </PackageListItem>
               </PackageListItemWrapper>
               <PackagePricing>{prices[billingCycle].essentials} 
                 <PackageHostingNote> 
-                    {billingCycle === 'monthly' ? ' Per month' : ' +$15/mo Hosting'} 
+                    {billingCycle === 'monthly' ? '/ month (Min. 12 months)' : ''} 
                     </PackageHostingNote> 
                 </PackagePricing>
             </PackageCard>
@@ -82,20 +88,22 @@ const Pricing = () => {
                 <PackageListItem><IoCheckmarkSharp />
                 {billingCycle === 'monthly'
                     ? 'Unlimited Hosting'
-                    : '$15/mo for Hosting'}
+                    : 'Free 1 Year Hosting'}
                 </PackageListItem>
                 <PackageListItem><FaAnglesUp />5 Fully Responsive pages</PackageListItem>
 
                 <PackageListItem><FaAnglesUp />5 Edit Per Month</PackageListItem>
                 <PackageListItem><FaAnglesUp />{billingCycle === 'monthly'
-                    ? '+$20/mo for each new page'
-                    : '+$250 for each new page'}</PackageListItem>
+                    ? '+15/mo for each new page'
+                    : '+$180 for each new page'}
+                </PackageListItem>
+                <PackageListItem><FaAnglesUp />Dynamic Blog/News Section Included</PackageListItem>
               </PackageListItemWrapper>
               <PackagePricing>{prices[billingCycle].growth}
               <PackageHostingNote>
                     {billingCycle === 'monthly'
-                    ? ' Per month'
-                    : ' +$15/mo Hosting'}
+                    ? '/ month (Min. 12 months)'
+                    : ''}
                 </PackageHostingNote>
               </PackagePricing>
             </PopularPackageCard>
