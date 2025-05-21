@@ -65,8 +65,8 @@ const Pricing = () => {
                     </PackageListItem>
 
                 <PackageListItem><IoCheckmarkSharp />{billingCycle === 'monthly'
-                    ? '+$10/mo for Dynamic Blog/News Section'
-                    : '+$120 for Dynamic Blog/News Section'}
+                    ? '+$10/mo CMS Section Add on'
+                    : '+$120 CMS Section Add On'}
                 </PackageListItem>
               </PackageListItemWrapper>
               <PackagePricing>{prices[billingCycle].essentials} 
@@ -97,7 +97,7 @@ const Pricing = () => {
                     ? '+15/mo for each new page'
                     : '+$180 for each new page'}
                 </PackageListItem>
-                <PackageListItem><FaAnglesUp />Dynamic Blog/News Section Included</PackageListItem>
+                <PackageListItem><FaAnglesUp />CMS Section Included</PackageListItem>
               </PackageListItemWrapper>
               <PackagePricing>{prices[billingCycle].growth}
               <PackageHostingNote>
