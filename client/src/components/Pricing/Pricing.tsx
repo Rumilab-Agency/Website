@@ -16,7 +16,7 @@ const Pricing = () => {
     // Pricing values based on billingCycle
     const prices = {
       monthly: { essentials: '$48', growth: '$128' },
-      oneTime: { essentials: '$648', growth: '$1728', hosting: '+$15/mo hosting' },
+      oneTime: { essentials: '$648', growth: '$1688', hosting: '+$15/mo hosting' },
     };
   
     // Example: different features for monthly vs one-time if needed
@@ -71,7 +71,7 @@ const Pricing = () => {
               </PackageListItemWrapper>
               <PackagePricing>{prices[billingCycle].essentials} 
                 <PackageHostingNote> 
-                    {billingCycle === 'monthly' ? '/ month (Min. 12 months)' : ''} 
+                    {billingCycle === 'monthly' ? '/ month' : ''} 
                     </PackageHostingNote> 
                 </PackagePricing>
             </PackageCard>
@@ -102,7 +102,7 @@ const Pricing = () => {
               <PackagePricing>{prices[billingCycle].growth}
               <PackageHostingNote>
                     {billingCycle === 'monthly'
-                    ? '/ month (Min. 12 months)'
+                    ? '/ month'
                     : ''}
                 </PackageHostingNote>
               </PackagePricing>

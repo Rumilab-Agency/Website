@@ -10,7 +10,7 @@ const Hero = () => (
         {/* Crafting Digital IdentitiesThrough Custom Design. */}
         </Headline>
         <Subheadline>
-        Starting at just <PriceHighlight>$49/month</PriceHighlight> — complete with design, hosting, and support.
+        Starting at just <PriceHighlight>$48/month</PriceHighlight> — complete with design, hosting, and support.
         </Subheadline>
     </HeadlineWrapper>
     {/* <SunWrapper>
