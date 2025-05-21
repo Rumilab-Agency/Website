@@ -9,7 +9,7 @@
 html, body {
   height: 100%;
   font-family: 'Manrope', sans-serif;
-  overflow-x: clip;
+  /* overflow-x: clip; */
   
 }
 
