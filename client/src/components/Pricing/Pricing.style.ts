@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { breakpoints, Title, Container, ContentWrapper, SubTitle, CTAButtonLarge } from '../../layouts/AppLayout.style';
+import styled, { } from 'styled-components';
+import { breakpoints, Title, Container, } from '../../layouts/AppLayout.style';
 
 
 export const PricingContainer = styled(Container)`

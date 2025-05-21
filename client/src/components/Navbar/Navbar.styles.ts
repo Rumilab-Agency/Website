@@ -10,7 +10,7 @@ export const shoot = keyframes`
   100% { box-shadow: 80px 0 40px 0px #a0a0ff00; }
 `;
 
-export const NavbarContainer = styled.div`
+export const NavbarContainer = styled.nav`
   width: 100%;
   background: black;
   display: flex;
