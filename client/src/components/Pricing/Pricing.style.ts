@@ -126,6 +126,16 @@ export const PackageCard = styled.div`
     pointer-events: none;
     z-index: -1;
   }
+
+    @media (min-width: ${breakpoints.xl}) {
+        padding: 2.5vw;
+        border-radius: 1.875vw;
+        
+        &::before {
+            padding: 0.156vw; // thickness of border
+            border-radius: 1.875vw;
+        }
+    }
 `;
 
 export const PopularPackageCard = styled(PackageCard)`

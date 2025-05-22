@@ -216,7 +216,7 @@ export const CTAButton = styled.button`
     }
   
     @media (min-width: ${breakpoints.xl}) {
-          padding: 8px 1.875vw;
+          padding: 0.625vw 1.875vw;
           font-size: 1.25vw;
           border-radius: 1.875vw;
           border: 0.156vw solid #a0a0ff;
