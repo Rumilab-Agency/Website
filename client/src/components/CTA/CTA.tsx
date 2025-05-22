@@ -22,7 +22,7 @@ const CTA = () => (
     </CTASubTitle>
     <CTAContentWrapper>
         <CTASlogan1 data-aos="fade-right">Not sure where to begin?</CTASlogan1>
-        <CTASlogan2 data-aos="fade-left"><GradientText>We're here to help.</GradientText></CTASlogan2>
+        <CTASlogan2><GradientText data-aos="fade-left">We're here to help.</GradientText></CTASlogan2>
         <CTAButton1
                   as="a"
                   href="https://wa.me/6598323646"
