@@ -12,8 +12,6 @@ import ctaBg from '../../assets/images/bg-cta.png';
 import backgroundStars from '../../assets/images/bg-stars.png';
 
 
-
-
 const CTA = () => (
   <CTAContainer>
     <CTATitle>Ready to get your <br/> <GradientText data-aos="fade-in" data-aos-duration="2000">business online?</GradientText></CTATitle>
