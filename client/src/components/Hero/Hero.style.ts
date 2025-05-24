@@ -41,18 +41,6 @@ export const HeadlineWrapper = styled.div`
 `;
 
 
-const gradientMove = keyframes`
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-`;
-
 const textReveal = keyframes`
   0% {
     opacity: 0;
