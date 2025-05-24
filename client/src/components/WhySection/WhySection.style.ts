@@ -32,7 +32,7 @@ export const WhyUsContentWrapper = styled(ContentWrapper)`
 
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 2.813vw;
+    font-size: 2.813rem;
   }
 
 `;
@@ -43,28 +43,28 @@ export const WhyUsSubHeadline = styled(SubTitle)`
 `;
 
 export const WhyUsHeadline = styled(SectionTitle)`
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 0.625rem;
+  margin-bottom: 1.25rem;
 
 
 
   @media (min-width: ${breakpoints.md}) {
-    margin-top: 12px;
-    margin-bottom: 24px;
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
 
 
   }
 
   @media (min-width: ${breakpoints.lg}) {
-    margin-top: 16px;
-    margin-bottom: 32px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 
   }
 
 
   @media (min-width: ${breakpoints.xl}) {
-    margin-top: 1.25vw;
-    margin-bottom: 2.5vw;
+    margin-top: 1.25rem;
+    margin-bottom: 2.5rem;
   }
 
 `;
@@ -93,13 +93,13 @@ export const WhyUsContent = styled(Content)`
 export const WhyUsBg = styled.img`
 
 
-  width: 285px;
+  width: 17.813rem;
   right: 0;
   bottom: 20%;
   opacity:0.9;
   height: auto;
   position:absolute;
-  margin-top: -64px; /* Optional: overlap slightly with Hero */
+  margin-top: -4rem; /* Optional: overlap slightly with Hero */
   z-index: 1;
   pointer-event:none;
 
@@ -108,19 +108,19 @@ export const WhyUsBg = styled.img`
   }
 
   @media (min-width: ${breakpoints.md}) {
-      width: 385px;
+      width: 24.063rem;
       right: 0;
       bottom: 20%;
 
   }
 
   @media (min-width: ${breakpoints.lg}) {
-      width: 735px;
+      width: 45.938rem;
       bottom: 0;
   }
 
   @media (min-width: ${breakpoints.xl}) {
-      width: 57.422vw;
+      width: 57.422rem;
 
   }
 

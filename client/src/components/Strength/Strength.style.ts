@@ -127,14 +127,11 @@ export const CardTitle = styled.h2`
 `;
 
 export const CardContent = styled.p`
-    font-weight:500;
-    font-size: 14px;
-    color: #ccc;
-
-
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #ccc;
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 1.094vw;
-
+    font-size: 1.094rem;
   }
 `;

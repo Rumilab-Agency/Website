@@ -32,29 +32,29 @@ export const MainContent = styled.div`
 
 
   export const Title = styled.h1`
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 600;
     text-align: center;
-    letter-spacing: -2px;
-    padding: 16px 0;
+    letter-spacing: -0.125rem;
+    padding: 1rem 0;
 
 
     @media (min-width: ${breakpoints.md}) {
-      font-size: 48px;
-      padding: 24px 0;
+      font-size: 3rem;
+      padding: 1.5rem 0;
 
     }
 
     @media (min-width: ${breakpoints.lg}) {
-      font-size: 72px;
-      padding: 32px 0;
+      font-size: 4.5rem;
+      padding: 2rem 0;
 
     }
 
     @media (min-width: ${breakpoints.xl}) {
-      font-size: 5.625vw;
-      padding: 2.5vw 0;
-      letter-spacing: -0.156vw;
+      font-size: 5.625rem;
+      padding: 2.5rem 0;
+      letter-spacing: -0.156rem;
 
     }
 
@@ -180,18 +180,18 @@ export const ContentWrapper = styled.div`
 
 
 export const Content = styled.p`
-  font-size: 14px;
+  font-size: 0.875rem;
 
   @media (min-width: ${breakpoints.md}) {
   }
 
   @media (min-width: ${breakpoints.lg}) {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 1.25vw;
+    font-size: 1.25rem;
   }
 `;
 

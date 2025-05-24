@@ -1,4 +1,3 @@
-
 import styled, {  } from 'styled-components';
 import { breakpoints, Title, Container, ContentWrapper } from '../../layouts/AppLayout.style';
 
@@ -81,12 +80,11 @@ export const CardTitle = styled.h1`
 `;
 
 export const CardDescription = styled.p`
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #ccc;
 
-@media (min-width: ${breakpoints.xl}) {
-    font-size: 1.25vw;
-
+  @media (min-width: ${breakpoints.xl}) {
+    font-size: 1.25rem;
   }
 `;
 

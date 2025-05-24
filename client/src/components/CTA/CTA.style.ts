@@ -6,10 +6,10 @@ import { sunriseGlow } from '../../styles/animations'; // adjust the path as nee
 
 export const CTAContainer = styled(Container)`
   background-color: black;
-  padding: 0px 12px;
-    position:relative;
+  padding: 0 0.75rem;
+  position: relative;
 
-    > * {
+  > * {
     position: relative;
     z-index: 3;
   }
@@ -31,29 +31,29 @@ export const CTASubTitle = styled(SubTitle)`
 
 
 export const CTAContentWrapper = styled(ContentWrapper)`
-    width:300px;
+    width: 18.75rem;
     display:flex;
     flex-direction:column;
-    margin-top:100px;
-    margin-bottom:100px;
+    margin-top:6.25rem;
+    margin-bottom:6.25rem;
 
 
 
     @media (min-width: ${breakpoints.md}) {
-        width:580px;
-            margin-top:125px;
+        width:36.25rem;
+            margin-top:7.813rem;
       }
 
     @media (min-width: ${breakpoints.lg}) {
-        width:780px;
-        margin-top:150px;
+        width:48.75rem;
+        margin-top:9.375rem;
 
     }
 
     @media (min-width: ${breakpoints.xl}) {
-        width: 60.938vw;
-        margin-top:11.719vw;
-        margin-bottom:7.813vw;
+        width: 60.938rem;
+        margin-top:11.719rem;
+        margin-bottom:7.813rem;
     }
 
 `;
@@ -61,19 +61,19 @@ export const CTAContentWrapper = styled(ContentWrapper)`
 export const CTASlogan1 = styled.p`
   text-align:left;
   color:white;
-  font-size:20px;
+  font-size:1.25rem;
 
       @media (min-width: ${breakpoints.md}) {
-        font-size:24px;
+        font-size:1.5rem;
 
       }
   
       @media (min-width: ${breakpoints.lg}) {
-        font-size: 28px;
+        font-size: 1.75rem;
       }
 
       @media (min-width: ${breakpoints.xl}) {
-        font-size: 2.188vw;
+        font-size: 2.188rem;
       }
 
 `;
@@ -86,20 +86,20 @@ export const CTASlogan2 = styled(Title)`
 export const CTAButton1 = styled(CTAButtonLarge)`
   text-align:center;
   width:70%;
-  margin:40px auto;
+  margin:2.5rem auto;
 
     @media (min-width: ${breakpoints.md}) {
              width:50%;
     }
 
     @media (min-width: ${breakpoints.xl}) {
-        margin:3.125vw auto;
+        margin:3.125rem auto;
     }
 
 `;
 
 export const CTABg = styled.img`
-    width: 435px;
+    width: 27.188rem;
     right: 0;
     top: 0;
   opacity:0.7;
@@ -109,20 +109,17 @@ export const CTABg = styled.img`
   pointer-events: none;
 
 
-  @media (min-width: ${breakpoints.sm}) {
-  }
-
   @media (min-width: ${breakpoints.md}) {
-    width: 585px;
+    width: 36.563rem;
 
   }
 
   @media (min-width: ${breakpoints.lg}) {
-      width: 735px;
+      width: 45.938rem;
   }
 
   @media (min-width: ${breakpoints.xl}) {
-      width: 57.422vw;
+      width: 57.422rem;
 
   }
 

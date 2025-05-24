@@ -12,8 +12,10 @@ export const PricingTitle = styled(Title)`
 
 export const BillingToggleWrapper = styled.div`
   position: relative;
-  border-radius: 9999px; // pill shape
-  padding: 2px; // spacing for gradient border
+  border-radius: 9999px;
+  padding: 2px;
+  max-width: 20rem;
+  margin: 0 auto;
 
   &::before {
     content: '';
@@ -30,8 +32,19 @@ export const BillingToggleWrapper = styled.div`
     z-index: -1;
   }
 
-  background-color: #0f0f0f; // or your base bg
+  background-color: #0f0f0f;
   z-index: 10;
+
+  @media (min-width: ${breakpoints.xl}) {
+    padding: 0.156vw;
+    border-radius: 3.125vw;
+    max-width: 25rem;
+
+    &::before {
+      padding: 0.156vw;
+      border-radius: 3.125vw;
+    }
+  }
 `;
 
 interface ToggleButtonProps {
@@ -40,13 +53,14 @@ interface ToggleButtonProps {
 
 export const BillingToggleButton = styled.button<ToggleButtonProps>`
   flex: 1;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   font-weight: 600;
   border: none;
   cursor: pointer;
   position: relative;
+  font-size: 0.75rem;
 
-        /* Corner overrides */
+  /* Corner overrides */
   &:first-child {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -66,6 +80,16 @@ export const BillingToggleButton = styled.button<ToggleButtonProps>`
   z-index: 1;
   border-radius: 9999px;
 
+  @media (min-width: ${breakpoints.md}) {
+    font-size: 0.875rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  @media (min-width: ${breakpoints.xl}) {
+    font-size: 0.938vw;
+    padding: 0.938vw 1.875vw;
+    border-radius: 3.125vw;
+  }
 `;
 
 
@@ -77,6 +101,12 @@ export const PackageCardWrapper = styled.section`
   align-items: center;
     width:100%;
 
+    @media (min-width: ${breakpoints.md}) {
+                width:auto;
+
+
+}
+
       @media (min-width: ${breakpoints.xl}) {
     padding: 1.875vw;
   }
@@ -87,10 +117,11 @@ export const PackageCardGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
+width: 92%;
 
 @media (min-width: ${breakpoints.md}) {
         grid-template-columns: repeat(2, 1fr);
-        min-width: 800px;
+        min-width: 700px;
   }
 
  @media (min-width: ${breakpoints.lg}) {
@@ -104,19 +135,19 @@ export const PackageCardGrid = styled.div`
 
 export const PackageCard = styled.div`
   position: relative;
-  background-color: #111; // fallback or content background
+  background-color: #111;
   color: white;
   z-index: 30;
   transition: all 0.3s ease;
-  padding: 32px;
-  border-radius: 24px;
+  padding: 2rem;
+  border-radius: 1.5rem;
 
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    padding: 2px; // thickness of border
-    border-radius: 24px;
+    padding: 2px;
+    border-radius: 1.5rem;
     background: linear-gradient(135deg, #8e44f3, #a084ff, #d2b4ff);
     -webkit-mask: 
       linear-gradient(#fff 0 0) content-box, 
@@ -127,15 +158,15 @@ export const PackageCard = styled.div`
     z-index: -1;
   }
 
-    @media (min-width: ${breakpoints.xl}) {
-        padding: 2.5vw;
-        border-radius: 1.875vw;
-        
-        &::before {
-            padding: 0.156vw; // thickness of border
-            border-radius: 1.875vw;
-        }
+  @media (min-width: ${breakpoints.xl}) {
+    padding: 2.5rem;
+    border-radius: 1.875rem;
+    
+    &::before {
+      padding: 2px;
+      border-radius: 1.875rem;
     }
+  }
 `;
 
 export const PopularPackageCard = styled(PackageCard)`
@@ -145,41 +176,38 @@ export const PopularPackageCard = styled(PackageCard)`
 `
 
 export const PackageTitle = styled.h3`
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
 
- @media (min-width: ${breakpoints.lg}) {
-     font-size: 32px;
- }
+  @media (min-width: ${breakpoints.lg}) {
+    font-size: 2rem;
+  }
 
   @media (min-width: ${breakpoints.xl}) {
-       font-size: 2.5vw;
-
+    font-size: 2.5rem;
   }
 `;
 
 export const PackageTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 
-    @media (min-width: ${breakpoints.xl}) {
-     font-size: 1.25vw;
-
+  @media (min-width: ${breakpoints.xl}) {
+    font-size: 1.25rem;
   }
 `;
 
 export const PackageSubtitle = styled.span`
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #cfcfcf;
 
-   @media (min-width: ${breakpoints.lg}) {
-     font-size: 14px;
- }
+  @media (min-width: ${breakpoints.lg}) {
+    font-size: 0.875rem;
+  }
 
   @media (min-width: ${breakpoints.xl}) {
-     font-size: 1.094vw;
-
+    font-size: 1.094rem;
   }
 `;
 
@@ -190,63 +218,76 @@ export const PackageListItemWrapper = styled.ul`
 `;
 
 export const PackageListItem = styled.li`
-    margin-bottom: 12px;
-    font-size: 14px;
-    display: flex;
-  align-items: center; /* vertical center */
-  gap: 8px; /* spacing between icon and text */
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
-     @media (min-width: ${breakpoints.lg}) {
-     font-size: 16px;
- }
-
-  @media (min-width: ${breakpoints.xl}) {
-     font-size: 1.25vw;
-         margin-bottom: 0.938vw;
-
+  @media (min-width: ${breakpoints.lg}) {
+    font-size: 1rem;
   }
 
+  @media (min-width: ${breakpoints.xl}) {
+    font-size: 1.25rem;
+    margin-bottom: 0.938rem;
+  }
 `;
 
 export const PackagePricing = styled.div`
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: bold;
-  margin-top: 16px;
+  margin-top: 1rem;
   color: white;
 
-       @media (min-width: ${breakpoints.lg}) {
-     font-size: 48px;
-       margin-top: 40px;
-
- }
+  @media (min-width: ${breakpoints.lg}) {
+    font-size: 3rem;
+    margin-top: 2.5rem;
+  }
 
   @media (min-width: ${breakpoints.xl}) {
-     font-size: 3.75vw;
-    margin-top: 3.125vw;
+    font-size: 3.75rem;
+    margin-top: 3.125rem;
   }
 `;
 
 export const PackageHostingNote = styled.span`
-  font-size: 12px; // or smaller
-  color: rgba(255, 255, 255, 0.7); // subtle text
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
 
-    @media (min-width: ${breakpoints.xl}) {
-     font-size: 0.938vw;
+  @media (min-width: ${breakpoints.xl}) {
+    font-size: 0.938rem;
   }
 `;
 
 export const PopularBadge = styled.div`
   position: absolute;
-  top: -12px;
-  right: -12px;
+  top: -0.75rem;
+  right: -0.75rem;
   background: linear-gradient(135deg, #a084ff, #f780ff);
   color: white;
-  padding: 0.4rem 0.8rem;
+  padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: 9999px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
   z-index: 10;
+
+  @media (min-width: ${breakpoints.md}) {
+    top: -0.875rem;
+    right: -0.875rem;
+    padding: 0.313rem 0.625rem;
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: ${breakpoints.xl}) {
+    top: -0.938vw;
+    right: -0.938vw;
+    padding: 0.313vw 0.625vw;
+    font-size: 0.938vw;
+    border-radius: 3.125vw;
+    box-shadow: 0 0.313vw 0.781vw rgba(0, 0, 0, 0.15);
+  }
 `;
 
 
