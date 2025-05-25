@@ -190,7 +190,7 @@ export const Content = styled.p`
 
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 1.25rem;
+    font-size: 1.25vw;
   }
 `;
 

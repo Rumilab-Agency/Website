@@ -120,7 +120,7 @@ export const WhyUsBg = styled.img`
   }
 
   @media (min-width: ${breakpoints.xl}) {
-      width: 57.422rem;
+      width: 57.422vw;
 
   }
 

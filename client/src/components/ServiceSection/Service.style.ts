@@ -84,7 +84,7 @@ export const CardDescription = styled.p`
   color: #ccc;
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 1.25rem;
+    font-size: 1.25vw;
   }
 `;
 

@@ -38,7 +38,7 @@ export const NavbarContainer = styled.nav`
   }
 
   @media (min-width: ${breakpoints.xl}) {
-    padding: 1.25rem 6.25rem;
+    padding: 1.25vw 6.25vw;
   }
 `;
 
@@ -56,8 +56,8 @@ export const Logo = styled.div`
     }
   
     @media (min-width: ${breakpoints.xl}) {
-      font-size: 1.25rem;
-      letter-spacing: 0.156rem;
+      font-size: 1.25vw;
+      letter-spacing: 0.156vw;
     }
 `;
 
@@ -71,8 +71,8 @@ export const LogoImage = styled.img`
     }
 
       @media (min-width: ${breakpoints.xl}) {
-        height: 1.875rem;
-        margin-right: 0.625rem;
+        height: 1.875vw;
+        margin-right: 0.625vw;
     }
 `;
 
@@ -136,8 +136,8 @@ export const HamburgerButton = styled.button`
   }
 
   @media (min-width: ${breakpoints.xl}) {
-    padding: 0.75rem;
-    gap: 0.625rem;
+    padding: 0.75vw;
+    gap: 0.625vw;
   }
 `;
 
@@ -155,8 +155,8 @@ export const HamburgerLine = styled.span`
   }
 
   @media (min-width: ${breakpoints.xl}) {
-    width: 2rem;
-    height: 0.188rem;
+    width: 2vw;
+    height: 0.188vw;
   }
 
   ${HamburgerButton}.active & {

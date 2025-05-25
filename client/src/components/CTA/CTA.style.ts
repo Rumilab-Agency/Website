@@ -73,7 +73,7 @@ export const CTASlogan1 = styled.p`
       }
 
       @media (min-width: ${breakpoints.xl}) {
-        font-size: 2.188rem;
+        font-size: 2.188vw;
       }
 
 `;
@@ -93,7 +93,7 @@ export const CTAButton1 = styled(CTAButtonLarge)`
     }
 
     @media (min-width: ${breakpoints.xl}) {
-        margin:3.125rem auto;
+        margin:3.125vw auto;
     }
 
 `;
@@ -119,7 +119,7 @@ export const CTABg = styled.img`
   }
 
   @media (min-width: ${breakpoints.xl}) {
-      width: 57.422rem;
+      width: 57.422vw;
 
   }
 
