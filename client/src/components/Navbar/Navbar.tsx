@@ -6,8 +6,8 @@ import {
   Logo,
   NavbarCTAButton,
   LogoImage,
-  HamburgerButton,
-  HamburgerLine,
+  // HamburgerButton,
+  // HamburgerLine,
 } from './Navbar.styles';
 
 interface NavbarProps {
