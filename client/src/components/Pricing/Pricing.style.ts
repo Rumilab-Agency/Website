@@ -14,7 +14,6 @@ export const BillingToggleWrapper = styled.div`
   position: relative;
   border-radius: 9999px;
   padding: 2px;
-  max-width: 20rem;
   margin: 0 auto;
 
   &::before {
@@ -38,7 +37,6 @@ export const BillingToggleWrapper = styled.div`
   @media (min-width: ${breakpoints.xl}) {
     padding: 0.156vw;
     border-radius: 3.125vw;
-    max-width: 25rem;
 
     &::before {
       padding: 0.156vw;
@@ -159,12 +157,12 @@ export const PackageCard = styled.div`
   }
 
   @media (min-width: ${breakpoints.xl}) {
-    padding: 2.5rem;
-    border-radius: 1.875rem;
+    padding: 2.5vw;
+    border-radius: 1.875vw;
     
     &::before {
-      padding: 2px;
-      border-radius: 1.875rem;
+      padding: 0.156vw;
+      border-radius: 1.875vw;
     }
   }
 `;
@@ -184,7 +182,7 @@ export const PackageTitle = styled.h3`
   }
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 2.5rem;
+    font-size: 1.953vw;
   }
 `;
 
@@ -207,7 +205,7 @@ export const PackageSubtitle = styled.span`
   }
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 1.094rem;
+    font-size: 0.977vw;
   }
 `;
 
@@ -229,8 +227,8 @@ export const PackageListItem = styled.li`
   }
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 1.25rem;
-    margin-bottom: 0.938rem;
+    font-size: 0.977vw;
+    margin-bottom: 0.938vw;
   }
 `;
 
@@ -246,8 +244,8 @@ export const PackagePricing = styled.div`
   }
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 3.75rem;
-    margin-top: 3.125rem;
+    font-size: 2.93vw;
+    margin-top: 2.344vw;
   }
 `;
 
@@ -256,7 +254,7 @@ export const PackageHostingNote = styled.span`
   color: rgba(255, 255, 255, 0.7);
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 0.938rem;
+    font-size: 0.977vw;
   }
 `;
 

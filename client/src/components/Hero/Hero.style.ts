@@ -36,7 +36,7 @@ export const HeadlineWrapper = styled.div`
 
 
   @media (min-width: ${breakpoints.xl}) {
-    height: 31.25rem;
+    height: 24.414vw;  // 312.5px at 1280px
   }
 `;
 
@@ -67,7 +67,6 @@ export const Headline = styled(Title)`
   will-change: transform, opacity, filter;
   
   @media (min-width: ${breakpoints.xl}) {
-    animation: ${textReveal} 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 `;
 

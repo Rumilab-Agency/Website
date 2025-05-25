@@ -6,6 +6,8 @@ import {
   Logo,
   NavbarCTAButton,
   LogoImage,
+  HamburgerButton,
+  HamburgerLine,
 } from './Navbar.styles';
 
 interface NavbarProps {
@@ -15,6 +17,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,12 +42,16 @@ const Navbar: React.FC<NavbarProps> = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <NavbarContainer className={isVisible ? 'visible' : 'hidden'}>
       <Logo>
         <LogoImage src={logoImg} alt="RomiLab Logo" />
       </Logo>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         <NavbarCTAButton
           as="a"
           href="https://wa.me/6598323646"
@@ -53,6 +60,15 @@ const Navbar: React.FC<NavbarProps> = () => {
         >
           Get in touch
         </NavbarCTAButton>
+        {/* <HamburgerButton 
+          onClick={toggleMenu}
+          className={isMenuOpen ? 'active' : ''}
+          aria-label="Toggle menu"
+        >
+          <HamburgerLine />
+          <HamburgerLine />
+          <HamburgerLine />
+        </HamburgerButton> */}
       </div>
     </NavbarContainer>
   );

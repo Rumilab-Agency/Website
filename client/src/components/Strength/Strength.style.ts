@@ -49,7 +49,7 @@ export const CardGrid = styled(ContentWrapper)`
   }
 
   @media (min-width: ${breakpoints.xl}) {
-        gap: 4.375vw;
+    gap: 4.375vw;
   }
 `;
 
@@ -88,7 +88,7 @@ export const GlowingCard = styled.div`
   box-shadow: 0px 0px 32px rgba(162, 83, 237, 0.84);
 
  @media (min-width: ${breakpoints.xl}) {
-    padding: 3.75vw 1.875vw;
+    padding: 3.75vw 2.344vw;
     border-radius: 3.906vw;
     box-shadow: 0px 0px 2.5vw rgba(162, 83, 237, 0.84);
 
@@ -132,6 +132,6 @@ export const CardContent = styled.p`
   color: #ccc;
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 1.094rem;
+    font-size: 1.094vw;
   }
 `;

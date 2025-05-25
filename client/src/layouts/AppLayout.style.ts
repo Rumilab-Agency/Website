@@ -11,21 +11,19 @@ export const breakpoints = {
 
 
 export const MainContent = styled.div`
-
-  padding-top:71px; 
-  background:black;
-
+  padding-top: 4.438rem;  // 71px
+  background: black;
 
   @media (min-width: ${breakpoints.md}) {
-      padding-top:74px; 
+    padding-top: 4.625rem;  // 74px
   }
 
   @media (min-width: ${breakpoints.lg}) {
-      padding-top:73px; 
+    padding-top: 4.563rem;  // 73px
   }
 
-    @media (min-width: ${breakpoints.xl}) {
-      padding-top:5.703vw; 
+  @media (min-width: ${breakpoints.xl}) {
+    padding-top: 5.703vw;
   }
 `;
 
@@ -52,17 +50,16 @@ export const MainContent = styled.div`
     }
 
     @media (min-width: ${breakpoints.xl}) {
-      font-size: 5.625rem;
-      padding: 2.5rem 0;
-      letter-spacing: -0.156rem;
-
+      font-size: 5.625vw;
+      padding: 1.953vw 0;
+      letter-spacing: -0.156vw;
     }
 
 
   `;
 
   export const Headline = styled.h1`
-  font-size: 28px;
+  font-size: 1.75rem;  // 28px
   font-weight: 800;
   text-align: center;
   background: linear-gradient(90deg, #a084ff 0%, #f780ff 100%);
@@ -70,17 +67,21 @@ export const MainContent = styled.div`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  margin: 0 0 8px 0;
-  letter-spacing: -2px;
+  margin: 0 0 0.5rem 0;  // 8px
+  letter-spacing: -0.125rem;  // -2px
 
   @media (min-width: ${breakpoints.md}) {
-    font-size: 56px;
-    margin: 0 0 24px 0;
+    font-size: 2.5rem;  // 56px
+    margin: 0 0 1rem 0;  // 24px
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    font-size: 3.5rem;  // 56px
+    margin: 0 0 1.5rem 0;  // 24px
   }
 
   @media (min-width: ${breakpoints.lg}) {
-    margin: 0 0 24px 0;
-
+    margin: 0 0 1.5rem 0;  // 24px
   }
 
   @media (min-width: ${breakpoints.xl}) {
@@ -91,14 +92,14 @@ export const MainContent = styled.div`
 
 
 export const SubTitle = styled.p`
-  font-size: 16px;
+  font-size: 1rem;  // 16px
 
   @media (min-width: ${breakpoints.md}) {
-    font-size: 18px;
+    font-size: 1.125rem;  // 18px
   }
 
   @media (min-width: ${breakpoints.lg}) {
-      font-size: 24px;
+      font-size: 1.5rem;  // 24px
 
   }
 
@@ -110,7 +111,7 @@ export const SubTitle = styled.p`
 
 export const Container = styled.div`
 
-  padding: 32px 0;
+  padding: 2rem 0;  // 32px
   min-height:80vh;
   display: flex;
   flex-direction: column;
@@ -118,11 +119,11 @@ export const Container = styled.div`
   align-items: center;
 
   @media (min-width: ${breakpoints.md}) {
-    padding: 40px 0;
+    padding: 2.5rem 0;  // 40px
   }
 
   @media (min-width: ${breakpoints.lg}) {
-    padding: 48px 0;
+    padding: 3rem 0;  // 48px
   }
 
 
@@ -133,19 +134,17 @@ export const Container = styled.div`
 
 export const SectionTitle = styled.h2`
   color: white;
-  font-size: 20px;
+  font-size: 1.25rem;  // 20px
   font-weight:600;
 
 
 
   @media (min-width: ${breakpoints.md}) {
-    font-size: 26px;
-
-
+    font-size: 1.625rem;  // 26px
   }
 
   @media (min-width: ${breakpoints.lg}) {
-    font-size: 40px;
+    font-size: 2.5rem;  // 40px
 
   }
 
@@ -158,16 +157,16 @@ export const SectionTitle = styled.h2`
 
 
 export const ContentWrapper = styled.div`
-  margin: 20px auto;
+  margin: 1.25rem auto;  // 20px
 
   @media (min-width: ${breakpoints.md}) {
-      margin-top: 40px;
-      margin-bottom: 40px;
+      margin-top: 2.5rem;  // 40px
+      margin-bottom: 2.5rem;  // 40px
   }
 
   @media (min-width: ${breakpoints.lg}) {
-      margin-top: 80px;
-      margin-bottom: 80px;
+      margin-top: 5rem;  // 80px
+      margin-bottom: 5rem;  // 80px
   }
 
 
@@ -197,11 +196,11 @@ export const Content = styled.p`
 
 export const CTAButton = styled.button`
   background: transparent;
-  border: 2px solid #a0a0ff;
+  border: 0.125rem solid #a0a0ff;  // 2px
   color: #fff;
-  padding: 8px 20px;
-  border-radius: 24px;
-  font-size: 14px;
+  padding: 0.5rem 1.25rem;  // 8px 20px
+  border-radius: 1.5rem;  // 24px
+  font-size: 0.875rem;  // 14px
   cursor: pointer;
   text-decoration:none;
   transition: background 0.2s, color 0.2s;
@@ -211,8 +210,8 @@ export const CTAButton = styled.button`
   }
 
     @media (min-width: ${breakpoints.md}) {
-      padding: 8px 24px;
-      font-size: 16px;
+      padding: 0.5rem 1.5rem;  // 8px 24px
+      font-size: 1rem;  // 16px
     }
   
     @media (min-width: ${breakpoints.xl}) {
@@ -226,11 +225,11 @@ export const CTAButton = styled.button`
 
 export const CTAButtonLarge = styled.button`
   background: transparent;
-  border: 2px solid #a0a0ff;
+  border: 0.125rem solid #a0a0ff;  // 2px
   color: #fff;
-  padding: 12px 32px;
-  border-radius: 40px;
-  font-size: 18px;
+  padding: 0.75rem 2rem;  // 12px 32px
+  border-radius: 2.5rem;  // 40px
+  font-size: 1.125rem;  // 18px
   cursor: pointer;
   text-decoration:none;
   transition: background 0.2s, color 0.2s;
@@ -240,7 +239,7 @@ export const CTAButtonLarge = styled.button`
   }
 
     @media (min-width: ${breakpoints.md}) {
-      font-size: 24px;
+      font-size: 1.5rem;  // 24px
     }
 
 

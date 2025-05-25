@@ -5,7 +5,7 @@ import { StrengthContainer, StrengthContentWrapper, StrengthTitle, CardGrid, Glo
 const strengths = [
     {
       title: 'Brand-Driven Design',
-      description: 'Every website we create is carefully crafted to reflect your unique brand identity and voice.',
+      description: 'Every website we create is carefully crafted in-house with our designers to reflect your unique brand identity and voice.',
     },
     {
       title: 'Flexible Pricing Options',
@@ -32,6 +32,8 @@ const Strength = () => (
         ))}
         </CardGrid>
         </StrengthContentWrapper>
+
+
   </StrengthContainer>
 );
 

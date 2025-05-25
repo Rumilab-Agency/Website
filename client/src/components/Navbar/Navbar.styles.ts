@@ -104,3 +104,70 @@ export const ShootingStarButton = styled.button`
 export const NavbarCTAButton = styled(CTAButton)`
 
 `;
+
+export const HamburgerButton = styled.button`
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 100;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8e71ff, #c986f8, #f3b2ff);
+    opacity: 0.15;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 0.25;
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    padding: 0.625rem;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: ${breakpoints.xl}) {
+    padding: 0.75rem;
+    gap: 0.625rem;
+  }
+`;
+
+export const HamburgerLine = styled.span`
+  display: block;
+  width: 1.5rem;
+  height: 0.125rem;
+  background: white;
+  border-radius: 0.25rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  @media (min-width: ${breakpoints.md}) {
+    width: 1.75rem;
+    height: 0.156rem;
+  }
+
+  @media (min-width: ${breakpoints.xl}) {
+    width: 2rem;
+    height: 0.188rem;
+  }
+
+  ${HamburgerButton}.active & {
+    &:first-child {
+      transform: translateY(0.5rem) rotate(45deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:last-child {
+      transform: translateY(-0.5rem) rotate(-45deg);
+    }
+  }
+`;
