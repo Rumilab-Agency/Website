@@ -51,7 +51,7 @@ export const CTAContentWrapper = styled(ContentWrapper)`
     }
 
     @media (min-width: ${breakpoints.xl}) {
-        width: 47.608vw;
+        width: 60.938vw;
         margin-top: 9.155vw;
         margin-bottom: 6.103vw;
     }
