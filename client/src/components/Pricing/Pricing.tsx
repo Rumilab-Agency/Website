@@ -92,7 +92,6 @@ const Pricing = () => {
                 </PackageListItem>
                 <PackageListItem><FaAnglesUp />5 Fully Responsive pages</PackageListItem>
 
-                <PackageListItem><FaAnglesUp />5 Edit Per Month</PackageListItem>
                 <PackageListItem><FaAnglesUp />{billingCycle === 'monthly'
                     ? 'Unlimited Edits'
                     : 'Free 5 Edits/mo for 1 year'}
