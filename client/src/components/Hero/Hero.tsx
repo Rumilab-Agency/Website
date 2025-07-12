@@ -5,13 +5,13 @@ import sunriseGlow from '../../assets/images/sunrise.png';
 const Hero = () => (
   <HeroContainer>
     <HeadlineWrapper>
-        <Headline>
+      <Headline>
         Beautiful, Custom Websites <br /> for Small Businesses.
         {/* Crafting Digital IdentitiesThrough Custom Design. */}
-        </Headline>
-        <Subheadline>
-        Starting at just <PriceHighlight>$48/month</PriceHighlight> — complete with design, hosting, and support.
-        </Subheadline>
+      </Headline>
+      <Subheadline>
+        Starting at just <PriceHighlight>$168/month</PriceHighlight> — complete with design, hosting, and support.
+      </Subheadline>
     </HeadlineWrapper>
     {/* <SunWrapper>
       <SunriseGlow />
