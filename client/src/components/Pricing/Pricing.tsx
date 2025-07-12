@@ -1,9 +1,8 @@
-import { useState } from 'react';
 
 import {
   PricingContainer, PricingTitle, PackageCardWrapper,
   PackageCardGrid, PackageCard, PackageTitle, PackageTitleWrapper, PackageSubtitle, PackageListItemWrapper, PackageListItem, PackagePricing,
-  PopularPackageCard, PopularBadge, BillingToggleWrapper, BillingToggleButton, PackageHostingNote
+  PopularPackageCard, PopularBadge, PackageHostingNote
 } from './Pricing.style';
 
 
@@ -12,13 +11,7 @@ import { FaAnglesUp } from "react-icons/fa6";
 
 
 const Pricing = () => {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'oneTime'>('monthly');
 
-  // Pricing values based on billingCycle
-  const prices = {
-    monthly: { essentials: '$48', growth: '$168' },
-    oneTime: { essentials: '$868', growth: '$2688', hosting: '+$25/mo hosting' },
-  };
 
   // Example: different features for monthly vs one-time if needed
   // const features = billingCycle === 'monthly' ? monthlyFeatures : oneTimeFeatures;

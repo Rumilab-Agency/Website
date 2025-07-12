@@ -53,7 +53,7 @@ const Footer: React.FC = () => (
         <FooterIcon>
         <MdEmail />
         </FooterIcon>
-        <a href="mailto:airumilab@gmail.com">airumilab@gmail.com</a>
+        <a href="mailto:contact@rumilab.co">contact@rumilab.co</a>
     </FooterItem>
 
     <FooterItem>
