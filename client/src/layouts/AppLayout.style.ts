@@ -263,3 +263,5 @@ export const GradientText = styled.span`
   background-clip: text;
   color: transparent;
 `;
+
+
