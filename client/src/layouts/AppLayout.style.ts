@@ -2,11 +2,11 @@ import styled, { } from 'styled-components';
 
 // src/styles/theme.ts
 export const breakpoints = {
-    sm: '480px',   // small devices (phones)
-    md: '768px',   // tablets
-    lg: '1024px',  // desktops
-    xl: '1280px', // large screens
-  };
+  sm: '480px',   // small devices (phones)
+  md: '768px',   // tablets
+  lg: '1024px',  // desktops
+  xl: '1280px', // large screens
+};
 
 
 
@@ -14,27 +14,28 @@ export const MainContent = styled.div`
   padding-top: 4.438rem;  // 71px
   background: black;
 
-  @media (min-width: ${breakpoints.md}) {
-    padding-top: 4.625rem;  // 74px
-  }
+  // @media (min-width: ${breakpoints.md}) {
+  //   padding-top: 4.625rem;  // 74px
+  // }
 
-  @media (min-width: ${breakpoints.lg}) {
-    padding-top: 4.563rem;  // 73px
-  }
+  // @media (min-width: ${breakpoints.lg}) {
+  //   padding-top: 4.563rem;  // 73px
+  // }
 
-  @media (min-width: ${breakpoints.xl}) {
-    padding-top: 5.703vw;
-  }
+  // @media (min-width: ${breakpoints.xl}) {
+  //   padding-top: 5.703vw;
+  // }
 `;
 
 
 
-  export const Title = styled.h1`
+export const Title = styled.h1`
     font-size: 1.75rem;
     font-weight: 600;
     text-align: center;
     letter-spacing: -0.125rem;
     padding: 1rem 0;
+    color: #fff;
 
 
     @media (min-width: ${breakpoints.md}) {
@@ -58,7 +59,7 @@ export const MainContent = styled.div`
 
   `;
 
-  export const Headline = styled.h1`
+export const Headline = styled.h1`
   font-size: 1.75rem;  // 28px
   font-weight: 800;
   text-align: center;

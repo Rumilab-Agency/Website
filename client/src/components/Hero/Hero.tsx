@@ -6,11 +6,11 @@ const Hero = () => (
   <HeroContainer>
     <HeadlineWrapper>
       <Headline>
-        Beautiful, Custom Websites <br /> for Small Businesses.
+        Turn Clicks into Customers
         {/* Crafting Digital IdentitiesThrough Custom Design. */}
       </Headline>
       <Subheadline>
-        Starting at just <PriceHighlight>$168/month</PriceHighlight> — complete with design, hosting, and support.
+        Custom websites built to drive <PriceHighlight>bookings & enquiries</PriceHighlight>
       </Subheadline>
     </HeadlineWrapper>
     {/* <SunWrapper>
