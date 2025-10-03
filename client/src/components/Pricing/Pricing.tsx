@@ -39,7 +39,7 @@ const Pricing = () => {
               <PackageListItem className="text-muted"><IoCloseSharp /> 24/7 Support</PackageListItem>
               <PackageListItem className="text-muted"><IoCloseSharp /> Lifetime Updates</PackageListItem>
             </PackageListItemWrapper>
-            <PackagePricing>$2688
+            <PackagePricing>$3588
             </PackagePricing>
           </PackageCard>
 
@@ -60,7 +60,7 @@ const Pricing = () => {
               <PackageListItem><FaAnglesUp /> 24/7 Support</PackageListItem>
               <PackageListItem><FaAnglesUp /> Lifetime Updates</PackageListItem>
             </PackageListItemWrapper>
-            <PackagePricing>$168
+            <PackagePricing>$178
               <PackageHostingNote>/ month</PackageHostingNote>
             </PackagePricing>
           </PopularPackageCard>
