@@ -6,7 +6,7 @@ const Hero = () => (
   <HeroContainer>
     <HeadlineWrapper>
       <Headline>
-        Turn Clicks into Customers123
+        Turn Clicks into Clients
         {/* Crafting Digital IdentitiesThrough Custom Design. */}
       </Headline>
       <Subheadline>

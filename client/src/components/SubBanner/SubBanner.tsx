@@ -1,4 +1,4 @@
-import { breakpoints, Title, Container, ContentWrapper } from '../../layouts/AppLayout.style';
+import { Title, ContentWrapper } from '../../layouts/AppLayout.style';
 
 
 const SubBanner = () => (
