@@ -34,12 +34,12 @@ const Pricing = () => {
               <PackageListItem><IoCheckmarkSharp />5 Fully Responsive Pages</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$150 for each additional page</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$300 for Article/Blog</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />Free 1 Year - 5 Edits per month</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />Free 1 Year - Unlimited Edits</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />Free 1 Year Hosting</PackageListItem>
               <PackageListItem className="text-muted"><IoCloseSharp /> 24/7 Support</PackageListItem>
               <PackageListItem className="text-muted"><IoCloseSharp /> Lifetime Updates</PackageListItem>
             </PackageListItemWrapper>
-            <PackagePricing>$3588
+            <PackagePricing>$3600
             </PackagePricing>
           </PackageCard>
 
@@ -60,7 +60,7 @@ const Pricing = () => {
               <PackageListItem><FaAnglesUp /> 24/7 Support</PackageListItem>
               <PackageListItem><FaAnglesUp /> Lifetime Updates</PackageListItem>
             </PackageListItemWrapper>
-            <PackagePricing>$178
+            <PackagePricing>$180
               <PackageHostingNote>/ month</PackageHostingNote>
             </PackagePricing>
           </PopularPackageCard>
