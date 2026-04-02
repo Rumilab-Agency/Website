@@ -32,14 +32,14 @@ const Pricing = () => {
             <PackageListItemWrapper>
               <PackageListItem><IoCheckmarkSharp />Design and Development</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />5 Fully Responsive Pages</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$150 for each additional page</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$300 for Article/Blog</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$180 for each additional page</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$350 for Article/Blog</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />Free 1 Year - Unlimited Edits</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />Free 1 Year Hosting</PackageListItem>
               <PackageListItem className="text-muted"><IoCloseSharp /> 24/7 Support</PackageListItem>
               <PackageListItem className="text-muted"><IoCloseSharp /> Lifetime Updates</PackageListItem>
             </PackageListItemWrapper>
-            <PackagePricing>$3600
+            <PackagePricing>$4500
             </PackagePricing>
           </PackageCard>
 
@@ -53,14 +53,14 @@ const Pricing = () => {
             <PackageListItemWrapper>
               <PackageListItem><IoCheckmarkSharp />Design and Development</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />5 Fully Responsive Pages</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$150 for each additional page</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$300 for Article/Blog</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$180 for each additional page</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$350 for Article/Blog</PackageListItem>
               <PackageListItem><FaAnglesUp />Unlimited Edits</PackageListItem>
               <PackageListItem><FaAnglesUp />Unlimited Hosting</PackageListItem>
               <PackageListItem><FaAnglesUp /> 24/7 Support</PackageListItem>
               <PackageListItem><FaAnglesUp /> Lifetime Updates</PackageListItem>
             </PackageListItemWrapper>
-            <PackagePricing>$180
+            <PackagePricing>$200
               <PackageHostingNote>/ month</PackageHostingNote>
             </PackagePricing>
           </PopularPackageCard>
