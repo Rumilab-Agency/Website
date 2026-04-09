@@ -13,6 +13,8 @@ type Project = {
     imageUrl: string;
     title: string;
     clientName: string;
+    url: string;
+
 };
 
 type PortfolioDisplayProps = {
@@ -23,7 +25,11 @@ const PortfolioDisplay: React.FC<PortfolioDisplayProps> = ({ projects }) => {
     return (
         <PortfolioGrid>
             {projects.map((proj) => (
-                <PortfolioCard key={proj.id}>
+                <PortfolioCard key={proj.id}
+                    href={proj.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <ImageWrapper>
                         <img src={proj.imageUrl} alt={proj.title} />
                     </ImageWrapper>

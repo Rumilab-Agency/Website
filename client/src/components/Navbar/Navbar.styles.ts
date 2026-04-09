@@ -76,6 +76,31 @@ export const LogoImage = styled.img`
     }
 `;
 
+export const NavList = styled.div`
+    display: none;
+    align-items: center;
+    gap: 2rem;
+
+    @media (min-width: ${breakpoints.md}) {
+      display: flex;
+    }
+
+      @media (min-width: ${breakpoints.xl}) {
+    }
+`;
+
+
+export const NavItem = styled.a`
+    font-size:1rem;
+    color:white;
+
+    @media (min-width: ${breakpoints.lg}) {
+    }
+
+      @media (min-width: ${breakpoints.xl}) {
+    }
+`;
+
 export const ShootingStarButton = styled.button`
   background: linear-gradient(90deg, #a0a0ff 60%, #fff 100%);
   border: none;
@@ -98,11 +123,27 @@ export const ShootingStarButton = styled.button`
     border-radius: 2px;
     pointer-events: none;
   }
-`; 
+`;
 
 
 export const NavbarCTAButton = styled(CTAButton)`
+    display: none;
 
+    @media (min-width: ${breakpoints.md}) {
+      display: flex;
+    }
+`;
+
+export const NavbarCTAButtonMobile = styled(CTAButton)`
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  
+  @media (min-width: ${breakpoints.md}) {
+    display: none;
+  }
 `;
 
 export const HamburgerButton = styled.button`
@@ -133,12 +174,15 @@ export const HamburgerButton = styled.button`
   @media (min-width: ${breakpoints.md}) {
     padding: 0.625rem;
     gap: 0.5rem;
+        display:none;
+
   }
 
-  @media (min-width: ${breakpoints.xl}) {
-    padding: 0.75vw;
-    gap: 0.625vw;
-  }
+
+  // @media (min-width: ${breakpoints.xl}) {
+  //   padding: 0.75vw;
+  //   gap: 0.625vw;
+  // }
 `;
 
 export const HamburgerLine = styled.span`
