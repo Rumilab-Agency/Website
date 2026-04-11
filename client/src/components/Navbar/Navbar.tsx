@@ -5,12 +5,12 @@ import {
   NavbarContainer,
   Logo,
   NavbarCTAButton,
-  NavbarCTAButtonMobile,
+  // NavbarCTAButtonMobile,
   LogoImage,
-  NavList,
-  NavItem,
-  HamburgerButton,
-  HamburgerLine,
+  // NavList,
+  // NavItem,
+  // HamburgerButton,
+  // HamburgerLine,
 } from './Navbar.styles';
 
 interface NavbarProps {
@@ -45,9 +45,9 @@ const Navbar: React.FC<NavbarProps> = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  // const toggleMenu = () => {
+  //   setIsMenuOpen(!isMenuOpen);
+  // };
 
   return (
 
