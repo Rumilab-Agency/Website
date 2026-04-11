@@ -46,6 +46,7 @@ export const WhyUsHeadline = styled(SectionTitle)`
   margin-top: 0.625rem;
   margin-bottom: 1.25rem;
 
+    line-height:1.2;
 
 
   @media (min-width: ${breakpoints.md}) {
@@ -63,8 +64,8 @@ export const WhyUsHeadline = styled(SectionTitle)`
 
 
   @media (min-width: ${breakpoints.xl}) {
-    margin-top: 1.25rem;
-    margin-bottom: 2.5rem;
+    margin-top: 1.563vw;
+    margin-bottom: 3.125vw;
   }
 
 `;

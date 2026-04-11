@@ -7,8 +7,7 @@ import Service from '../components/ServiceSection/Service';
 import Pricing from '../components/Pricing/Pricing';
 import CTA from '../components/CTA/CTA';
 
-
-
+// import Portfolio from '../components/Portfolio/Portfolio';
 
 
 const Landing = () => {
@@ -18,7 +17,9 @@ const Landing = () => {
         <Hero />
         <WhySection/>
         <Strength/>
-        <Service/>
+        <Service/> 
+                        {/* <Portfolio/> */}
+
         <Pricing/>
         <CTA/>
       </AppLayout>

@@ -6,11 +6,11 @@ const Hero = () => (
   <HeroContainer>
     <HeadlineWrapper>
       <Headline>
-        Turn Clicks into Clients
+        Turn Visitors into Clients
         {/* Crafting Digital IdentitiesThrough Custom Design. */}
       </Headline>
       <Subheadline>
-        Custom websites built to drive <PriceHighlight>bookings & enquiries</PriceHighlight>
+        Purpose-built for SMEs to drive more <PriceHighlight>bookings</PriceHighlight>, <PriceHighlight>enquiries</PriceHighlight>, <PriceHighlight>memberships</PriceHighlight>, and <PriceHighlight>students</PriceHighlight>
       </Subheadline>
     </HeadlineWrapper>
     {/* <SunWrapper>

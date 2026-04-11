@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         <LogoImage src={logoImg} alt="RomiLab Logo" />
       </Logo>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+      {/* <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
         <NavList>
           <NavItem>About Us</NavItem>
           <NavItem
@@ -82,9 +82,19 @@ const Navbar: React.FC<NavbarProps> = () => {
           <HamburgerLine />
           <HamburgerLine />
         </HamburgerButton>
-      </div>
+      </div> */}
 
-      {isMenuOpen && (
+        <NavbarCTAButton
+          as="a"
+          href="https://wa.me/6598323646"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get in touch
+        </NavbarCTAButton>
+
+
+      {/* {isMenuOpen && (
         <div
           style={{
             position: 'absolute',
@@ -118,7 +128,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             Get in touch
           </NavbarCTAButtonMobile>
         </div>
-      )}
+      )} */}
 
 
     </NavbarContainer>
