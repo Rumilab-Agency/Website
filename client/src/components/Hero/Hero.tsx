@@ -6,11 +6,11 @@ const Hero = () => (
   <HeroContainer>
     <HeadlineWrapper>
       <Headline>
-        Turn Clicks into Clients
+        Websites Crafted to Convert
         {/* Crafting Digital IdentitiesThrough Custom Design. */}
       </Headline>
       <Subheadline>
-        Custom websites built to drive <PriceHighlight>bookings & enquiries</PriceHighlight>
+        Custom websites built for Singapore small businesses — engineered to drive <PriceHighlight>enquiries, bookings, and sales</PriceHighlight>. Guaranteed.
       </Subheadline>
     </HeadlineWrapper>
     {/* <SunWrapper>

@@ -94,6 +94,7 @@ export const Subheadline = styled(SubTitle)`
  opacity: 0;
   animation: ${fadeIn} 3s ease-in-out forwards;
   font-weight:500;
+  max-width: 960px;
 `;
 
 

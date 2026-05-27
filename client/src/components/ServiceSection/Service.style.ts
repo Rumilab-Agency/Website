@@ -1,4 +1,4 @@
-import styled, {  } from 'styled-components';
+import styled, { } from 'styled-components';
 import { breakpoints, Title, Container, ContentWrapper } from '../../layouts/AppLayout.style';
 
 
@@ -38,11 +38,11 @@ export const ServiceCard = styled.article`
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  width:300px;
+  width:320px;
     //   margin-bottom: 20px;
 
     @media (min-width: ${breakpoints.xl}) {
-    width: 23.438vw;
+    width: 24.438vw;
   }
 
 `;

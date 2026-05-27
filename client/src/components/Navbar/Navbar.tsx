@@ -58,13 +58,13 @@ const Navbar: React.FC<NavbarProps> = () => {
       </Logo>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-        <NavList>
+        {/* <NavList>
           <NavItem>About Us</NavItem>
           <NavItem
             as="a"
             href="https://rumilab.co"
           >Portfolio</NavItem>
-        </NavList>
+        </NavList> */}
         <NavbarCTAButton
           as="a"
           href="https://wa.me/6598323646"
@@ -73,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         >
           Get in touch
         </NavbarCTAButton>
-        <HamburgerButton
+        {/* <HamburgerButton
           onClick={toggleMenu}
           className={isMenuOpen ? 'active' : ''}
           aria-label="Toggle menu"
@@ -81,10 +81,10 @@ const Navbar: React.FC<NavbarProps> = () => {
           <HamburgerLine />
           <HamburgerLine />
           <HamburgerLine />
-        </HamburgerButton>
+        </HamburgerButton> */}
       </div>
 
-      {isMenuOpen && (
+      {/* {isMenuOpen && (
         <div
           style={{
             position: 'absolute',
@@ -118,7 +118,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             Get in touch
           </NavbarCTAButtonMobile>
         </div>
-      )}
+      )} */}
 
 
     </NavbarContainer>

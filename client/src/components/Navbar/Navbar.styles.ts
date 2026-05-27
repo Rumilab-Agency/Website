@@ -127,7 +127,7 @@ export const ShootingStarButton = styled.button`
 
 
 export const NavbarCTAButton = styled(CTAButton)`
-    display: none;
+      display: flex;
 
     @media (min-width: ${breakpoints.md}) {
       display: flex;
