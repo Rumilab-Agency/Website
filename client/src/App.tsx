@@ -6,7 +6,7 @@ import Portfolio from './pages/Portfolio';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // import FloatingCTA from './components/FloatingCTA/FloatingCTA';
 
