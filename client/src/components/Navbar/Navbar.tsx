@@ -5,12 +5,12 @@ import {
   NavbarContainer,
   Logo,
   NavbarCTAButton,
-  NavbarCTAButtonMobile,
+  // NavbarCTAButtonMobile,
   LogoImage,
-  NavList,
-  NavItem,
-  HamburgerButton,
-  HamburgerLine,
+  // NavList,
+  // NavItem,
+  // HamburgerButton,
+  // HamburgerLine,
 } from './Navbar.styles';
 
 interface NavbarProps {
