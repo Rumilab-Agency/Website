@@ -80,6 +80,7 @@ export const NavList = styled.div`
     display: none;
     align-items: center;
     gap: 2rem;
+    margin-right: 0 5rem;
 
     @media (min-width: ${breakpoints.md}) {
       display: flex;
@@ -91,13 +92,15 @@ export const NavList = styled.div`
 
 
 export const NavItem = styled.a`
-    font-size:1rem;
     color:white;
+  font-size: 0.875rem;  // 14px
 
-    @media (min-width: ${breakpoints.lg}) {
+    @media (min-width: ${breakpoints.md}) {
+      font-size: 1rem;  // 16px
     }
-
-      @media (min-width: ${breakpoints.xl}) {
+  
+    @media (min-width: ${breakpoints.xl}) {
+          font-size: 1.25vw;
     }
 `;
 
