@@ -24,13 +24,6 @@ function App() {
 
   return (
     <Router>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/portfolio">Portfolio</Link></li>
-        </ul>
-      </nav>
-
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/portfolio" element={<Portfolio />} />
