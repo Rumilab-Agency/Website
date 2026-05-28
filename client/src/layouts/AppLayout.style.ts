@@ -11,7 +11,7 @@ export const breakpoints = {
 
 
 export const MainContent = styled.div`
-  padding-top: 4.438rem;  // 71px
+  // padding-top: 4.438rem;  // 71px
   background: black;
 
   // @media (min-width: ${breakpoints.md}) {

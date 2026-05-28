@@ -22,22 +22,11 @@ export const HeadlineWrapper = styled.div`
   align-items: center;
   justify-content: center; 
   flex-direction: column;
-  height: 15.625rem; 
-  min-height:80vh;
+  height: 100vh; 
   width: 90%;
   margin:0 auto;
   background-color:#010101;
 
-
-  @media (min-width: ${breakpoints.md}) {
-    height: 25rem;
-    min-height:60vh;
-  }
-
-
-  @media (min-width: ${breakpoints.xl}) {
-    height: 24.414vw;  // 312.5px at 1280px
-  }
 `;
 
 
@@ -108,8 +97,8 @@ export const SunriseImage = styled.img`
   opacity: 0;
   animation: ${sunriseGlow} 2.5s ease-in-out forwards;
 
-@media (min-width: ${breakpoints.xl}) {
-    margin-top: -5rem;
+@media (min-width: ${breakpoints.md}) {
+    margin-top: -12rem;
   }
 `;
 
