@@ -32,11 +32,14 @@ const Pricing = () => {
             <PackageListItemWrapper>
               <PackageListItem><IoCheckmarkSharp />Design and Development</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />5 Fully Responsive Pages</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$180 for each additional page</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$150 for each additional page</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$350 for Article/Blog</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$50/mo Unlimited Edits</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$25/mo Unlimited Hosting</PackageListItem>
-              <PackageListItem className="text-muted"><IoCloseSharp />Perfomance-based Guarantee (3%)</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$25/mo Hosting</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$50/mo Unlimited Edits Add-on</PackageListItem>
+              <PackageListItem></PackageListItem>
+              <PackageListItem className="text-muted"><IoCloseSharp />Perfomance-based Guarantee (4%)</PackageListItem>
+              <PackageListItem className="text-muted"><IoCloseSharp />Monthly Analytics Report (PDF)</PackageListItem>
+
               <PackageListItem className="text-muted"><IoCloseSharp /> 24/7 Support</PackageListItem>
               <PackageListItem className="text-muted"><IoCloseSharp /> Lifetime Updates</PackageListItem>
             </PackageListItemWrapper>
@@ -54,11 +57,13 @@ const Pricing = () => {
             <PackageListItemWrapper>
               <PackageListItem><IoCheckmarkSharp />Design and Development</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />5 Fully Responsive Pages</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$180 for each additional page</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$150 for each additional page</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$350 for Article/Blog</PackageListItem>
-              <PackageListItem><FaAnglesUp />Unlimited Edits</PackageListItem>
-              <PackageListItem><FaAnglesUp />Unlimited Hosting</PackageListItem>
-              <PackageListItem><FaAnglesUp />Perfomance-based Guarantee (3%)</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />Includes Hosting</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />Unlimited Edits</PackageListItem>
+              <PackageListItem></PackageListItem>
+              <PackageListItem><FaAnglesUp />Perfomance-based Guarantee (4%)</PackageListItem>
+              <PackageListItem><FaAnglesUp />Monthly Analytics Report (PDF)</PackageListItem>
               <PackageListItem><FaAnglesUp /> 24/7 Support</PackageListItem>
               <PackageListItem><FaAnglesUp /> Lifetime Updates</PackageListItem>
             </PackageListItemWrapper>

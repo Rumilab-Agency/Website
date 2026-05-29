@@ -80,10 +80,14 @@ export const Subheadline = styled(SubTitle)`
   color: #ccc;
   text-align: center;
   margin: 0 0 3rem 0;
- opacity: 0;
+  opacity: 0;
   animation: ${fadeIn} 3s ease-in-out forwards;
   font-weight:500;
   max-width: 960px;
+
+  @media (min-width: ${breakpoints.xl}) {
+    max-width: 75vw;
+  }
 `;
 
 
