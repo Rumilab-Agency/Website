@@ -23,7 +23,7 @@ const services = [
     icon: businessIcon,
     title: 'Performance-Based Guarantee',
     description:
-      'We guarantee your website converts at least 3% of visitors into leads or sales within 90 days — or we refund your monthly fee and keep fixing it until it does.',
+      'We guarantee your website converts at least 4% of visitors into leads or sales within 90 days — or we refund your monthly fee and keep fixing it until it does.',
   },
   {
     icon: responsiveIcon,
