@@ -32,8 +32,8 @@ const Pricing = () => {
             <PackageListItemWrapper>
               <PackageListItem><IoCheckmarkSharp />Design and Development</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />5 Fully Responsive Pages</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$150 for each additional page</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$350 for Article/Blog</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$100 for each additional page</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$300 for Article/Blog</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$25/mo Hosting</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$50/mo Unlimited Edits Add-on</PackageListItem>
               <PackageListItem></PackageListItem>
@@ -57,8 +57,8 @@ const Pricing = () => {
             <PackageListItemWrapper>
               <PackageListItem><IoCheckmarkSharp />Design and Development</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />5 Fully Responsive Pages</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$150 for each additional page</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$350 for Article/Blog</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$100 for each additional page</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$300 for Article/Blog</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />Includes Hosting</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />Unlimited Edits</PackageListItem>
               <PackageListItem></PackageListItem>
