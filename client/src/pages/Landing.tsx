@@ -14,8 +14,8 @@ const Landing = () => {
       <AppLayout>
         <Helmet>
           <title>RumiLab | High-Conversion Web Design for Small Businesses – Guaranteed to Perform</title>
-          <link rel="canonical" href="https://rumilab.org/" />
-          <meta property="og:url" content="https://rumilab.org/" />
+          <link rel="canonical" href="https://www.rumilab.org/" />
+          <meta property="og:url" content="https://www.rumilab.org/" />
         </Helmet>
         <Hero />
         <WhySection/>

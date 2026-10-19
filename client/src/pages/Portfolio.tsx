@@ -106,8 +106,8 @@ const Portfolio = () => (
     <Helmet>
       <title>Our Work | RumiLab</title>
       <meta name="description" content="Websites RumiLab has designed and built for businesses and organisations, from B2B supplies to education." />
-      <link rel="canonical" href="https://rumilab.org/portfolio" />
-      <meta property="og:url" content="https://rumilab.org/portfolio" />
+      <link rel="canonical" href="https://www.rumilab.org/portfolio" />
+      <meta property="og:url" content="https://www.rumilab.org/portfolio" />
     </Helmet>
     <Page>
       <Inner>

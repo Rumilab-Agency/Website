@@ -85,8 +85,8 @@ const Contact = () => {
     <Helmet>
       <title>Start Your Project | RumiLab</title>
       <meta name="description" content="Tell RumiLab about your business and the website you need. It takes about a minute." />
-      <link rel="canonical" href="https://rumilab.org/contact" />
-      <meta property="og:url" content="https://rumilab.org/contact" />
+      <link rel="canonical" href="https://www.rumilab.org/contact" />
+      <meta property="og:url" content="https://www.rumilab.org/contact" />
     </Helmet>
     <Page>
       <Sky aria-hidden="true">

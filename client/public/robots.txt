@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://rumilab.org/sitemap.xml
+Sitemap: https://www.rumilab.org/sitemap.xml
