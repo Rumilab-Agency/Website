@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { Helmet } from 'react-helmet-async';
+import PageMeta from '../components/PageMeta';
+import { PAGES } from '../seo';
 import AppLayout from '../layouts/AppLayout';
 import ProjectForm, { type FormStatus } from '../components/ProjectForm/ProjectForm';
 import Galaxy, { type GalaxyProps } from '../components/Galaxy/Galaxy';
@@ -82,12 +83,7 @@ const Contact = () => {
 
   return (
   <AppLayout>
-    <Helmet>
-      <title>Start Your Project | RumiLab</title>
-      <meta name="description" content="Tell RumiLab about your business and the website you need. It takes about a minute." />
-      <link rel="canonical" href="https://www.rumilab.org/contact" />
-      <meta property="og:url" content="https://www.rumilab.org/contact" />
-    </Helmet>
+    <PageMeta page={PAGES.contact} />
     <Page>
       <Sky aria-hidden="true">
         <Galaxy

@@ -37,7 +37,7 @@ export const FooterWrapper = styled.section`
 
 export const FooterColumn = styled.div``;
 
-export const FooterHeading = styled.h2`
+export const FooterHeading = styled.p`
   font-size: 0.75rem;
   font-weight: 500;
   color: #ccc;

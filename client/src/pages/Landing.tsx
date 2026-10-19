@@ -1,4 +1,5 @@
-import { Helmet } from 'react-helmet-async';
+import PageMeta from '../components/PageMeta';
+import { PAGES } from '../seo';
 import AppLayout from '../layouts/AppLayout';
 
 import Hero from '../components/Hero/Hero';
@@ -12,11 +13,7 @@ import CTA from '../components/CTA/CTA';
 const Landing = () => {
     return (
       <AppLayout>
-        <Helmet>
-          <title>RumiLab | High-Conversion Web Design for Small Businesses – Guaranteed to Perform</title>
-          <link rel="canonical" href="https://www.rumilab.org/" />
-          <meta property="og:url" content="https://www.rumilab.org/" />
-        </Helmet>
+        <PageMeta page={PAGES.home} />
         <Hero />
         <WhySection/>
         <Strength/>
