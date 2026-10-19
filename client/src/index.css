@@ -53,52 +53,13 @@ a {
 
 /* src/styles/fonts.css */
 
+/* Manrope as one variable font (weights 200–800, Latin, ~25 KB), preloaded in
+   index.html so it downloads alongside the CSS rather than after it. */
 @font-face {
   font-family: 'Manrope';
-  src: url('../src/assets/fonts/Manrope-ExtraLight.ttf') format('truetype');
-  font-weight: 200;
+  src: url('/fonts/manrope-variable.woff2') format('woff2');
+  font-weight: 200 800;
   font-style: normal;
   font-display: swap;
 }
-
-@font-face {
-  font-family: 'Manrope';
-  src: url('../src/assets/fonts/Manrope-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Manrope';
-  src: url('../src/assets/fonts/Manrope-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Manrope';
-  src: url('../src/assets/fonts/Manrope-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Manrope';
-  src: url('../src/assets/fonts/Manrope-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Manrope';
-  src: url('../src/assets/fonts/Manrope-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
 

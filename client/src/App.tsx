@@ -1,15 +1,17 @@
 // import { useState } from 'react'
 import './App.css'
 import Landing from './pages/Landing';
-import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
-// import FloatingCTA from './components/FloatingCTA/FloatingCTA';
+import FloatingCTA from './components/FloatingCTA/FloatingCTA';
+
+// The Work and Contact pages (and the Galaxy effect) load only when visited
+const Portfolio = lazy(() => import('./pages/Portfolio'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 // Start each page at the top, or at its #section when the link has one (e.g.
 // "/#pricing" from the navbar). Without this, moving to /contact from the bottom
@@ -46,12 +48,15 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
-        {/* You can add more routes */}
-      </Routes>
+      <FloatingCTA />
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* You can add more routes */}
+        </Routes>
+      </Suspense>
     </Router>
   );
 

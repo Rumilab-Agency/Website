@@ -1,41 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FloatingCTAButton } from './FloatingCTA.style';
 import { WHATSAPP_URL } from '../../data/contact';
 
-const FloatingCTA: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+// Pages that already offer WhatsApp beside their own actions, where a bubble
+// would only cover the form's buttons on a phone.
+const HIDDEN_ON = ['/contact'];
+
+const FloatingCTA = () => {
+  const [visible, setVisible] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    const toggleVisibility = () => {
-        const scrollY = window.scrollY;
-        const viewportHeight = window.innerHeight;
-        const fullHeight = document.documentElement.scrollHeight;
-      
-        const nearBottomThreshold = 150; // px from bottom to start hiding
-      
-        const isScrolledEnough = scrollY > 100;
-        const isNearBottom = scrollY + viewportHeight > fullHeight - nearBottomThreshold;
-      
-        setIsVisible(isScrolledEnough && !isNearBottom);    };
+    const update = () => {
+      const { scrollY, innerHeight } = window;
+      const nearBottom = scrollY + innerHeight > document.documentElement.scrollHeight - 150;
+      setVisible(scrollY > innerHeight * 0.6 && !nearBottom);
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    return () => {
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+    };
+  }, [pathname]);
 
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []);
-
-  if (!isVisible) return null;
+  if (HIDDEN_ON.includes(pathname)) return null;
 
   return (
     <FloatingCTAButton
-      as="a"
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
       title="Chat with us on WhatsApp"
-      isVisible={isVisible}
+      $visible={visible}
+      tabIndex={visible ? 0 : -1}
     >
-      <FaWhatsapp size={28} />
+      <FaWhatsapp aria-hidden="true" />
     </FloatingCTAButton>
   );
 };

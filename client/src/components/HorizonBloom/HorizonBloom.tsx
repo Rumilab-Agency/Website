@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { BloomWrapper, BloomCanvas, BloomFallback } from './HorizonBloom.style';
+import { useNearViewport } from '../../hooks/useNearViewport';
 import sunriseFallback from '../../assets/images/sunrise.png';
 import { createFullscreenProgram, resizeCanvas } from '../../utils/webgl';
 
@@ -169,6 +170,11 @@ const DEFAULT_HORIZON = 0.48;
 
 const RISE_DURATION = 1800;
 
+// The glow is soft and slow, so 30 fps at 1x resolution looks the same as 60 fps
+// at full resolution, at about a quarter of the GPU work.
+const FRAME_MS = 1000 / 30;
+const BLOOM_DPR = 1;
+
 const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
 type HorizonBloomProps = {
@@ -184,10 +190,12 @@ type HorizonBloomProps = {
 const HorizonBloom = ({ horizon = DEFAULT_HORIZON, drop, flip = false }: HorizonBloomProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [failed, setFailed] = useState(false);
+  // The dawn rises from black, so starting a beat after first paint isn't seen
+  const [wrapperRef, ready] = useNearViewport<HTMLDivElement>();
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas || !ready) return;
 
     const gl = canvas.getContext('webgl', { premultipliedAlpha: true, antialias: false });
     if (!gl) {
@@ -213,10 +221,11 @@ const HorizonBloom = ({ horizon = DEFAULT_HORIZON, drop, flip = false }: Horizon
     const pointer = { x: 0, y: 0, targetX: 0, targetY: 0 };
     let riseStart: number | null = null;
     let frame = 0;
+    let lastDraw = 0;
     let inView = true;
 
     const draw = (now: number) => {
-      resizeCanvas(gl, canvas);
+      resizeCanvas(gl, canvas, BLOOM_DPR);
       if (riseStart === null) riseStart = now;
       const rise = reducedMotion ? 1 : easeOutCubic(Math.min((now - riseStart) / RISE_DURATION, 1));
       pointer.x += (pointer.targetX - pointer.x) * 0.05;
@@ -234,7 +243,10 @@ const HorizonBloom = ({ horizon = DEFAULT_HORIZON, drop, flip = false }: Horizon
     };
 
     const loop = (now: number) => {
-      draw(now);
+      if (now - lastDraw >= FRAME_MS - 1) {
+        lastDraw = now;
+        draw(now);
+      }
       frame = inView && !document.hidden ? requestAnimationFrame(loop) : 0;
     };
 
@@ -278,10 +290,10 @@ const HorizonBloom = ({ horizon = DEFAULT_HORIZON, drop, flip = false }: Horizon
       window.removeEventListener('pointermove', onPointerMove);
       dispose();
     };
-  }, [horizon, drop]);
+  }, [horizon, drop, ready]);
 
   return (
-    <BloomWrapper aria-hidden="true" $flip={flip}>
+    <BloomWrapper ref={wrapperRef} aria-hidden="true" $flip={flip}>
       {failed ? (
         <BloomFallback src={sunriseFallback} alt="" />
       ) : (

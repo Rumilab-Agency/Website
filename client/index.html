@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/x-icon" href="/rumilab.ico" />
+  <link rel="preload" href="/fonts/manrope-variable.woff2" as="font" type="font/woff2" crossorigin />
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0,width=device-width">
   <title>RumiLab | High-Conversion Web Design for Small Businesses – Guaranteed to Perform</title>
   <meta name="description"
@@ -15,27 +16,35 @@
   <meta property="og:type" content="website" />
   <meta name="robots" content="index, follow" />
 
-  <script type="text/javascript">
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "rv782crlyy");
+
+
+  <!-- Google Analytics and Microsoft Clarity. Calls are queued right away, but
+       the scripts download only after the page has loaded, so they don't compete
+       with the first render. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-NB1H2H8C2V');
+    window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
+
+    function loadAnalytics() {
+      [
+        'https://www.googletagmanager.com/gtag/js?id=G-NB1H2H8C2V',
+        'https://www.clarity.ms/tag/rv782crlyy',
+      ].forEach(function (src) {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = src;
+        document.head.appendChild(script);
+      });
+    }
+    window.addEventListener('load', function () {
+      if ('requestIdleCallback' in window) requestIdleCallback(loadAnalytics, { timeout: 3000 });
+      else setTimeout(loadAnalytics, 1000);
+    });
   </script>
-
-
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NB1H2H8C2V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-NB1H2H8C2V');
-</script>
-
 <body style="background-color: black;">
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>

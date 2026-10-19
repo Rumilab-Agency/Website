@@ -9,9 +9,11 @@ import {
 import { IoCheckmarkSharp, IoCloseSharp } from "react-icons/io5";
 import { FaAnglesUp } from "react-icons/fa6";
 import HoloFoil from '../HoloFoil/HoloFoil';
+import { useNearViewport } from '../../hooks/useNearViewport';
 
 
 const Pricing = () => {
+  const [popularRef, showFoil] = useNearViewport<HTMLDivElement>();
 
 
   // Example: different features for monthly vs one-time if needed
@@ -49,7 +51,7 @@ const Pricing = () => {
           </PackageCard>
 
           {/* Monthly Plan */}
-          <PopularPackageCard data-aos="fade-in">
+          <PopularPackageCard data-aos="fade-in" ref={popularRef}>
             <PopularBadge>Most Popular</PopularBadge>
             <PackageTitleWrapper>
               <PackageTitle>Monthly</PackageTitle>
@@ -72,7 +74,7 @@ const Pricing = () => {
               <PackageHostingNote>/ month</PackageHostingNote>
             </PackagePricing>
             {/* Gold foil sheen drifting over the card on its own (no tilt, no hover) */}
-            <HoloFoil intensity={0.6} glare={0.5} />
+            {showFoil && <HoloFoil intensity={0.6} glare={0.5} />}
           </PopularPackageCard>
         </PackageCardGrid>
       </PackageCardWrapper>

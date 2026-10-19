@@ -2,10 +2,13 @@ import { WhyUsContainer, WhyUsContentWrapper, WhyUsSubHeadline, WhyUsContent, Wh
 
 import { GradientText } from '../../layouts/AppLayout.style';
 import AuroraBlob from '../AuroraBlob/AuroraBlob';
+import { useNearViewport } from '../../hooks/useNearViewport';
 import whyUsBg from '../../assets/images/bg-why.png';
 
 
-const WhyUs = () => (
+const WhyUs = () => {
+  const [bgRef, showBg] = useNearViewport<HTMLDivElement>();
+  return (
     <WhyUsContainer>
         <WhyUsTitle>
             What We Do
@@ -20,12 +23,13 @@ const WhyUs = () => (
             <WhyUsContent data-aos="fade-right">
                 We only succeed when you do. If a website doesn't bring you more customers, it isn't worth what you paid for it, and we don't believe in charging for work that doesn't pay you back. So every site we build is custom-made to bring in real business: more enquiries, more bookings and more repeat customers. We judge our work by your results, and we stay with you to keep improving them as your business grows.
             </WhyUsContent>
-            <WhyUsBg aria-hidden="true">
-                <AuroraBlob src={whyUsBg} />
+            <WhyUsBg aria-hidden="true" ref={bgRef}>
+                {showBg && <AuroraBlob src={whyUsBg} />}
             </WhyUsBg>
         </WhyUsContentWrapper>
 
     </WhyUsContainer>
-);
+  );
+};
 
 export default WhyUs;
