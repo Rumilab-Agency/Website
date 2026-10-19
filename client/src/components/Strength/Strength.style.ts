@@ -4,6 +4,9 @@ import { breakpoints, Title, Container, ContentWrapper } from '../../layouts/App
 
 export const StrengthContainer = styled(Container)`
   background-color: black;
+  /* The cards' glow halo can reach past the screen edge on phones */
+  overflow-x: hidden;
+  overflow-x: clip;
 
 `;
 
@@ -14,8 +17,8 @@ export const StrengthTitle = styled(Title)`
 
 
 export const StrengthContentWrapper = styled.div`
-    width:65%;
-    max-width: 300px;
+    width: 88%;
+    max-width: 26rem;
     margin:0 auto;
 
     @media (min-width: ${breakpoints.md}) {
@@ -31,6 +34,7 @@ export const StrengthContentWrapper = styled.div`
 
 export const CardGrid = styled(ContentWrapper)`
   display: grid;
+  align-items: stretch;
   gap: 32px;
   grid-template-columns: 1fr;
 
@@ -53,85 +57,96 @@ export const CardGrid = styled(ContentWrapper)`
   }
 `;
 
-export const GlowingCard = styled.div`
-  padding: 48px 30px;
-  border-radius: 50px;
-  aspect-ratio: 1 / 1; /* 1:1 square */
-  position: relative;
-  color: white;
-  text-align: center;
-  font-family: 'Manrope', sans-serif;
-  z-index: 0;
-  overflow: hidden;
-    display: flex;
-  flex-direction: column;
-  justify-content: center; /* Vertical center */
-  align-items: center;     /* Horizontal center */
+// One grid cell; stretches the BorderGlow card inside so all three match height
+export const CardCell = styled.div`
+  display: flex;
 
-
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 2px;
-    border-radius: 50px;
-    background: linear-gradient(180deg, #E95EBC, #AD6EF5);
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    z-index: -1;
+  > .border-glow-card {
+    flex: 1;
   }
 
-  box-shadow: 0px 0px 32px rgba(162, 83, 237, 0.84);
-
- @media (min-width: ${breakpoints.xl}) {
-    padding: 3.75vw 2.344vw;
-    border-radius: 3.906vw;
-    box-shadow: 0px 0px 2.5vw rgba(162, 83, 237, 0.84);
-
-    &::before {
-        padding: 0.156vw;
-        border-radius: 3.906vw;
-    }
-
+  .border-glow-inner {
+    height: 100%;
   }
 `;
 
-export const CardTitle = styled.h2`
-    margin-bottom:16px;
-    font-weight:600;    
-    font-size:16px;
-
-  @media (min-width: ${breakpoints.sm}) {
-    font-size: 20px;
-    margin-bottom:20px;
-  }
-
-  @media (min-width: ${breakpoints.lg}) {
-    font-size: 24px;
-    margin-bottom:24px;
-
-  }
-
+// Content of each BorderGlow card: left-aligned so the longer copy scans easily.
+export const CardBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 19rem;
+  padding: 2.25rem 2rem;
+  border-radius: 50px;
+  /* Faint nebula haze held inside the card, lit from the top */
+  background:
+    radial-gradient(120% 70% at 50% 0%, rgb(180 155 255 / 15%), transparent 65%),
+    radial-gradient(80% 60% at 85% 100%, rgb(244 200 255 / 7%), transparent 70%);
+  color: white;
+  text-align: left;
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 1.875vw;
-    margin-bottom:1.875vw;
-
+    min-height: 22rem;
+    padding: 2.75vw 2.5vw;
   }
+`;
 
+export const Kicker = styled.p`
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a084ff;
 
+  @media (min-width: ${breakpoints.xl}) {
+    font-size: 0.9vw;
+  }
+`;
+
+// The guarantee card's headline number
+export const Figure = styled.p`
+  margin-top: 0.75rem;
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  background: linear-gradient(90deg, #a084ff, #f780ff 60%, #ffd1e3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
+
+export const CardTitle = styled.h3`
+  margin-top: 0.75rem;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  @media (min-width: ${breakpoints.xl}) {
+    font-size: 1.75vw;
+  }
 `;
 
 export const CardContent = styled.p`
+  margin-top: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
-  font-size: 0.875rem;
-  color: #ccc;
+  line-height: 1.55;
+  color: #c9c3d8;
 
   @media (min-width: ${breakpoints.xl}) {
-    font-size: 1.094vw;
+    font-size: 1.1vw;
+  }
+`;
+
+// Small print pinned to the bottom of a card
+export const CardNote = styled.p`
+  margin-top: auto;
+  padding-top: 1.25rem;
+  font-size: 0.875rem;
+  color: #8f899f;
+
+  @media (min-width: ${breakpoints.xl}) {
+    font-size: 0.9vw;
   }
 `;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { breakpoints } from '../../layouts/AppLayout.style';
+import { canHover } from '../../styles/animations';
 
 export const FooterContainer = styled.footer`
   background-color: black;
@@ -36,7 +37,7 @@ export const FooterWrapper = styled.section`
 
 export const FooterColumn = styled.div``;
 
-export const FooterHeading = styled.h4`
+export const FooterHeading = styled.h2`
   font-size: 0.75rem;
   font-weight: 500;
   color: #ccc;
@@ -59,9 +60,21 @@ export const FooterItem = styled.p`
   gap: 0.5rem;
   margin-bottom: 0.75rem;
   font-size: 1rem;
-  cursor: pointer;
 
-  &:hover {
+  a {
+    transition: color 150ms ease;
+  }
+
+  ${canHover} {
+    a:hover {
+      color: #a0a0ff;
+    }
+  }
+
+  a:focus-visible {
+    outline: 2px solid #f780ff;
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 
   @media (min-width: ${breakpoints.lg}) {

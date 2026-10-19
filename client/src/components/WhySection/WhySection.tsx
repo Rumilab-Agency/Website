@@ -1,7 +1,8 @@
 import { WhyUsContainer, WhyUsContentWrapper, WhyUsSubHeadline, WhyUsContent, WhyUsHeadline, WhyUsTitle, WhyUsBg } from './WhySection.style';
 
-import whyUsBg from '../../assets/images/bg-why.png';
 import { GradientText } from '../../layouts/AppLayout.style';
+import AuroraBlob from '../AuroraBlob/AuroraBlob';
+import whyUsBg from '../../assets/images/bg-why.png';
 
 
 const WhyUs = () => (
@@ -11,18 +12,20 @@ const WhyUs = () => (
         </WhyUsTitle>
         <WhyUsContentWrapper>
             <WhyUsSubHeadline data-aos="fade-right">
-                <GradientText>What We Do at RumiLab</GradientText>
+                <GradientText>The RumiLab principle</GradientText>
             </WhyUsSubHeadline>
             <WhyUsHeadline data-aos="fade-right">
-                Custom Websites That <br /> Grows Your Business
+                A Website Should Earn <br /> More Than It Costs
             </WhyUsHeadline>
             <WhyUsContent data-aos="fade-right">
-                At RumiLab, we handcraft every website — no templates, no shortcuts. Each project is designed to showcase your brand and built to generate real business results, like more calls, appointments, and repeat customers. We see ourselves as your digital partner, ensuring your website continues to work for you as your business grows.
+                We only succeed when you do. If a website doesn't bring you more customers, it isn't worth what you paid for it, and we don't believe in charging for work that doesn't pay you back. So every site we build is custom-made to bring in real business: more enquiries, more bookings and more repeat customers. We judge our work by your results, and we stay with you to keep improving them as your business grows.
             </WhyUsContent>
-            <WhyUsBg src={whyUsBg} alt="Why Us Background" />
+            <WhyUsBg aria-hidden="true">
+                <AuroraBlob src={whyUsBg} />
+            </WhyUsBg>
         </WhyUsContentWrapper>
 
     </WhyUsContainer>
 );
 
-export default WhyUs; 
+export default WhyUs;

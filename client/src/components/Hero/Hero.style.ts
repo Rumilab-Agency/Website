@@ -1,40 +1,62 @@
 import styled, { keyframes } from 'styled-components';
-import { breakpoints, Title, SubTitle } from '../../layouts/AppLayout.style';
+import { breakpoints, SubTitle, CTAButton } from '../../layouts/AppLayout.style';
+import { CTAGroup } from '../WhatsAppButton/WhatsAppButton.style';
 
-import { fadeIn, sunriseGlow } from '../../styles/animations'; // adjust the path as needed
+import { fadeIn, easeOut } from '../../styles/animations'; // adjust the path as needed
 
+// The hero is one screen split at the planet's horizon: the headline sits just
+// above it, the subheadline and CTA on the planet below. Keep in step with
+// HORIZON in HorizonBloom.tsx (0.48 from the bottom = 52% from the top).
+const HERO_SPLIT = '52fr 48fr';
 
+export const HeroContainer = styled.section`
+  /* Headline size, shared so the rim overlap and the space below scale with it */
+  --headline-size: clamp(2.25rem, 10.5vw, 3.5rem);
 
-export const sunrise = keyframes`
-  0% { filter: blur(2.5rem) brightness(1.1); opacity: 0.7; }
-  50% { filter: blur(3.75rem) brightness(1.3); opacity: 1; }
-  100% { filter: blur(2.5rem) brightness(1.1); opacity: 0.7; }
-`;
+  @media (min-width: ${breakpoints.md}) {
+    --headline-size: 7.5vw;
+  }
 
+  @media (min-width: ${breakpoints.xl}) {
+    --headline-size: 8vw;
+  }
 
-export const HeroContainer = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-rows: ${HERO_SPLIT};
+  height: 100vh;
+  height: 100svh;
+  min-height: 560px;
   background-color: #010101;
-
+  overflow: hidden;
 `;
 
-export const HeadlineWrapper = styled.div`
+export const HeroTop = styled.div`
+  position: relative;
+  z-index: 1;
   display: flex;
-  align-items: center;
-  justify-content: center; 
   flex-direction: column;
-  height: 100vh; 
-  width: 90%;
-  margin:0 auto;
-  background-color:#010101;
-
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 5%;
 `;
 
+export const HeroBottom = styled.div`
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2rem, 7vh, 4.5rem);
+  /* Clear the lower half of the headline that hangs over the planet */
+  padding: calc(var(--headline-size) * 0.35 + clamp(2.5rem, 8vh, 6rem)) 5% 0;
+`;
 
 const textReveal = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(20px) scale(0.95);
-    filter: blur(10px);
+    transform: translateY(12px) scale(0.97);
+    filter: blur(8px);
   }
   100% {
     opacity: 1;
@@ -43,28 +65,58 @@ const textReveal = keyframes`
   }
 `;
 
-export const Headline = styled(Title)`
-  background: linear-gradient(180deg, #a084ff, #f780ff, #ffd1e3);
-  background-size: 100% 150%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  font-weight: 700;
-  animation: ${textReveal} 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  opacity: 0;
-  transform-origin: center;
-  will-change: transform, opacity, filter;
-  
-  @media (min-width: ${breakpoints.xl}) {
+const riseIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 `;
 
-export const SubHeadlinePrice = styled(SubTitle)`
-  color: #ccc;
+export const Headline = styled.h1`
+  /* Lower the headline so the planet's rim cuts through the middle of the
+     second line: ~0.2em gets the baseline to the rim, a further ~0.35em
+     (half the letter height) sinks the word halfway in. */
+  margin: 0 0 -0.55em;
   text-align: center;
-  margin: 0 0 3rem 0;
- opacity: 0;
-  animation: ${fadeIn} 2.5s ease-in-out forwards;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-size: var(--headline-size);
+`;
+
+// Line one: white
+export const HeadlineLight = styled.span`
+  display: block;
+  color: #fff;
+  font-weight: 700;
+  opacity: 0;
+  animation: ${textReveal} 1.2s ${easeOut} forwards;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: ${fadeIn} 0.6s ease forwards;
+  }
+`;
+
+// Line two: in the brand gradient
+export const HeadlineBold = styled.span`
+  display: block;
+  font-weight: 700;
+  /* room for descenders so the gradient clip doesn't crop them */
+  padding-bottom: 0.08em;
+  background: linear-gradient(90deg, #a084ff, #f780ff 55%, #ffd1e3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  animation: ${textReveal} 1.2s ${easeOut} 0.12s forwards;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: ${fadeIn} 0.6s ease forwards;
+  }
 `;
 
 export const PriceHighlight = styled.strong`
@@ -74,36 +126,34 @@ export const PriceHighlight = styled.strong`
   font-weight: 500;
 `;
 
-
-
 export const Subheadline = styled(SubTitle)`
-  color: #ccc;
+  color: #ddd;
   text-align: center;
-  margin: 0 0 3rem 0;
+  font-weight: 500;
+  line-height: 1.45;
+  max-width: 40rem;
+  /* Even line lengths, no lone last word */
+  text-wrap: balance;
   opacity: 0;
-  animation: ${fadeIn} 3s ease-in-out forwards;
-  font-weight:500;
-  max-width: 960px;
+  animation: ${riseIn} 0.9s ${easeOut} 0.4s forwards;
 
   @media (min-width: ${breakpoints.xl}) {
-    max-width: 75vw;
+    font-size: 1.5vw;
+    max-width: 54vw;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: ${fadeIn} 0.6s ease 0.2s forwards;
   }
 `;
 
+export const HeroCTA = styled(CTAButton)``;
 
-
-export const SunriseImage = styled.img`
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-top: -4rem; /* Optional: overlap slightly with Hero */
-  z-index: -1;
+export const HeroActions = styled(CTAGroup)`
   opacity: 0;
-  animation: ${sunriseGlow} 2.5s ease-in-out forwards;
+  animation: ${riseIn} 0.9s ${easeOut} 0.55s forwards;
 
-@media (min-width: ${breakpoints.md}) {
-    margin-top: -12rem;
+  @media (prefers-reduced-motion: reduce) {
+    animation: ${fadeIn} 0.6s ease 0.3s forwards;
   }
 `;
-
-

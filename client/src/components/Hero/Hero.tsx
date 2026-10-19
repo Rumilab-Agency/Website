@@ -1,24 +1,33 @@
-import { HeroContainer, Headline, HeadlineWrapper, Subheadline, SunriseImage, PriceHighlight } from './Hero.style';
-import sunriseGlow from '../../assets/images/sunrise.png';
+import {
+  HeroContainer, HeroTop, HeroBottom, Headline, HeadlineLight, HeadlineBold,
+  Subheadline, PriceHighlight, HeroCTA, HeroActions,
+} from './Hero.style';
+import { Link } from 'react-router-dom';
+import HorizonBloom from '../HorizonBloom/HorizonBloom';
+import WhatsAppButton from '../WhatsAppButton/WhatsAppButton';
 
 
 const Hero = () => (
   <HeroContainer>
-    <HeadlineWrapper>
+    <HorizonBloom />
+    <HeroTop>
       <Headline>
-        Websites Crafted to Convert
-        {/* Crafting Digital IdentitiesThrough Custom Design. */}
+        <HeadlineLight>Websites Crafted</HeadlineLight>
+        <HeadlineBold>to Convert</HeadlineBold>
       </Headline>
+    </HeroTop>
+    <HeroBottom>
       <Subheadline>
-        Custom websites built for Singapore small businesses — engineered to drive <PriceHighlight>enquiries, bookings, and sales</PriceHighlight>. Guaranteed.
+        Custom websites built for Singapore small businesses — made to drive <PriceHighlight>enquiries, bookings, and sales</PriceHighlight>. Guaranteed.
       </Subheadline>
-    </HeadlineWrapper>
-    {/* <SunWrapper>
-      <SunriseGlow />
-      <SunCurve />
-    </SunWrapper> */}
-    <SunriseImage src={sunriseGlow} alt="Sunrise Glow" />
+      <HeroActions>
+        <HeroCTA as={Link} to="/contact">
+          Start your project
+        </HeroCTA>
+        <WhatsAppButton />
+      </HeroActions>
+    </HeroBottom>
   </HeroContainer>
 );
 
-export default Hero; 
+export default Hero;
