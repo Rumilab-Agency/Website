@@ -1,128 +1,122 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import logoImg from '../../assets/images/logo.png';
 
 import {
   NavbarContainer,
   Logo,
-  NavbarCTAButton,
-  // NavbarCTAButtonMobile,
   LogoImage,
-  // NavList,
-  // NavItem,
-  // HamburgerButton,
-  // HamburgerLine,
+  NavRight,
+  NavList,
+  NavItem,
+  NavbarCTAButton,
+  NavWhatsApp,
+  MenuButton,
+  MenuPanel,
+  MenuList,
 } from './Navbar.styles';
 
 interface NavbarProps {
   onMenuClick?: () => void;
 }
 
+// "Pricing" is a section of the home page, so it's a plain link (never marked as
+// the current page); "Work" is its own page and gets the active underline.
 const Navbar: React.FC<NavbarProps> = () => {
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [atTop, setAtTop] = useState(() => window.scrollY < 10);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const lastScrollY = useRef(0);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY.current;
+      setAtTop(currentScrollY < 10);
 
       if (currentScrollY < 50) {
         // Always show navbar near top
         setIsVisible(true);
-      } else if (currentScrollY > lastScrollY) {
-        // Scrolling down -> hide navbar
-        setIsVisible(false);
+      } else if (Math.abs(delta) < 6) {
+        // Ignore tiny scroll jitter (trackpads, momentum tails)
+        return;
       } else {
-        // Scrolling up -> show navbar
-        setIsVisible(true);
+        // Scrolling down hides, scrolling up shows
+        setIsVisible(delta < 0);
       }
 
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
-  // const toggleMenu = () => {
-  //   setIsMenuOpen(!isMenuOpen);
-  // };
+  // Close the phone menu whenever the page (or #section) changes
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname, location.hash]);
+
+  // Escape closes the menu and hands focus back to its button
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setMenuOpen(false);
+      menuButtonRef.current?.focus();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [menuOpen]);
 
   return (
-
-
-    <NavbarContainer className={isVisible ? 'visible' : 'hidden'}>
-      <Logo>
-        <LogoImage src={logoImg} alt="RomiLab Logo" />
+    <NavbarContainer
+      className={`${isVisible || menuOpen ? 'visible' : 'hidden'}${atTop && !menuOpen ? ' at-top' : ''}`}
+      aria-label="Main"
+    >
+      <Logo as={Link} to="/" aria-label="RumiLab home">
+        <LogoImage src={logoImg} alt="RumiLab" />
       </Logo>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-        {/* <NavList>
-          <NavItem>About Us</NavItem>
-          <NavItem
-            as="a"
-            href="https://rumilab.co"
-          >Portfolio</NavItem>
-        </NavList> */}
-        <NavbarCTAButton
-          as="a"
-          href="https://wa.me/6598323646"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Get in touch
+      <NavRight>
+        <NavList>
+          <li><NavItem to="/portfolio">Work</NavItem></li>
+          <li><NavItem as={Link} to="/#pricing">Pricing</NavItem></li>
+        </NavList>
+
+        <NavWhatsApp iconOnly />
+        <NavbarCTAButton as={Link} to="/contact">
+          Start your project
         </NavbarCTAButton>
-        {/* <HamburgerButton
-          onClick={toggleMenu}
-          className={isMenuOpen ? 'active' : ''}
-          aria-label="Toggle menu"
+
+        <MenuButton
+          ref={menuButtonRef}
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          onClick={() => setMenuOpen((open) => !open)}
         >
-          <HamburgerLine />
-          <HamburgerLine />
-          <HamburgerLine />
-        </HamburgerButton> */}
-      </div>
+          <span />
+          <span />
+          <span />
+        </MenuButton>
+      </NavRight>
 
-      {/* {isMenuOpen && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '80px',
-            textAlign: 'center',
-            left: '0',
-            width: '100%',
-            background: 'black',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-            padding: '1rem',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem',
-            zIndex: 1000,
-          }}
-        >
-          <NavItem href="#about" style={{ textDecoration: 'none' }}>
-            About Us
-          </NavItem>
-
-          <NavItem href="https://rumilab.co" style={{ textDecoration: 'none' }}>
-            Portfolio
-          </NavItem>
-
-          <NavbarCTAButtonMobile
-            as="a"
-            href="https://wa.me/6598323646"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Get in touch
-          </NavbarCTAButtonMobile>
-        </div>
-      )} */}
-
-
+      {menuOpen && (
+        <MenuPanel id="mobile-menu">
+          <MenuList>
+            <li><NavLink to="/" end>Home</NavLink></li>
+            <li><NavLink to="/portfolio">Work</NavLink></li>
+            <li><Link to="/#pricing">Pricing</Link></li>
+          </MenuList>
+        </MenuPanel>
+      )}
     </NavbarContainer>
-
   );
 };
 

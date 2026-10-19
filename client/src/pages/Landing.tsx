@@ -3,27 +3,22 @@ import AppLayout from '../layouts/AppLayout';
 import Hero from '../components/Hero/Hero';
 import WhySection from '../components/WhySection/WhySection';
 import Strength from '../components/Strength/Strength';
+import HowItWorks from '../components/HowItWorks/HowItWorks';
 import Service from '../components/ServiceSection/Service';
 import Pricing from '../components/Pricing/Pricing';
 import CTA from '../components/CTA/CTA';
 
-// import Portfolio from '../components/Portfolio/Portfolio';
-
-
 const Landing = () => {
     return (
-        <>
       <AppLayout>
         <Hero />
         <WhySection/>
         <Strength/>
-        <Service/> 
-                        {/* <Portfolio/> */}
-
+        <HowItWorks/>
+        <Service/>
         <Pricing/>
         <CTA/>
       </AppLayout>
-      </>
     );
   };
 

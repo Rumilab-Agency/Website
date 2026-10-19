@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FloatingCTAButton } from './FloatingCTA.style';
+import { WHATSAPP_URL } from '../../data/contact';
 
 const FloatingCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,7 +28,7 @@ const FloatingCTA: React.FC = () => {
   return (
     <FloatingCTAButton
       as="a"
-      href="https://wa.me/98323646"
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"

@@ -1,71 +1,93 @@
-
+import type { IconType } from 'react-icons';
 import {
-  ServiceContainer, ServiceTitle, ServiceContentWrapper,
-  ServiceCard, IconContainer, CardTitle, CardDescription, IconImage, ServiceBg
+  IoColorPaletteOutline, IoPhonePortraitOutline, IoSearchOutline,
+  IoChatbubblesOutline, IoStatsChartOutline, IoCloudDoneOutline,
+} from 'react-icons/io5';
+import {
+  ServiceContainer, ServiceTitle, ServiceIntro, IncludedGrid, IncludedItem,
+  IncludedIcon, ItemTitle, ItemText, PlanTag, ServiceAurora,
 } from './Service.style';
 
-import serviceBg from '../../assets/images/bg-service.png';
+import SoftAurora from '../SoftAurora/SoftAurora';
 
-import designIcon from '../../assets/images/service-icon/design.png';
-import businessIcon from '../../assets/images/service-icon/business.png';
-import responsiveIcon from '../../assets/images/service-icon/responsive.png';
-import seoIcon from '../../assets/images/service-icon/seo.png';
-import supportIcon from '../../assets/images/service-icon/support.png';
-
-
-const services = [
+// "What's included": what every site comes with, in plain words. Items that only
+// come with the Monthly plan are tagged.
+const included: { icon: IconType; title: string; text: string; monthly?: boolean }[] = [
   {
-    icon: designIcon,
-    title: 'Custom Design',
-    description: 'Unique, brand-driven designs tailored to your business goals — no templates, just thoughtful creativity.',
+    icon: IoColorPaletteOutline,
+    title: 'Custom design',
+    text: 'Made around your brand and your customers. Never a template.',
   },
   {
-    icon: businessIcon,
-    title: 'Performance-Based Guarantee',
-    description:
-      'We guarantee your website converts at least 4% of visitors into leads or sales within 90 days — or we refund your monthly fee and keep fixing it until it does.',
+    icon: IoPhonePortraitOutline,
+    title: 'Fast on every phone',
+    text: 'Designed for phones first. Loads in under a second and scores 90+ on Google PageSpeed.',
   },
   {
-    icon: responsiveIcon,
-    title: 'Mobile-first',
-    description: 'Over 60% of web traffic comes from mobile — we build mobile-first to keep your business front and center.',
+    icon: IoSearchOutline,
+    title: 'Found on Google',
+    text: 'Search-ready from launch, with your Google Business Profile set up and linked.',
   },
   {
-    icon: seoIcon,
-    title: 'SEO-Ready',
-    description: 'Foundational SEO setup to improve visibility and help your site rank on search engines.',
+    icon: IoChatbubblesOutline,
+    title: 'WhatsApp and bookings',
+    text: 'Enquiries, chats and online bookings connected, so visitors can act in one tap.',
   },
-
   {
-    icon: supportIcon,
-    title: 'Optimized Page Speed',
-    description: 'Load your site in under 1 second and score 90+ on PageSpeed for top-tier performance.',
+    icon: IoStatsChartOutline,
+    title: 'Monthly progress report',
+    text: 'Visits, button clicks and how close you are to the 5% guarantee.',
+    monthly: true,
   },
-
+  {
+    icon: IoCloudDoneOutline,
+    title: 'Hosting and unlimited edits',
+    text: 'We keep the site online, fast and up to date. Ask for changes any time.',
+    monthly: true,
+  },
 ];
 
 const Service = () => (
   <ServiceContainer>
-    <ServiceTitle>
-      What We Offer
-    </ServiceTitle>
-    <ServiceContentWrapper>
-
-      {services.map((service, idx) => (
-        <ServiceCard key={idx} data-aos="fade-up" data-aos-delay={idx * 100}>
-          <IconContainer>
-            <IconImage src={service.icon} alt={service.title} />
-          </IconContainer>
-          <CardTitle>{service.title}</CardTitle>
-          <CardDescription>{service.description}</CardDescription>
-        </ServiceCard>
+    <ServiceAurora aria-hidden="true">
+      <SoftAurora
+        speed={0.6}
+        scale={1.5}
+        // Lower bandSpread widens the band but dims its peak by e^(1 - bandSpread);
+        // brightness is raised by the same factor to keep the peak unchanged.
+        brightness={1.8}
+        color1="#a084ff"
+        color2="#f780ff"
+        noiseFrequency={2.5}
+        noiseAmplitude={3}
+        bandHeight={0.5}
+        bandSpread={0.45}
+        octaveDecay={0.1}
+        layerOffset={0}
+        colorSpeed={1.0}
+        enableMouseInteraction={false}
+        mouseInfluence={0.25}
+        resolution={0.5}
+        fps={30}
+      />
+    </ServiceAurora>
+    <ServiceTitle>What&apos;s included</ServiceTitle>
+    <ServiceIntro>Everything your website needs to win customers, built in from day one.</ServiceIntro>
+    <IncludedGrid>
+      {included.map(({ icon: Icon, title, text, monthly }, idx) => (
+        <IncludedItem key={title} data-aos="fade-up" data-aos-delay={(idx % 3) * 60}>
+          <IncludedIcon aria-hidden="true"><Icon /></IncludedIcon>
+          <div>
+            <ItemTitle>
+              {title}
+              {monthly && <PlanTag>Monthly plan</PlanTag>}
+            </ItemTitle>
+            <ItemText>{text}</ItemText>
+          </div>
+        </IncludedItem>
       ))}
-
-      <ServiceBg src={serviceBg} alt="Service Background" />
-
-
-    </ServiceContentWrapper>
+    </IncludedGrid>
   </ServiceContainer>
 );
 
-export default Service; 
+export default Service;

@@ -1,4 +1,5 @@
 import styled, { } from 'styled-components';
+import { easeOut, canHover } from '../styles/animations';
 
 // src/styles/theme.ts
 export const breakpoints = {
@@ -10,7 +11,7 @@ export const breakpoints = {
 
 
 
-export const MainContent = styled.div`
+export const MainContent = styled.main`
   // padding-top: 4.438rem;  // 71px
   background: black;
 
@@ -29,7 +30,8 @@ export const MainContent = styled.div`
 
 
 
-export const Title = styled.h1`
+// Section titles. The page's only h1 is the hero headline.
+export const Title = styled.h2`
     font-size: 1.75rem;
     font-weight: 600;
     text-align: center;
@@ -58,39 +60,6 @@ export const Title = styled.h1`
 
 
   `;
-
-export const Headline = styled.h1`
-  font-size: 1.75rem;  // 28px
-  font-weight: 800;
-  text-align: center;
-  background: linear-gradient(90deg, #a084ff 0%, #f780ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  margin: 0 0 0.5rem 0;  // 8px
-  letter-spacing: -0.125rem;  // -2px
-
-  @media (min-width: ${breakpoints.md}) {
-    font-size: 2.5rem;  // 56px
-    margin: 0 0 1rem 0;  // 24px
-  }
-
-  @media (min-width: ${breakpoints.md}) {
-    font-size: 3.5rem;  // 56px
-    margin: 0 0 1.5rem 0;  // 24px
-  }
-
-  @media (min-width: ${breakpoints.lg}) {
-    margin: 0 0 1.5rem 0;  // 24px
-  }
-
-  @media (min-width: ${breakpoints.xl}) {
-    font-size: 4.375vw;
-    margin: 0 0 1.875vw 0;
-  }
-`;
-
 
 export const SubTitle = styled.p`
   font-size: 1rem;  // 16px
@@ -204,10 +173,22 @@ export const CTAButton = styled.button`
   font-size: 0.875rem;  // 14px
   cursor: pointer;
   text-decoration:none;
-  transition: background 0.2s, color 0.2s;
-  &:hover {
-    background: #a0a0ff;
-    color: #111;
+  transition: background-color 200ms ease, color 200ms ease, transform 160ms ${easeOut};
+
+  ${canHover} {
+    &:hover {
+      background-color: #a0a0ff;
+      color: #111;
+    }
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #f780ff;
+    outline-offset: 3px;
   }
 
     @media (min-width: ${breakpoints.md}) {
@@ -233,10 +214,22 @@ export const CTAButtonLarge = styled.button`
   font-size: 1.125rem;  // 18px
   cursor: pointer;
   text-decoration:none;
-  transition: background 0.2s, color 0.2s;
-  &:hover {
-    background: #a0a0ff;
-    color: #111;
+  transition: background-color 200ms ease, color 200ms ease, transform 160ms ${easeOut};
+
+  ${canHover} {
+    &:hover {
+      background-color: #a0a0ff;
+      color: #111;
+    }
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #f780ff;
+    outline-offset: 3px;
   }
 
     @media (min-width: ${breakpoints.md}) {

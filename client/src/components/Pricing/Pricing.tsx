@@ -8,6 +8,7 @@ import {
 
 import { IoCheckmarkSharp, IoCloseSharp } from "react-icons/io5";
 import { FaAnglesUp } from "react-icons/fa6";
+import HoloFoil from '../HoloFoil/HoloFoil';
 
 
 const Pricing = () => {
@@ -17,7 +18,7 @@ const Pricing = () => {
   // const features = billingCycle === 'monthly' ? monthlyFeatures : oneTimeFeatures;
 
   return (
-    <PricingContainer>
+    <PricingContainer id="pricing">
       <PricingTitle>Plans and Packages</PricingTitle>
 
 
@@ -37,19 +38,19 @@ const Pricing = () => {
               <PackageListItem><IoCheckmarkSharp />+$25/mo Hosting</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$50/mo Unlimited Edits Add-on</PackageListItem>
               <PackageListItem></PackageListItem>
-              <PackageListItem className="text-muted"><IoCloseSharp />Perfomance-based Guarantee (4%)</PackageListItem>
+              <PackageListItem className="text-muted"><IoCloseSharp />Performance-based Guarantee (5%)</PackageListItem>
               <PackageListItem className="text-muted"><IoCloseSharp />Monthly Analytics Report (PDF)</PackageListItem>
 
               <PackageListItem className="text-muted"><IoCloseSharp /> 24/7 Support</PackageListItem>
               <PackageListItem className="text-muted"><IoCloseSharp /> Lifetime Updates</PackageListItem>
             </PackageListItemWrapper>
-            <PackagePricing>$4000
+            <PackagePricing>$4,000
             </PackagePricing>
           </PackageCard>
 
           {/* Monthly Plan */}
           <PopularPackageCard data-aos="fade-in">
-            <PopularBadge>More Popular</PopularBadge>
+            <PopularBadge>Most Popular</PopularBadge>
             <PackageTitleWrapper>
               <PackageTitle>Monthly</PackageTitle>
               <PackageSubtitle>Spread the cost, stay supported</PackageSubtitle>
@@ -62,7 +63,7 @@ const Pricing = () => {
               <PackageListItem><IoCheckmarkSharp />Includes Hosting</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />Unlimited Edits</PackageListItem>
               <PackageListItem></PackageListItem>
-              <PackageListItem><FaAnglesUp />Perfomance-based Guarantee (4%)</PackageListItem>
+              <PackageListItem><FaAnglesUp />Performance-based Guarantee (5%)</PackageListItem>
               <PackageListItem><FaAnglesUp />Monthly Analytics Report (PDF)</PackageListItem>
               <PackageListItem><FaAnglesUp /> 24/7 Support</PackageListItem>
               <PackageListItem><FaAnglesUp /> Lifetime Updates</PackageListItem>
@@ -70,6 +71,8 @@ const Pricing = () => {
             <PackagePricing>$180
               <PackageHostingNote>/ month</PackageHostingNote>
             </PackagePricing>
+            {/* Gold foil sheen drifting over the card on its own (no tilt, no hover) */}
+            <HoloFoil intensity={0.6} glare={0.5} />
           </PopularPackageCard>
         </PackageCardGrid>
       </PackageCardWrapper>

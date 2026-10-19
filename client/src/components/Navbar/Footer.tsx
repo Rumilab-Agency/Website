@@ -60,7 +60,7 @@ const Footer: React.FC = () => (
           <FooterIcon>
             <FaPhone />
           </FooterIcon>
-          <a href="tel:+6598323646">+65 98323646</a>
+          <a href="tel:+6598323646">+65 9832 3646</a>
         </FooterItem>
       </FooterColumn>
 

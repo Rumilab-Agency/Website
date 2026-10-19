@@ -6,6 +6,10 @@ import { breakpoints, SubTitle, Title, Content, Container,ContentWrapper, Sectio
 export const WhyUsContainer = styled(Container)`
   background-color: black;
   position:relative;
+  /* The aurora blob's glow overhangs the right edge; clip it sideways only
+     (clip, unlike hidden, doesn't make this a scroll container). */
+  overflow-x: hidden;
+  overflow-x: clip;
 
 `;
 
@@ -42,7 +46,7 @@ export const WhyUsSubHeadline = styled(SubTitle)`
     font-weight:500;
 `;
 
-export const WhyUsHeadline = styled(SectionTitle)`
+export const WhyUsHeadline = styled(SectionTitle).attrs({ as: 'h3' })`
   margin-top: 0.625rem;
   margin-bottom: 1.25rem;
 
@@ -91,28 +95,20 @@ export const WhyUsContent = styled(Content)`
 `;
 
 
-export const WhyUsBg = styled.img`
-
-
+export const WhyUsBg = styled.div`
   width: 17.813rem;
+  aspect-ratio: 735 / 790; /* bg-why.png */
   right: 0;
   bottom: 20%;
   opacity:0.9;
-  height: auto;
   position:absolute;
-  margin-top: -4rem; /* Optional: overlap slightly with Hero */
   z-index: 1;
-  pointer-event:none;
-
-
-  @media (min-width: ${breakpoints.sm}) {
-  }
+  pointer-events: none;
 
   @media (min-width: ${breakpoints.md}) {
       width: 24.063rem;
       right: 0;
       bottom: 20%;
-
   }
 
   @media (min-width: ${breakpoints.lg}) {
@@ -122,12 +118,5 @@ export const WhyUsBg = styled.img`
 
   @media (min-width: ${breakpoints.xl}) {
       width: 57.422vw;
-
   }
-
 `;
-
-
-
-
-

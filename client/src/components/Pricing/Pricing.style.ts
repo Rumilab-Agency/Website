@@ -3,6 +3,7 @@ import { breakpoints, Title, Container, } from '../../layouts/AppLayout.style';
 
 
 export const PricingContainer = styled(Container)`
+  scroll-margin-top: 1rem;
 `;
 
 
@@ -132,13 +133,14 @@ width: 92%;
 `;
 
 export const PackageCard = styled.div`
+  /* Corner radius as a variable so overlays (the Monthly glare) can match it */
+  --card-radius: 1.5rem;
   position: relative;
   background-color: #111;
   color: white;
   z-index: 30;
-  transition: all 0.3s ease;
   padding: 2rem;
-  border-radius: 1.5rem;
+  border-radius: var(--card-radius);
 
   &::before {
     content: '';
@@ -157,8 +159,9 @@ export const PackageCard = styled.div`
   }
 
   @media (min-width: ${breakpoints.xl}) {
+    --card-radius: 1.875vw;
     padding: 2.5vw;
-    border-radius: 1.875vw;
+    border-radius: var(--card-radius);
     
     &::before {
       padding: 0.156vw;

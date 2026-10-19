@@ -1,0 +1,12 @@
+.holo-foil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  pointer-events: none;
+  /* Light only: black areas leave the card beneath untouched */
+  mix-blend-mode: screen;
+}
