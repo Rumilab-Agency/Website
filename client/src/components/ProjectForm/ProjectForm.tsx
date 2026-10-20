@@ -6,7 +6,7 @@ import {
   ProgressRow, ProgressTrack, ProgressDot, ProgressCount,
   StepPanel, Question, Hint, ErrorText,
   TextInput, TextArea, FollowUp, FollowUpLabel,
-  ChoiceGrid, Choice, ChoiceNote,
+  ChoiceGrid, Choice,
   Actions, PrimaryButton, SecondaryButton, Fallback,
   DoneTitle, DoneBody, Loader,
   type StepMotion,
@@ -14,16 +14,15 @@ import {
 
 // A one-question-at-a-time project enquiry, modelled on the Wealthous quote form.
 
-type StepKey = 'company' | 'industry' | 'website' | 'goals' | 'plan' | 'name' | 'email' | 'phone' | 'notes';
+type StepKey = 'company' | 'industry' | 'website' | 'goals' | 'name' | 'email' | 'phone' | 'notes';
 
-const STEPS: StepKey[] = ['company', 'industry', 'website', 'goals', 'plan', 'name', 'email', 'phone', 'notes'];
+const STEPS: StepKey[] = ['company', 'industry', 'website', 'goals', 'name', 'email', 'phone', 'notes'];
 
 const COPY: Record<StepKey, { question: string; hint: string }> = {
   company: { question: "What's your business called?", hint: "We'll set up your project under this name." },
   industry: { question: 'What industry are you in?', hint: 'So we can show you work from businesses like yours.' },
   website: { question: 'Do you have a website today?', hint: "If you do, we'll take a look before we talk." },
   goals: { question: 'What should your new website get you?', hint: 'Pick everything that matters.' },
-  plan: { question: 'Which plan are you leaning towards?', hint: "No commitment. It just helps us prepare." },
   name: { question: 'Who should we speak to?', hint: 'Your name, or whoever looks after the project.' },
   email: { question: "What's the best email to reach you?", hint: "We'll send our reply here." },
   phone: { question: 'Want to leave a phone or WhatsApp number?', hint: 'Optional. Handy for a quick call.' },
@@ -41,13 +40,7 @@ const INDUSTRIES = [
   'Other',
 ];
 
-const GOALS = ['More enquiries', 'More bookings', 'Online sales', 'Look more credible', 'Not sure yet'];
-
-const PLANS = [
-  { value: 'One-Time', note: '$4,000 one-off' },
-  { value: 'Monthly', note: '$180 / month' },
-  { value: 'Not sure yet', note: "We'll help you choose" },
-];
+const GOALS = ['More enquiries', 'More bookings', 'Online sales', 'Look more credible', 'Not sure yet', 'Other'];
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const EXIT_MS = 200;
@@ -126,9 +119,8 @@ const ProjectForm = ({ onStatusChange, onStepComplete, onStepChange }: Props) =>
       case 'website':
         return values.hasWebsite ? null : 'Please choose one.';
       case 'goals':
-        return values.goals.length > 0 ? null : 'Please pick at least one.';
-      case 'plan':
-        return values.plan ? null : 'Please choose one.';
+        if (values.goals.length === 0) return 'Please pick at least one.';
+        return !values.goals.includes('Other') || values.goalsOther.trim() ? null : 'Please tell us what else you need.';
       case 'name':
         return values.name.trim() ? null : 'Please enter a name.';
       case 'email':
@@ -298,22 +290,13 @@ const ProjectForm = ({ onStatusChange, onStepComplete, onStepChange }: Props) =>
               </Choice>
             ))}
           </ChoiceGrid>
-        </div>
-      );
-      break;
-    case 'plan':
-      body = (
-        <div role="radiogroup" aria-labelledby={`q-${key}`} aria-describedby={describedBy}>
-          <ChoiceGrid>
-            {PLANS.map((plan) => (
-              <Choice key={plan.value} $checked={values.plan === plan.value}>
-                <input type="radio" name="plan" value={plan.value} checked={values.plan === plan.value}
-                  onChange={() => update('plan', plan.value)} />
-                {plan.value}
-                <ChoiceNote>{plan.note}</ChoiceNote>
-              </Choice>
-            ))}
-          </ChoiceGrid>
+          {values.goals.includes('Other') && (
+            <FollowUp>
+              <FollowUpLabel htmlFor="goals-other">What else should it do?</FollowUpLabel>
+              <TextInput id="goals-other" type="text" placeholder="e.g. Hire staff, show our menu"
+                value={values.goalsOther} onChange={(e) => update('goalsOther', e.target.value)} />
+            </FollowUp>
+          )}
         </div>
       );
       break;

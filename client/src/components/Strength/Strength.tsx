@@ -15,18 +15,19 @@ const reasons = [
     note: 'On the Monthly plan.',
   },
   {
-    kicker: 'Made for here',
-    figure: 'Built',
-    title: 'for Singapore businesses',
+    kicker: 'No lock-in',
+    figure: 'Cancel',
+    title: 'anytime. No minimum term or period.',
     description:
-      'WhatsApp chats, online bookings and your Google Business Profile, all connected from day one, on a site designed for customers browsing on their phones.',
+      "Stay with us because your website keeps bringing in customers, not because a contract says you have to. contact us directly to cancel no questions asked, and we won't charge you for the rest of the month.",
+    note: 'On the Monthly plan.',
   },
   {
-    kicker: 'Direct',
-    figure: 'Talk',
-    title: 'to the people who build it',
+    kicker: 'Quick start',
+    figure: '28',
+    title: 'days from first chat to a live site worldwide.',
     description:
-      'No account managers in between. You work directly with your designer and developer, and we reply to every message within 1 day.',
+      "We start with a quick chat about your business, then design your site around your customers, build it and test it on every kind of phone, setting up WhatsApp, bookings and Google along the way. Most sites go live within 4 weeks, so you start winning customers sooner.",
   },
 ];
 

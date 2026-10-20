@@ -10,14 +10,14 @@ export type ProjectDraft = {
   hasWebsite: '' | 'yes' | 'no';
   websiteUrl: string;
   goals: string[];
-  plan: string;
+  goalsOther: string;
   name: string;
   email: string;
   phone: string;
   notes: string;
 };
 
-const KEY = 'rumilab-project-draft-v1';
+const KEY = 'rumilab-project-draft-v2';
 
 export const EMPTY_DRAFT: ProjectDraft = {
   company: '',
@@ -26,7 +26,7 @@ export const EMPTY_DRAFT: ProjectDraft = {
   hasWebsite: '',
   websiteUrl: '',
   goals: [],
-  plan: '',
+  goalsOther: '',
   name: '',
   email: '',
   phone: '',
@@ -47,7 +47,7 @@ export function loadDraft(): ProjectDraft {
         hasWebsite: d.hasWebsite === 'yes' || d.hasWebsite === 'no' ? d.hasWebsite : '',
         websiteUrl: text(d.websiteUrl),
         goals: Array.isArray(d.goals) ? d.goals.filter((g): g is string => typeof g === 'string') : [],
-        plan: text(d.plan),
+        goalsOther: text(d.goalsOther),
         name: text(d.name),
         email: text(d.email),
         phone: text(d.phone),

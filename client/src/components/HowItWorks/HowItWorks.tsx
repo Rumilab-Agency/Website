@@ -7,19 +7,23 @@ import {
 const steps = [
   {
     title: 'Tell us about your business',
-    text: 'Answer a few quick questions about what you do and who you serve. We reply within 1 day.',
+    text: 'Tap "Start your project" and answer a few quick questions about what you do and who you serve. We reply within 1 day.',
+  },
+  {
+    title: 'Discovery',
+    text: 'A short call to understand your customers, your competitors and what a good month looks like for you. We then map out your pages and the key buttons that should bring in enquiries.',
   },
   {
     title: 'We design it',
-    text: 'A custom design made for your business and your customers. No templates.',
+    text: 'A custom design made for your business and your customers, never a template. You review it, and we refine it until it feels right.',
   },
   {
     title: 'We build and launch',
-    text: 'Fast and mobile-first, with WhatsApp, online bookings and your Google Business Profile connected.',
+    text: 'Fast and mobile-first, tested on every kind of phone, tablets and laptops, with WhatsApp and your Google Business Profile connected.',
   },
   {
     title: 'We optimise to 5%',
-    text: 'We track clicks on your key buttons and keep improving the site until 5 in every 100 visitors take action.',
+    text: 'We track clicks on your key buttons and keep improving the site until at least 5 in every 100 visitors take action. If not, we refund your monthly fee and keep improving the site until they do.',
   },
 ];
 

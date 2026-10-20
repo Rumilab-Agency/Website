@@ -16,7 +16,6 @@ type Enquiry = {
   hasWebsite: string;
   websiteUrl: string;
   goals: string[];
-  plan: string;
   name: string;
   email: string;
   phone: string;
@@ -41,8 +40,8 @@ function parse(body: Record<string, unknown>): Enquiry | string {
     industry: industry === 'Other' ? text(body.industryOther, 100) || 'Other' : industry,
     hasWebsite: text(body.hasWebsite, 10),
     websiteUrl: text(body.websiteUrl, 300),
-    goals: Array.isArray(body.goals) ? body.goals.map((g) => text(g, 100)).filter(Boolean).slice(0, 10) : [],
-    plan: text(body.plan, 100),
+    goals: (Array.isArray(body.goals) ? body.goals.map((g) => text(g, 100)).filter(Boolean).slice(0, 10) : [])
+      .map((g) => (g === 'Other' ? `Other: ${text(body.goalsOther, 200) || 'not specified'}` : g)),
     name: text(body.name, 200),
     email: text(body.email, 200),
     phone: text(body.phone, 50),
@@ -60,7 +59,6 @@ function render(e: Enquiry) {
     ['Industry', e.industry],
     ['Current website', e.hasWebsite === 'yes' ? e.websiteUrl || 'Yes' : 'No, starting fresh'],
     ['Goals', e.goals.join(', ')],
-    ['Plan', e.plan],
     ['Name', e.name],
     ['Email', e.email],
     ['Phone', e.phone || '–'],
