@@ -11,7 +11,7 @@ const reasons = [
     figure: '5%',
     title: 'of your visitors take action. Guaranteed.',
     description:
-      'Within 90 days, at least 5 in every 100 visitors will click one of your key buttons, like Book Now, Enquire or WhatsApp. If not, we refund your monthly fee and keep improving the site until they do.',
+      "From your very first month, at least 5 in every 100 visitors will click one of your key buttons, like Book Now, Enquire or WhatsApp. Any month they don't, you don't pay for that month, and we keep improving the site until they do.",
     note: 'On the Monthly plan.',
   },
   {

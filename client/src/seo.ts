@@ -16,7 +16,7 @@ export const PAGES = {
     path: '/',
     title: 'Web Design for Singapore Small Businesses | RumiLab',
     description:
-      'Custom websites for Singapore SMBs, built to turn visitors into enquiries and bookings. 5% of visitors take action within 90 days, or your fee back.',
+      "Custom websites for Singapore SMBs, built to turn visitors into enquiries and bookings. 5% of visitors take action from month one, or you don't pay.",
   },
   portfolio: {
     path: '/portfolio',
