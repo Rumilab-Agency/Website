@@ -8,6 +8,7 @@ import { PROJECTS } from '../data/projects';
 import { breakpoints, CTAButtonLarge, GradientText } from '../layouts/AppLayout.style';
 import WhatsAppButton from '../components/WhatsAppButton/WhatsAppButton';
 import { CTAGroup } from '../components/WhatsAppButton/WhatsAppButton.style';
+import { CTA_LABEL } from '../data/offer';
 
 // overflow-x: clip because the phone screens hang off the frames' corners.
 const Page = styled.div`
@@ -128,7 +129,7 @@ const Portfolio = () => (
           <ClosingTitle>Your business could be next.</ClosingTitle>
           <ClosingText>Tell us about your business and what you need. It takes about a minute.</ClosingText>
           <CTAGroup>
-            <CTAButtonLarge as={Link} to="/contact">Start your project</CTAButtonLarge>
+            <CTAButtonLarge as={Link} to="/contact">{CTA_LABEL}</CTAButtonLarge>
             <WhatsAppButton size="large" />
           </CTAGroup>
         </Closing>

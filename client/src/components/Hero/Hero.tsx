@@ -1,10 +1,11 @@
 import {
   HeroContainer, HeroTop, HeroBottom, Headline, HeadlineLight, HeadlineBold,
-  Subheadline, PriceHighlight, HeroCTA, HeroActions,
+  Subheadline, PriceHighlight, HeroCTA, HeroActions, HeroOffer,
 } from './Hero.style';
 import { Link } from 'react-router-dom';
 import HorizonBloom from '../HorizonBloom/HorizonBloom';
 import WhatsAppButton from '../WhatsAppButton/WhatsAppButton';
+import { CTA_LABEL, OFFER_NOTE } from '../../data/offer';
 
 
 const Hero = () => (
@@ -22,10 +23,11 @@ const Hero = () => (
       </Subheadline>
       <HeroActions>
         <HeroCTA as={Link} to="/contact">
-          Start your project
+          {CTA_LABEL}
         </HeroCTA>
         <WhatsAppButton />
       </HeroActions>
+      <HeroOffer>{OFFER_NOTE}</HeroOffer>
     </HeroBottom>
   </HeroContainer>
 );

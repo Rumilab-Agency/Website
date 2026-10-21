@@ -18,6 +18,7 @@ import {
   FooterBottom,
   LogoImage,
 } from './Footer.styles';
+import { CTA_LABEL } from '../../data/offer';
 
 const Footer: React.FC = () => (
   <FooterContainer>
@@ -35,7 +36,7 @@ const Footer: React.FC = () => (
           <FooterItem><Link to="/">Home</Link></FooterItem>
           <FooterItem><Link to="/portfolio">Work</Link></FooterItem>
           <FooterItem><Link to="/#pricing">Pricing</Link></FooterItem>
-          <FooterItem><Link to="/contact">Start your project</Link></FooterItem>
+          <FooterItem><Link to="/contact">{CTA_LABEL}</Link></FooterItem>
         </FooterList>
       </FooterColumn>
 

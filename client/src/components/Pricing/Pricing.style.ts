@@ -292,3 +292,29 @@ export const PopularBadge = styled.div`
 `;
 
 
+
+// The regular price, struck through beside the founding-offer price
+export const OldPrice = styled.s`
+  margin-right: 0.5rem;
+  font-size: 0.55em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration-thickness: 2px;
+`;
+
+// The terms under a price: how long the offer lasts and who it's for.
+// width 0 + min-width 100% lets it wrap to the card instead of widening it
+// (the cards size to their content).
+export const PriceTerms = styled.p`
+  width: 0;
+  min-width: 100%;
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.85);
+
+  @media (min-width: ${breakpoints.xl}) {
+    font-size: 0.95vw;
+  }
+`;

@@ -26,9 +26,9 @@ export const PAGES = {
   },
   contact: {
     path: '/contact',
-    title: 'Start Your Project | RumiLab',
+    title: 'Apply for a Free Website | RumiLab',
     description:
-      "Tell us about your business and the website you need. It takes about a minute, and we reply within 1 day. Prefer to chat? WhatsApp us.",
+      "Apply for a free custom website for your Singapore business. It takes about a minute, and we reply within 1 day. Open to our first 10 clients.",
   },
 } satisfies Record<string, PageSeo>;
 

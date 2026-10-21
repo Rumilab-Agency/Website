@@ -2,13 +2,22 @@
 import {
   PricingContainer, PricingTitle, PackageCardWrapper,
   PackageCardGrid, PackageCard, PackageTitle, PackageTitleWrapper, PackageSubtitle, PackageListItemWrapper, PackageListItem, PackagePricing,
-  PopularPackageCard, PopularBadge, PackageHostingNote
+  PopularPackageCard, PopularBadge, PackageHostingNote, OldPrice, PriceTerms
 } from './Pricing.style';
 
 
 import { IoCheckmarkSharp, IoCloseSharp } from "react-icons/io5";
 import { FaAnglesUp } from "react-icons/fa6";
 import HoloFoil from '../HoloFoil/HoloFoil';
+import InfoTip from '../InfoTip/InfoTip';
+
+// Plain-words explanation for owners who haven't run a website before
+const HOSTING_TIP = (
+  <InfoTip label="What is hosting?">
+    Hosting is what keeps your website online 24/7. We run it on fast, secure servers, keep backups and renew the
+    security padlock in the browser for you. If you host it yourself, you set this up and pay a hosting company directly.
+  </InfoTip>
+);
 import { useNearViewport } from '../../hooks/useNearViewport';
 
 
@@ -37,8 +46,8 @@ const Pricing = () => {
               <PackageListItem><IoCheckmarkSharp />5 Fully Responsive Pages</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$100 for each additional page</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$300 for Article/Blog</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$25/mo Hosting</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$50/mo Unlimited Edits Add-on</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp /><span>Hosting {HOSTING_TIP} free for 3 months, then $25/mo</span></PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />Unlimited edits free for 3 months, then $50/mo</PackageListItem>
               <PackageListItem></PackageListItem>
               <PackageListItem className="text-muted"><IoCloseSharp />Performance-based Guarantee (5%)</PackageListItem>
               <PackageListItem className="text-muted"><IoCloseSharp />Monthly Analytics Report (PDF)</PackageListItem>
@@ -62,7 +71,7 @@ const Pricing = () => {
               <PackageListItem><IoCheckmarkSharp />5 Fully Responsive Pages</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$100 for each additional page</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$300 for Article/Blog</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />Includes Hosting</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp /><span>Includes Hosting {HOSTING_TIP}</span></PackageListItem>
               <PackageListItem><IoCheckmarkSharp />Unlimited Edits</PackageListItem>
               <PackageListItem></PackageListItem>
               <PackageListItem><FaAnglesUp />Performance-based Guarantee (5%)</PackageListItem>
@@ -70,9 +79,11 @@ const Pricing = () => {
               <PackageListItem><FaAnglesUp /> 24/7 Support</PackageListItem>
               <PackageListItem><FaAnglesUp /> Lifetime Updates</PackageListItem>
             </PackageListItemWrapper>
-            <PackagePricing>$180
-              <PackageHostingNote>/ month</PackageHostingNote>
+            <PackagePricing>
+              <OldPrice aria-label="Usually $180">$180</OldPrice>$0
+              <PackageHostingNote> / month for 3 months</PackageHostingNote>
             </PackagePricing>
+            <PriceTerms>Then $25/month for hosting, or host it yourself. Cancel anytime. Only for our first 10 clients.</PriceTerms>
             {/* Gold foil sheen drifting over the card on its own (no tilt, no hover) */}
             {showFoil && <HoloFoil intensity={0.6} glare={0.5} />}
           </PopularPackageCard>

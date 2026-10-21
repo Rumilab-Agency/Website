@@ -201,8 +201,8 @@ const ProjectForm = ({ onStatusChange, onStepComplete, onStepChange }: Props) =>
     return (
       <div role="status">
         <StepPanel key="done" $motion="in-next">
-          <DoneTitle>Thanks, {sent.name}. We&apos;ve got it.</DoneTitle>
-          <DoneBody>We&apos;ll look over your project and reply to {sent.email}.</DoneBody>
+          <DoneTitle>Thanks, {sent.name}. We&apos;ve got your application.</DoneTitle>
+          <DoneBody>We&apos;ll review it and reply to {sent.email} within 1 day.</DoneBody>
           <Actions>
             <PrimaryButton as={Link} to="/">Back to home</PrimaryButton>
           </Actions>

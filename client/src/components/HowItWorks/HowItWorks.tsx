@@ -7,7 +7,7 @@ import {
 const steps = [
   {
     title: 'Tell us about your business',
-    text: 'Tap "Start your project" and answer a few quick questions about what you do and who you serve. We reply within 1 day.',
+    text: 'Tap "Apply for a free website" and answer a few quick questions about what you do and who you serve. We reply within 1 day.',
   },
   {
     title: 'Discovery',

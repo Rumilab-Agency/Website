@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 import WhatsAppButton from '../WhatsAppButton/WhatsAppButton';
 
 import backgroundStars from '../../assets/images/bg-stars.png';
+import { CTA_LABEL } from '../../data/offer';
 
 // WebGPU + shader compiler are ~90 KB gzipped: load them in their own chunk,
 // and only once the visitor scrolls near this section, so the effect at the
@@ -35,7 +36,7 @@ const CTA = () => {
         <CTASlogan1 data-aos="fade-right">Not sure where to begin?</CTASlogan1>
         <CTASlogan2><GradientText data-aos="fade-left">We're here to help.</GradientText></CTASlogan2>
         <CTAActions>
-          <CTAButton1 as={Link} to="/contact">Start your project</CTAButton1>
+          <CTAButton1 as={Link} to="/contact">{CTA_LABEL}</CTAButton1>
           <WhatsAppButton size="large" />
         </CTAActions>
       </CTAContentWrapper>

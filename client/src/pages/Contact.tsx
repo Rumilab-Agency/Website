@@ -102,7 +102,7 @@ const Contact = () => {
         />
       </Sky>
       <Inner>
-        <PageTitle>Start your project</PageTitle>
+        <PageTitle>Apply for your free website</PageTitle>
         <ProjectForm onStatusChange={setStatus} onStepComplete={onStepComplete} onStepChange={onStepChange} />
       </Inner>
     </Page>

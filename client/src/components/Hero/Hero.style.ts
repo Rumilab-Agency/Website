@@ -157,3 +157,24 @@ export const HeroActions = styled(CTAGroup)`
     animation: ${fadeIn} 0.6s ease 0.3s forwards;
   }
 `;
+
+// One line under the buttons that states the offer plainly
+export const HeroOffer = styled.p`
+  max-width: 34rem;
+  margin-top: calc(clamp(2rem, 7vh, 4.5rem) * -0.6);
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 70%);
+  opacity: 0;
+  animation: ${riseIn} 0.9s ${easeOut} 0.7s forwards;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: ${fadeIn} 0.6s ease 0.4s forwards;
+  }
+
+  @media (min-width: ${breakpoints.xl}) {
+    max-width: 40vw;
+    font-size: 1vw;
+  }
+`;

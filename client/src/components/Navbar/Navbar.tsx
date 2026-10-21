@@ -15,6 +15,7 @@ import {
   MenuPanel,
   MenuList,
 } from './Navbar.styles';
+import { CTA_SHORT } from '../../data/offer';
 
 interface NavbarProps {
   onMenuClick?: () => void;
@@ -90,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
         <NavWhatsApp iconOnly />
         <NavbarCTAButton as={Link} to="/contact">
-          Start your project
+          {CTA_SHORT}
         </NavbarCTAButton>
 
         <MenuButton

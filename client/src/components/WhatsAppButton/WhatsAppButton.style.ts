@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { breakpoints } from '../../layouts/AppLayout.style';
 import { easeOut, canHover } from '../../styles/animations';
 
-// Sits beside a primary "Start your project" button and wraps under it when
+// Sits beside the primary call-to-action button and wraps under it when
 // there isn't room.
 export const CTAGroup = styled.div`
   display: flex;
