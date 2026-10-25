@@ -1,6 +1,7 @@
-import { useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { IoInformationCircleOutline } from 'react-icons/io5';
 import { TipWrap, TipButton, TipBubble } from './InfoTip.style';
+import { useIsomorphicLayoutEffect } from '../../hooks/useIsomorphicLayoutEffect';
 
 type Props = {
   /** What the icon explains, read out by screen readers, e.g. "What is hosting?" */
@@ -36,7 +37,7 @@ const InfoTip = ({ label, children }: Props) => {
   }, [open]);
 
   // Keep the bubble inside the screen on narrow phones
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const bubble = bubbleRef.current;
     if (!open || !bubble) return;
     bubble.style.setProperty('--shift', '0px');

@@ -1,8 +1,9 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   StepsContainer, StepsTitle, Timeline, PathSvg, Sparkle, StepList, Step, StepNumber,
   StepBody, StepTitle, StepText,
 } from './HowItWorks.style';
+import { useIsomorphicLayoutEffect } from '../../hooks/useIsomorphicLayoutEffect';
 
 const steps = [
   {
@@ -61,7 +62,7 @@ const HowItWorks = () => {
   const [geometry, setGeometry] = useState({ d: '', width: 0, height: 0 });
 
   // Measure where the nodes sit and rebuild the path whenever the layout changes
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const timeline = timelineRef.current;
     if (!timeline) return;
     const measure = () => {

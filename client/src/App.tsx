@@ -5,7 +5,7 @@ import Landing from './pages/Landing';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { lazy, Suspense, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import FloatingCTA from './components/FloatingCTA/FloatingCTA';
 
@@ -15,6 +15,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const CostGuide = lazy(() => import('./pages/CostGuide'));
 const Guarantee = lazy(() => import('./pages/Guarantee'));
 const Faq = lazy(() => import('./pages/Faq'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Start each page at the top, or at its #section when the link has one (e.g.
 // "/#pricing" from the navbar). Without this, moving to /contact from the bottom
@@ -35,8 +36,10 @@ function ScrollToTop() {
   return null;
 }
 
-function App() {
-
+// The routes and app-wide pieces, without a router, so the same tree renders in
+// the browser (BrowserRouter, below) and at build time (StaticRouter, in
+// entry-server.tsx) when each page is pre-rendered to HTML.
+export function AppRoutes() {
   useEffect(() => {
     AOS.init({
       duration: 700,
@@ -49,7 +52,7 @@ function App() {
 
 
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <FloatingCTA />
       <Suspense fallback={null}>
@@ -60,12 +63,19 @@ function App() {
           <Route path="/pricing" element={<CostGuide />} />
           <Route path="/guarantee" element={<Guarantee />} />
           <Route path="/faq" element={<Faq />} />
-          {/* You can add more routes */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
-    </Router>
+    </>
   );
+}
 
+function App() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
 }
 
 export default App

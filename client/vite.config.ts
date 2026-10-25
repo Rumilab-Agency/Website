@@ -50,15 +50,19 @@ function pageMeta(): Plugin {
   const block = (page: PageSeo) =>
     `<!--page-meta-->\n    ${pageMetaTags(page)}\n    <!--/page-meta-->`
   let outDir = 'dist'
+  let ssr = false
   return {
     name: 'page-meta',
     configResolved(config) {
       outDir = config.build.outDir
+      ssr = Boolean(config.build.ssr)
     },
     transformIndexHtml(html) {
       return html.replace(MARKER, block(PAGES.home))
     },
     closeBundle() {
+      // The SSR build (the page renderer) has no HTML of its own to write
+      if (ssr) return
       const index = readFileSync(join(outDir, 'index.html'), 'utf8')
       for (const page of ALL_PAGES) {
         if (page.path === '/') continue
@@ -78,4 +82,9 @@ function pageMeta(): Plugin {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), devApi(), pageMeta()],
+  // Bundle libraries that ship CommonJS into the page renderer, so Node can
+  // load it (only affects the SSR build used for pre-rendering)
+  ssr: {
+    noExternal: ['react-helmet-async', 'styled-components'],
+  },
 })

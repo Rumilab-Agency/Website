@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { clearDraft, loadDraft, saveDraft, type ProjectDraft } from './projectDraft';
+import { clearDraft, loadDraft, saveDraft, EMPTY_DRAFT, type ProjectDraft } from './projectDraft';
 import { WHATSAPP_URL, WHATSAPP_DISPLAY } from '../../data/contact';
 import {
   ProgressRow, ProgressTrack, ProgressDot, ProgressCount,
@@ -60,7 +60,11 @@ type Props = {
 };
 
 const ProjectForm = ({ onStatusChange, onStepComplete, onStepChange }: Props) => {
-  const [values, setValues] = useState<ProjectDraft>(loadDraft);
+  // Starts empty, as in the pre-rendered page, then restores any saved draft
+  const [values, setValues] = useState<ProjectDraft>(EMPTY_DRAFT);
+  useEffect(() => {
+    setValues(loadDraft());
+  }, []);
   const [step, setStep] = useState(0);
   const [motion, setMotion] = useState<StepMotion>('in-next');
   const [leaving, setLeaving] = useState(false);

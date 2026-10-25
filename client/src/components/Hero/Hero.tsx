@@ -13,7 +13,7 @@ const Hero = () => (
     <HorizonBloom />
     <HeroTop>
       <Headline>
-        <HeadlineLight>Websites Crafted</HeadlineLight>
+        <HeadlineLight>Websites Crafted</HeadlineLight>{' '}
         <HeadlineBold>to Convert</HeadlineBold>
       </Headline>
     </HeroTop>

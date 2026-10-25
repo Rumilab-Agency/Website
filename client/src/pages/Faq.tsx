@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import styled from 'styled-components';
 import AppLayout from '../layouts/AppLayout';
 import { GradientText } from '../layouts/AppLayout.style';
@@ -141,9 +140,8 @@ const faqSchema = {
 const Faq = () => (
   <AppLayout>
     <PageMeta page={PAGES.faq} />
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-    </Helmet>
+    {/* In the page itself (not the head manager), so it's in the pre-rendered HTML */}
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     <ArticlePage>
       <ArticleInner>
         <ArticleIntro>

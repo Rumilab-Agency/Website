@@ -20,10 +20,6 @@
     {
       "source": "/faq",
       "destination": "/faq/index.html"
-    },
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
     }
   ]
 }

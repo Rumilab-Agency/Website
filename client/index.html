@@ -42,30 +42,19 @@
       ]
     }
   </script>
-  <meta name="robots" content="index, follow" />
-
-
-
-  <!-- Google Analytics and Microsoft Clarity. Calls are queued right away, but
-       the scripts download only after the page has loaded, so they don't compete
-       with the first render. -->
+  <!-- Google Analytics. Calls are queued right away, but the script downloads
+       only after the page has loaded, so it doesn't compete with the first render. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-NB1H2H8C2V');
-    window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
 
     function loadAnalytics() {
-      [
-        'https://www.googletagmanager.com/gtag/js?id=G-NB1H2H8C2V',
-        'https://www.clarity.ms/tag/rv782crlyy',
-      ].forEach(function (src) {
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = src;
-        document.head.appendChild(script);
-      });
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-NB1H2H8C2V';
+      document.head.appendChild(script);
     }
     window.addEventListener('load', function () {
       if ('requestIdleCallback' in window) requestIdleCallback(loadAnalytics, { timeout: 3000 });

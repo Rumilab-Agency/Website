@@ -24,7 +24,9 @@ interface NavbarProps {
 // Each link is its own page and gets the active underline when you're on it.
 const Navbar: React.FC<NavbarProps> = () => {
   const [isVisible, setIsVisible] = useState(true);
-  const [atTop, setAtTop] = useState(() => window.scrollY < 10);
+  // Starts as "at the top" (as in the pre-rendered page); the scroll handler
+  // corrects it straight after the page loads
+  const [atTop, setAtTop] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
