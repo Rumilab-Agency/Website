@@ -11,6 +11,9 @@ export type Project = {
   displayUrl: string;
   desktop: string;
   mobile: string;
+  /** Real, checkable results only (e.g. from Search Console or GA4). The
+      Results section on the case study page appears once this is filled in. */
+  results?: { value: string; label: string; source: string }[];
 };
 
 export const PROJECTS: Project[] = [

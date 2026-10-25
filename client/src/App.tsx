@@ -12,6 +12,9 @@ import FloatingCTA from './components/FloatingCTA/FloatingCTA';
 // The Work and Contact pages (and the Galaxy effect) load only when visited
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Contact = lazy(() => import('./pages/Contact'));
+const CostGuide = lazy(() => import('./pages/CostGuide'));
+const Guarantee = lazy(() => import('./pages/Guarantee'));
+const Faq = lazy(() => import('./pages/Faq'));
 
 // Start each page at the top, or at its #section when the link has one (e.g.
 // "/#pricing" from the navbar). Without this, moving to /contact from the bottom
@@ -54,6 +57,9 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/pricing" element={<CostGuide />} />
+          <Route path="/guarantee" element={<Guarantee />} />
+          <Route path="/faq" element={<Faq />} />
           {/* You can add more routes */}
         </Routes>
       </Suspense>

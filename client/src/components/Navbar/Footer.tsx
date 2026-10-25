@@ -35,7 +35,9 @@ const Footer: React.FC = () => (
         <FooterList>
           <FooterItem><Link to="/">Home</Link></FooterItem>
           <FooterItem><Link to="/portfolio">Work</Link></FooterItem>
-          <FooterItem><Link to="/#pricing">Pricing</Link></FooterItem>
+          <FooterItem><Link to="/pricing">Pricing</Link></FooterItem>
+          <FooterItem><Link to="/guarantee">Our guarantee</Link></FooterItem>
+          <FooterItem><Link to="/faq">FAQ</Link></FooterItem>
           <FooterItem><Link to="/contact">{CTA_LABEL}</Link></FooterItem>
         </FooterList>
       </FooterColumn>

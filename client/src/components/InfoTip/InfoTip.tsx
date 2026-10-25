@@ -70,9 +70,11 @@ const InfoTip = ({ label, children }: Props) => {
       >
         <IoInformationCircleOutline aria-hidden="true" />
       </TipButton>
-      <TipBubble ref={bubbleRef} id={id} role="tooltip" $open={open}>
-        {children}
-      </TipBubble>
+      {open && (
+        <TipBubble ref={bubbleRef} id={id} role="tooltip">
+          {children}
+        </TipBubble>
+      )}
     </TipWrap>
   );
 };

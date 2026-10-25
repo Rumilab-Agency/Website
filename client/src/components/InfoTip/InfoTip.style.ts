@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { easeOut } from '../../styles/animations';
 
 export const TipWrap = styled.span`
@@ -38,7 +38,13 @@ export const TipButton = styled.button`
 `;
 
 // Sits above the icon. --shift nudges it sideways so it never runs off screen.
-export const TipBubble = styled.span<{ $open: boolean }>`
+// Only rendered while open, so a closed bubble can't widen the page on phones.
+const tipIn = keyframes`
+  from { opacity: 0; transform: translate(calc(-50% + var(--shift, 0px)), 4px); }
+  to { opacity: 1; transform: translate(calc(-50% + var(--shift, 0px)), 0); }
+`;
+
+export const TipBubble = styled.span`
   position: absolute;
   bottom: calc(100% + 0.6rem);
   left: 50%;
@@ -56,10 +62,8 @@ export const TipBubble = styled.span<{ $open: boolean }>`
   line-height: 1.5;
   text-align: left;
   white-space: normal;
-  pointer-events: ${({ $open }) => ($open ? 'auto' : 'none')};
-  opacity: ${({ $open }) => ($open ? 1 : 0)};
-  transform: translate(calc(-50% + var(--shift, 0px)), ${({ $open }) => ($open ? '0' : '4px')});
-  transition: opacity 150ms ease, transform 200ms ${easeOut};
+  transform: translate(calc(-50% + var(--shift, 0px)), 0);
+  animation: ${tipIn} 200ms ${easeOut};
 
   /* little arrow pointing at the icon */
   &::after {
@@ -73,6 +77,6 @@ export const TipBubble = styled.span<{ $open: boolean }>`
   }
 
   @media (prefers-reduced-motion: reduce) {
-    transition: opacity 150ms ease;
+    animation: none;
   }
 `;

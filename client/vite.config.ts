@@ -2,7 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
-import { PAGES, pageMetaTags } from './src/seo'
+import { ALL_PAGES, PAGES, SITE_URL, pageMetaTags, type PageSeo } from './src/seo'
 
 // In dev, serve /api/* from the same handlers Vercel runs in production, so the
 // contact form can be tested locally. Secrets come from .env.local.
@@ -44,9 +44,10 @@ function devApi(): Plugin {
 // the HTML itself. The home page's go into index.html; every other page gets its
 // own copy at dist/<path>/index.html, which Vercel serves for that path. Link
 // previews (WhatsApp, LinkedIn) don't run JavaScript, so they rely on these.
+// Also writes sitemap.xml from the same list, so new pages are never missed.
 function pageMeta(): Plugin {
   const MARKER = /<!--page-meta-->[\s\S]*?<!--\/page-meta-->/
-  const block = (page: (typeof PAGES)[keyof typeof PAGES]) =>
+  const block = (page: PageSeo) =>
     `<!--page-meta-->\n    ${pageMetaTags(page)}\n    <!--/page-meta-->`
   let outDir = 'dist'
   return {
@@ -59,12 +60,17 @@ function pageMeta(): Plugin {
     },
     closeBundle() {
       const index = readFileSync(join(outDir, 'index.html'), 'utf8')
-      for (const page of Object.values(PAGES)) {
+      for (const page of ALL_PAGES) {
         if (page.path === '/') continue
         const dir = join(outDir, page.path)
         mkdirSync(dir, { recursive: true })
         writeFileSync(join(dir, 'index.html'), index.replace(MARKER, block(page)))
       }
+      const today = new Date().toISOString().slice(0, 10)
+      const urls = ALL_PAGES.map((page) =>
+        `  <url>\n    <loc>${SITE_URL}${page.path}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`)
+      writeFileSync(join(outDir, 'sitemap.xml'),
+        `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`)
     },
   }
 }

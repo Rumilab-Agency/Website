@@ -74,13 +74,13 @@ export const NavRight = styled.div`
   }
 `;
 
-// Desktop links; on phones they live in the menu panel instead.
+// Laptop and up; on phones and tablets they live in the menu panel instead.
 export const NavList = styled.ul`
   display: none;
   list-style: none;
   gap: 2rem;
 
-  @media (min-width: ${breakpoints.md}) {
+  @media (min-width: ${breakpoints.lg}) {
     display: flex;
     align-items: center;
   }
@@ -193,7 +193,7 @@ export const MenuButton = styled.button`
     outline-offset: 2px;
   }
 
-  @media (min-width: ${breakpoints.md}) {
+  @media (min-width: ${breakpoints.lg}) {
     display: none;
   }
 `;
@@ -208,7 +208,7 @@ export const MenuPanel = styled.div`
   border-bottom: 1px solid rgb(255 255 255 / 10%);
   box-shadow: 0 24px 48px -12px rgb(0 0 0 / 90%);
 
-  @media (min-width: ${breakpoints.md}) {
+  @media (min-width: ${breakpoints.lg}) {
     display: none;
   }
 `;

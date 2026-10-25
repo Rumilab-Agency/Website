@@ -11,6 +11,14 @@ import { FaAnglesUp } from "react-icons/fa6";
 import HoloFoil from '../HoloFoil/HoloFoil';
 import InfoTip from '../InfoTip/InfoTip';
 
+// What "every page your business needs" means, since the scope isn't a fixed count
+const PAGES_TIP = (
+  <InfoTip label="Which pages are included?">
+    Your main pages (Home, Services, About, FAQ and Contact) plus pages that answer the questions your customers
+    ask most. Usually 5 to 10 pages, all listed in your quote before we start.
+  </InfoTip>
+);
+
 // Plain-words explanation for owners who haven't run a website before
 const HOSTING_TIP = (
   <InfoTip label="What is hosting?">
@@ -43,8 +51,8 @@ const Pricing = () => {
             </PackageTitleWrapper>
             <PackageListItemWrapper>
               <PackageListItem><IoCheckmarkSharp />Design and Development</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />5 Fully Responsive Pages</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$100 for each additional page</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp /><span>Every page your business needs {PAGES_TIP}</span></PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$100 per page outside the agreed scope</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$300 for Article/Blog</PackageListItem>
               <PackageListItem><IoCheckmarkSharp /><span>Hosting {HOSTING_TIP} free for 3 months, then $25/mo</span></PackageListItem>
               <PackageListItem><IoCheckmarkSharp />Unlimited edits free for 3 months, then $50/mo</PackageListItem>
@@ -68,8 +76,8 @@ const Pricing = () => {
             </PackageTitleWrapper>
             <PackageListItemWrapper>
               <PackageListItem><IoCheckmarkSharp />Design and Development</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />5 Fully Responsive Pages</PackageListItem>
-              <PackageListItem><IoCheckmarkSharp />+$100 for each additional page</PackageListItem>
+              <PackageListItem><IoCheckmarkSharp /><span>Every page your business needs {PAGES_TIP}</span></PackageListItem>
+              <PackageListItem><IoCheckmarkSharp />+$100 per page outside the agreed scope</PackageListItem>
               <PackageListItem><IoCheckmarkSharp />+$300 for Article/Blog</PackageListItem>
               <PackageListItem><IoCheckmarkSharp /><span>Includes Hosting {HOSTING_TIP}</span></PackageListItem>
               <PackageListItem><IoCheckmarkSharp />Unlimited Edits</PackageListItem>
@@ -80,7 +88,7 @@ const Pricing = () => {
               <PackageListItem><FaAnglesUp /> Lifetime Updates</PackageListItem>
             </PackageListItemWrapper>
             <PackagePricing>
-              <OldPrice aria-label="Usually $180">$180</OldPrice>$0
+              <OldPrice aria-label="Usually $198">$198</OldPrice>$0
               <PackageHostingNote> / month for 3 months</PackageHostingNote>
             </PackagePricing>
             <PriceTerms>Then $25/month for hosting, or host it yourself. Cancel anytime. Only for our first 10 clients.</PriceTerms>

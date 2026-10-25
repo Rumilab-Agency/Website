@@ -1,7 +1,29 @@
 {
+  "trailingSlash": false,
   "rewrites": [
-    { "source": "/portfolio", "destination": "/portfolio/index.html" },
-    { "source": "/contact", "destination": "/contact/index.html" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    {
+      "source": "/portfolio",
+      "destination": "/portfolio/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing/index.html"
+    },
+    {
+      "source": "/guarantee",
+      "destination": "/guarantee/index.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq/index.html"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
   ]
 }

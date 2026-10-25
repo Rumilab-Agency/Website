@@ -146,6 +146,18 @@ export const CardNote = styled.p`
   font-size: 0.875rem;
   color: #8f899f;
 
+  a {
+    color: #c9b8ff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  a:focus-visible {
+    outline: 2px solid #f780ff;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
   @media (min-width: ${breakpoints.xl}) {
     font-size: 0.9vw;
   }

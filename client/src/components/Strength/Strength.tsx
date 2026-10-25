@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   StrengthContainer, StrengthContentWrapper, StrengthTitle, CardGrid,
   CardCell, CardBody, Kicker, Figure, CardTitle, CardContent, CardNote,
@@ -59,7 +60,12 @@ const Strength = () => (
                   {reason.title}
                 </CardTitle>
                 <CardContent>{reason.description}</CardContent>
-                {reason.note && <CardNote>{reason.note}</CardNote>}
+                {reason.note && (
+                  <CardNote>
+                    {reason.note}
+                    {reason.kicker === 'The guarantee' && <> <Link to="/guarantee">How we measure it</Link></>}
+                  </CardNote>
+                )}
               </CardBody>
             </BorderGlow>
           </CardCell>

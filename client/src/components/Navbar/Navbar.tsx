@@ -21,8 +21,7 @@ interface NavbarProps {
   onMenuClick?: () => void;
 }
 
-// "Pricing" is a section of the home page, so it's a plain link (never marked as
-// the current page); "Work" is its own page and gets the active underline.
+// Each link is its own page and gets the active underline when you're on it.
 const Navbar: React.FC<NavbarProps> = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [atTop, setAtTop] = useState(() => window.scrollY < 10);
@@ -86,7 +85,9 @@ const Navbar: React.FC<NavbarProps> = () => {
       <NavRight>
         <NavList>
           <li><NavItem to="/portfolio">Work</NavItem></li>
-          <li><NavItem as={Link} to="/#pricing">Pricing</NavItem></li>
+          <li><NavItem to="/pricing">Pricing</NavItem></li>
+          <li><NavItem to="/guarantee">Guarantee</NavItem></li>
+          <li><NavItem to="/faq">FAQ</NavItem></li>
         </NavList>
 
         <NavWhatsApp iconOnly />
@@ -113,7 +114,9 @@ const Navbar: React.FC<NavbarProps> = () => {
           <MenuList>
             <li><NavLink to="/" end>Home</NavLink></li>
             <li><NavLink to="/portfolio">Work</NavLink></li>
-            <li><Link to="/#pricing">Pricing</Link></li>
+            <li><NavLink to="/pricing">Pricing</NavLink></li>
+            <li><NavLink to="/guarantee">Guarantee</NavLink></li>
+            <li><NavLink to="/faq">FAQ</NavLink></li>
           </MenuList>
         </MenuPanel>
       )}
