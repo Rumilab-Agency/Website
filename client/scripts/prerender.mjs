@@ -14,6 +14,12 @@ const ssrDir = 'dist-ssr';
 const ROOT = '<div id="root"></div>';
 const PAGE_META = /<!--page-meta-->[\s\S]*?<!--\/page-meta-->/;
 
+// The site's CSS is small, so it goes straight into each page instead of being a
+// separate file the browser must fetch before it can show anything.
+const CSS_LINK = /<link rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.css)"[^>]*>/;
+const inlineCss = (html) =>
+  html.replace(CSS_LINK, (_, href) => `<style>${readFileSync(join(dist, href), 'utf8')}</style>`);
+
 const { render, ALL_PAGES } = await import(pathToFileURL(join(ssrDir, 'entry-server.js')).href);
 
 // The unrendered home template, kept before it's filled in, for the 404 page
@@ -29,7 +35,7 @@ for (const page of ALL_PAGES) {
 
   writeFileSync(
     file,
-    template.replace('</head>', `${styles}\n</head>`).replace(ROOT, `<div id="root">${html}</div>`),
+    inlineCss(template.replace('</head>', `${styles}\n</head>`).replace(ROOT, `<div id="root">${html}</div>`)),
   );
   console.log(`prerendered ${page.path.padEnd(12)} ${(html.length / 1024).toFixed(1)} KB`);
 }
@@ -38,13 +44,15 @@ for (const page of ALL_PAGES) {
 // not be indexed or claim a canonical address.
 {
   const { html, styles } = await render('/this-page-does-not-exist');
-  const head = '<title>Page not found | RumiLab</title>\n    <meta data-rh="true" name="robots" content="noindex" />';
+  const head = '<title>Page not found | RumiLab</title>\n    <meta data-head="" name="robots" content="noindex" />';
   writeFileSync(
     join(dist, '404.html'),
-    shell
-      .replace(PAGE_META, head)
-      .replace('</head>', `${styles}\n</head>`)
-      .replace(ROOT, `<div id="root">${html}</div>`),
+    inlineCss(
+      shell
+        .replace(PAGE_META, head)
+        .replace('</head>', `${styles}\n</head>`)
+        .replace(ROOT, `<div id="root">${html}</div>`),
+    ),
   );
   console.log(`prerendered 404          ${(html.length / 1024).toFixed(1)} KB`);
 }

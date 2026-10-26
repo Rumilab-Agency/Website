@@ -6,7 +6,6 @@ import { Writable } from 'node:stream';
 import { renderToPipeableStream } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { ServerStyleSheet } from 'styled-components';
-import { HelmetProvider } from 'react-helmet-async';
 import { AppRoutes } from './App';
 
 export { ALL_PAGES } from './seo';
@@ -28,11 +27,9 @@ export function render(url: string): Promise<{ html: string; styles: string }> {
 
     const { pipe } = renderToPipeableStream(
       sheet.collectStyles(
-        <HelmetProvider context={{}}>
-          <StaticRouter location={url}>
-            <AppRoutes />
-          </StaticRouter>
-        </HelmetProvider>,
+        <StaticRouter location={url}>
+          <AppRoutes />
+        </StaticRouter>,
       ),
       {
         // Wait for every lazy page to load, so the HTML is complete

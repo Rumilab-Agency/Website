@@ -69,19 +69,19 @@ export const ALL_PAGES: PageSeo[] = Object.values(PAGES);
 
 export const pageUrl = (page: PageSeo) => SITE_URL + page.path;
 
-// The page-specific tags. Marked data-rh so react-helmet-async takes them over
-// in the browser instead of adding duplicates next to them.
+// The page-specific tags. Marked data-head so useHead() replaces them in the
+// browser instead of adding duplicates next to them.
 export function pageMetaTags(page: PageSeo) {
   const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
   const url = pageUrl(page);
   return [
     `<title>${esc(page.title)}</title>`,
-    `<meta data-rh="true" name="description" content="${esc(page.description)}" />`,
-    `<link data-rh="true" rel="canonical" href="${url}" />`,
-    `<meta data-rh="true" property="og:url" content="${url}" />`,
-    `<meta data-rh="true" property="og:title" content="${esc(page.title)}" />`,
-    `<meta data-rh="true" property="og:description" content="${esc(page.description)}" />`,
-    `<meta data-rh="true" name="twitter:title" content="${esc(page.title)}" />`,
-    `<meta data-rh="true" name="twitter:description" content="${esc(page.description)}" />`,
+    `<meta data-head="" name="description" content="${esc(page.description)}" />`,
+    `<link data-head="" rel="canonical" href="${url}" />`,
+    `<meta data-head="" property="og:url" content="${url}" />`,
+    `<meta data-head="" property="og:title" content="${esc(page.title)}" />`,
+    `<meta data-head="" property="og:description" content="${esc(page.description)}" />`,
+    `<meta data-head="" name="twitter:title" content="${esc(page.title)}" />`,
+    `<meta data-head="" name="twitter:description" content="${esc(page.description)}" />`,
   ].join('\n    ');
 }

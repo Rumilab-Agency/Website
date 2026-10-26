@@ -85,6 +85,6 @@ export default defineConfig({
   // Bundle libraries that ship CommonJS into the page renderer, so Node can
   // load it (only affects the SSR build used for pre-rendering)
   ssr: {
-    noExternal: ['react-helmet-async', 'styled-components'],
+    noExternal: ['styled-components'],
   },
 })

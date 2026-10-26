@@ -22,16 +22,23 @@ a {
   text-decoration: none;
 }
 
-/* AOS slides elements 100px by default, which reads as heavy.
-   A shorter travel keeps reveals quiet and refined. The doubled attribute
-   beats aos.css (loaded later) but still loses to its .aos-animate rule. */
-[data-aos='fade-up'][data-aos] { transform: translate3d(0, 24px, 0); }
-[data-aos='fade-right'][data-aos] { transform: translate3d(-32px, 0, 0); }
-[data-aos='fade-left'][data-aos] { transform: translate3d(32px, 0, 0); }
-
-/* AOS's own "ease-out" curves are weak; use a strong ease-out. */
-[data-aos][data-aos][data-aos] {
-  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+/* Scroll reveal (src/utils/reveal.ts). Elements with data-aos fade and slide in
+   once as they scroll into view. Hiding only starts once the script has added
+   .reveal-ready, so without JavaScript (and for crawlers) everything is visible. */
+.reveal-ready [data-aos] {
+  opacity: 0;
+  transition: opacity 700ms cubic-bezier(0.23, 1, 0.32, 1), transform 700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.reveal-ready [data-aos='fade-up'] { transform: translate3d(0, 24px, 0); }
+.reveal-ready [data-aos='fade-right'] { transform: translate3d(-32px, 0, 0); }
+.reveal-ready [data-aos='fade-left'] { transform: translate3d(32px, 0, 0); }
+.reveal-ready [data-aos][data-aos-delay='60'] { transition-delay: 60ms; }
+.reveal-ready [data-aos][data-aos-delay='120'] { transition-delay: 120ms; }
+.reveal-ready [data-aos][data-aos-delay='180'] { transition-delay: 180ms; }
+.reveal-ready [data-aos][data-aos-duration='2000'] { transition-duration: 2000ms; }
+.reveal-ready [data-aos].aos-animate {
+  opacity: 1;
+  transform: none;
 }
 
 /* Text for screen readers only */

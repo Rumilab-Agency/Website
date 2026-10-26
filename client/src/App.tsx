@@ -2,8 +2,7 @@
 import './App.css'
 import Landing from './pages/Landing';
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { startReveal } from './utils/reveal';
 import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
@@ -40,15 +39,7 @@ function ScrollToTop() {
 // the browser (BrowserRouter, below) and at build time (StaticRouter, in
 // entry-server.tsx) when each page is pre-rendered to HTML.
 export function AppRoutes() {
-  useEffect(() => {
-    AOS.init({
-      duration: 700,
-      easing: 'ease-out-cubic',
-      offset: 80,
-      once: true,
-      disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-    });
-  }, []);
+  useEffect(() => startReveal(), []);
 
 
   return (

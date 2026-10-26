@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { useHead } from '../hooks/useHead';
 import styled from 'styled-components';
 import AppLayout from '../layouts/AppLayout';
 import { CTAButton, GradientText, breakpoints } from '../layouts/AppLayout.style';
@@ -34,12 +34,10 @@ const Links = styled.ul`
 
 // Shown for any address that isn't a page. Pre-rendered as dist/404.html,
 // which Vercel serves with a real 404 status.
-const NotFound = () => (
+const NotFound = () => {
+  useHead('Page not found | RumiLab', [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex' } }]);
+  return (
   <AppLayout>
-    <Helmet>
-      <title>Page not found | RumiLab</title>
-      <meta name="robots" content="noindex" />
-    </Helmet>
     <ArticlePage>
       <ArticleInner>
         <Body>
@@ -62,6 +60,7 @@ const NotFound = () => (
       </ArticleInner>
     </ArticlePage>
   </AppLayout>
-);
+  );
+};
 
 export default NotFound;

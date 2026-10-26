@@ -8,7 +8,7 @@ import {
 
 import { IoCheckmarkSharp, IoCloseSharp } from "react-icons/io5";
 import { FaAnglesUp } from "react-icons/fa6";
-import HoloFoil from '../HoloFoil/HoloFoil';
+import { lazy, Suspense } from 'react';
 import InfoTip from '../InfoTip/InfoTip';
 
 // What "every page your business needs" means, since the scope isn't a fixed count
@@ -27,6 +27,9 @@ const HOSTING_TIP = (
   </InfoTip>
 );
 import { useNearViewport } from '../../hooks/useNearViewport';
+
+// Loaded only when the pricing cards come near
+const HoloFoil = lazy(() => import('../HoloFoil/HoloFoil'));
 
 
 const Pricing = () => {
@@ -93,7 +96,7 @@ const Pricing = () => {
             </PackagePricing>
             <PriceTerms>Then $25/month for hosting, or host it yourself. Cancel anytime. Only for our first 10 clients.</PriceTerms>
             {/* Gold foil sheen drifting over the card on its own (no tilt, no hover) */}
-            {showFoil && <HoloFoil intensity={0.6} glare={0.5} />}
+            {showFoil && <Suspense fallback={null}><HoloFoil intensity={0.6} glare={0.5} /></Suspense>}
           </PopularPackageCard>
         </PackageCardGrid>
       </PackageCardWrapper>

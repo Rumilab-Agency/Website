@@ -8,8 +8,11 @@ import {
   IncludedIcon, ItemTitle, ItemText, PlanTag, ServiceAurora,
 } from './Service.style';
 
-import SoftAurora from '../SoftAurora/SoftAurora';
+import { lazy, Suspense } from 'react';
 import { useNearViewport } from '../../hooks/useNearViewport';
+
+// Loaded only when the section comes near: it brings the ogl WebGL library with it
+const SoftAurora = lazy(() => import('../SoftAurora/SoftAurora'));
 
 // "What's included": what every site comes with, in plain words. Items that only
 // come with the Monthly plan are tagged.
@@ -54,26 +57,28 @@ const Service = () => {
     <ServiceContainer>
       <ServiceAurora aria-hidden="true" ref={auroraRef}>
         {showAurora && (
-          <SoftAurora
-            speed={0.6}
-            scale={1.5}
-            // Lower bandSpread widens the band but dims its peak by e^(1 - bandSpread);
-            // brightness is raised by the same factor to keep the peak unchanged.
-            brightness={1.8}
-            color1="#a084ff"
-            color2="#f780ff"
-            noiseFrequency={2.5}
-            noiseAmplitude={3}
-            bandHeight={0.5}
-            bandSpread={0.45}
-            octaveDecay={0.1}
-            layerOffset={0}
-            colorSpeed={1.0}
-            enableMouseInteraction={false}
-            mouseInfluence={0.25}
-            resolution={0.5}
-            fps={30}
-          />
+          <Suspense fallback={null}>
+            <SoftAurora
+              speed={0.6}
+              scale={1.5}
+              // Lower bandSpread widens the band but dims its peak by e^(1 - bandSpread);
+              // brightness is raised by the same factor to keep the peak unchanged.
+              brightness={1.8}
+              color1="#a084ff"
+              color2="#f780ff"
+              noiseFrequency={2.5}
+              noiseAmplitude={3}
+              bandHeight={0.5}
+              bandSpread={0.45}
+              octaveDecay={0.1}
+              layerOffset={0}
+              colorSpeed={1.0}
+              enableMouseInteraction={false}
+              mouseInfluence={0.25}
+              resolution={0.5}
+              fps={30}
+            />
+          </Suspense>
         )}
       </ServiceAurora>
       <ServiceTitle>What&apos;s included</ServiceTitle>
