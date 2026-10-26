@@ -3,7 +3,7 @@ import { WhyUsContainer, WhyUsContentWrapper, WhyUsSubHeadline, WhyUsContent, Wh
 import { GradientText } from '../../layouts/AppLayout.style';
 import AuroraBlob from '../AuroraBlob/AuroraBlob';
 import { useNearViewport } from '../../hooks/useNearViewport';
-import whyUsBg from '../../assets/images/bg-why.png';
+import whyUsBg from '../../assets/images/bg-why.webp';
 
 
 const WhyUs = () => {

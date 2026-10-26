@@ -97,7 +97,7 @@ export const WhyUsContent = styled(Content)`
 
 export const WhyUsBg = styled.div`
   width: 17.813rem;
-  aspect-ratio: 735 / 790; /* bg-why.png */
+  aspect-ratio: 735 / 790; /* bg-why.webp */
   right: 0;
   bottom: 20%;
   opacity:0.9;

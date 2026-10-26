@@ -2,7 +2,7 @@
 
 import {
   CTAContainer, CTATitle, CTASubTitle, CTAContentWrapper,
-  CTASlogan1, CTASlogan2, CTAButton1, CTAActions, CTAHorizon, CTAShards, CTABgStars
+  CTASlogan1, CTASlogan2, CTAButton1, CTAActions, CTAHorizon, CTAShards
 } from './CTA.style';
 
 import { GradientText } from '../../layouts/AppLayout.style';
@@ -14,7 +14,6 @@ import { useNearViewport } from '../../hooks/useNearViewport';
 import { Link } from 'react-router-dom';
 import WhatsAppButton from '../WhatsAppButton/WhatsAppButton';
 
-import backgroundStars from '../../assets/images/bg-stars.png';
 import { CTA_LABEL } from '../../data/offer';
 
 // WebGPU + shader compiler are ~90 KB gzipped: load them in their own chunk,
@@ -73,7 +72,6 @@ const CTA = () => {
           </Suspense>
         )}
       </CTAShards>
-      <CTABgStars src={backgroundStars} alt="" />
 
       <CTAHorizon>
         <HorizonBloom horizon={0.62} drop={0.6} flip />

@@ -117,20 +117,6 @@ export const CTAShards = styled.div`
   mask-composite: intersect;
 `;
 
-export const CTABgStars = styled.img`
-    width: 100%;
-    bottom: 0;
-  opacity:0.8;
-  height: auto;
-  position:absolute;
-  z-index: 1;
-  pointer-events: none;
-
-
-  @media (min-width: ${breakpoints.sm}) {
-  }
-
-`;
 
 // Upside-down twin of the hero sunrise, spanning the full width (it cancels
 // the container's side padding) right above the footer.

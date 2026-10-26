@@ -85,7 +85,7 @@ void main() {
   aurora = mix(aurora, PINK, smoothstep(0.45, 0.75, hue));
   aurora = mix(aurora, LIGHT, rays * 0.45);
 
-  // Blend with the artwork's own gradient so it still reads as bg-why.png
+  // Blend with the artwork's own gradient so it still reads as bg-why.webp
   vec3 base = tex.rgb / max(tex.a, 0.001);
   vec3 color = mix(base, aurora, 0.4) * (0.85 + 0.55 * rays);
   float alpha = tex.a * (0.8 + 0.2 * rays);
